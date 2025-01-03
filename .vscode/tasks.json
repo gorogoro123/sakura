@@ -1,0 +1,141 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Debug Win32",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Debug",
+				"/p:Platform=Win32"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Release Win32",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Release",
+				"/p:Platform=Win32"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Debug x64",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Debug",
+				"/p:Platform=x64"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Release x64",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Release",
+				"/p:Platform=x64"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Debug_clang Win32",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Debug_clang",
+				"/p:Platform=Win32"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Release_clang Win32",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Release_clang",
+				"/p:Platform=Win32"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Debug_clang x64",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Debug_clang",
+				"/p:Platform=x64"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Release_clang x64",
+			"type": "shell",
+			"command": "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe",
+			"args": [
+				"/property:GenerateFullPaths=true",
+				"/t:build",
+				"/consoleloggerparameters:NoSummary",
+				"/p:Configuration=Release_clang",
+				"/p:Platform=x64"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			},
+			"problemMatcher": "$msCompile"
+		}
+	]
+}
