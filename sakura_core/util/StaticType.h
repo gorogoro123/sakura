@@ -105,7 +105,7 @@ public:
 public:
 	//コンストラクタ・デストラクタ
 	StaticString(){ m_szData[0]=0; }
-	StaticString(const WCHAR* rhs){ if(!rhs) m_szData[0]=0; else wcscpy(m_szData,rhs); }
+	StaticString(const WCHAR* rhs){ Assign(rhs); }
 
 	//クラス属性
 	size_t GetBufferCount() const{ return N_BUFFER_COUNT; }
@@ -121,11 +121,11 @@ public:
 	WCHAR At(int nIndex) const{ return m_szData[nIndex]; }
 
 	//簡易コピー
-	void Assign(const WCHAR* src){ if(!src) m_szData[0]=0; else wcscpy_s(m_szData,_countof(m_szData),src); }
+	void Assign(const WCHAR* src){ if(!src) m_szData[0]=L'\0'; else wcscpy_s(m_szData,_countof(m_szData),src); }
 	Me& operator = (const WCHAR* src){ Assign(src); return *this; }
 
 	//各種メソッド
-	int Length() const { return static_cast<int>(auto_strnlen(m_szData, BUFFER_COUNT)); }
+	int Length() const { return static_cast<int>(wcsnlen(m_szData, BUFFER_COUNT)); }
 
 private:
 	WCHAR m_szData[N_BUFFER_COUNT];
