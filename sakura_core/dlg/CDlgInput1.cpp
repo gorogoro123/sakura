@@ -17,7 +17,6 @@
 #include "StdAfx.h"
 #include "dlg/CDlgInput1.h"
 #include "CEditApp.h"
-#include "Funccode_enum.h"	// EFunctionCode
 #include "util/shell.h"
 #include "sakura_rc.h"
 #include "sakura.hh"

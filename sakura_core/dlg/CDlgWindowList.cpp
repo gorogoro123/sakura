@@ -21,7 +21,6 @@
 
 #include "StdAfx.h"
 #include "dlg/CDlgWindowList.h"
-#include "Funccode_enum.h"
 #include "util/shell.h"
 #include "util/window.h"
 #include "apiwrap/StdApi.h"

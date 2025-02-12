@@ -19,9 +19,9 @@
 
 #include <Windows.h>
 #include "CMacroManagerBase.h"
-#include "Funccode_enum.h"
 
 class CMacro;
+enum EFunctionCode : int;
 
 //#define MAX_STRLEN			70
 //#define MAX_KEYMACRONUM		10000

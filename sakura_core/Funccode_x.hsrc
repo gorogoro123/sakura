@@ -21,7 +21,7 @@
 //	11000- : 最近使ったファイルで使用する
 //	12000- : 最近使ったフォルダーで使用する
 
-//enum EFunctionCode{
+//enum EFunctionCode : int {
 
 //aliases
 F_INVALID		= -1,
