@@ -30,7 +30,7 @@
 #include "CRecentImp.h"
 #include "util/StaticType.h"
 
-typedef StaticString<WCHAR, _MAX_PATH> CMetaPath;
+typedef StaticString<_MAX_PATH> CMetaPath;
 
 //! フォルダーの履歴を管理 (RECENT_FOR_FOLDER)
 class CRecentExceptMRU final : public CRecentImp<CMetaPath, LPCWSTR>{

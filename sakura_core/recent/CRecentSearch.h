@@ -30,7 +30,7 @@
 #include "CRecentImp.h"
 #include "util/StaticType.h"
 
-typedef StaticString<WCHAR, _MAX_PATH> CSearchString;
+typedef StaticString<_MAX_PATH> CSearchString;
 
 //! 検索の履歴を管理 (RECENT_FOR_SEARCH)
 class CRecentSearch final : public CRecentImp<CSearchString, LPCWSTR>{

@@ -30,7 +30,7 @@
 #include "util/StaticType.h"
 #include "config/maxdata.h"
 
-typedef StaticString<WCHAR, MAX_EXCLUDE_PATH> CExcludeFolderString;
+typedef StaticString<MAX_EXCLUDE_PATH> CExcludeFolderString;
 
 //! Excludeフォルダーの履歴を管理 (RECENT_FOR_Exclude_FOLDER)
 class CRecentExcludeFolder final : public CRecentImp<CExcludeFolderString, LPCWSTR>{

@@ -31,7 +31,7 @@
 #include "util/StaticType.h"
 #include "config/maxdata.h" //MAX_CMDLEN
 
-typedef StaticString<WCHAR, MAX_CMDLEN> CCmdString;
+typedef StaticString<MAX_CMDLEN> CCmdString;
 
 //! コマンドの履歴を管理 (RECENT_FOR_CMD)
 class CRecentCmd final : public CRecentImp<CCmdString, LPCWSTR>{

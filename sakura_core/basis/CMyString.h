@@ -40,11 +40,11 @@
 #define _FT _T
 
 //共通型
-typedef StaticString<WCHAR,_MAX_PATH> SFilePath;
-typedef StaticString<WCHAR, MAX_GREP_PATH> SFilePathLong;
-class CFilePath : public StaticString<WCHAR,_MAX_PATH>{
+typedef StaticString<_MAX_PATH> SFilePath;
+typedef StaticString<MAX_GREP_PATH> SFilePathLong;
+class CFilePath : public StaticString<_MAX_PATH>{
 private:
-	typedef StaticString<WCHAR,_MAX_PATH> Super;
+	typedef StaticString<_MAX_PATH> Super;
 public:
 	CFilePath() = default;
 	CFilePath(const WCHAR* rhs) : Super(rhs) { }
