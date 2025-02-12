@@ -18,10 +18,10 @@
 #pragma once
 
 #include <Windows.h>
-#include "Funccode_enum.h"
 
 class CFuncLookup;
 class CNativeW;
+enum EFunctionCode : int;
 
 //! キー情報を保持する
 struct KEYDATA {

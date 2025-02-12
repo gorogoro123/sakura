@@ -241,7 +241,7 @@ next:
 		"// Don't edit this file manually.\n\n",
 		GetFileTitlePointer(in_file)
 	);
-	if(mode==MODE_ENUM)fprintf(out,"enum %s{\n",enum_name); //enum開始
+	if(mode==MODE_ENUM)fprintf(out,"enum %s : int {\n",enum_name); //enum開始
 	while(NULL!=fgets(line,_countof(line),in))
 	{
 		// #無視(for MinGW)
