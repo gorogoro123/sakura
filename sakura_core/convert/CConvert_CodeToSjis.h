@@ -25,7 +25,8 @@
 #pragma once
 
 #include "CConvert.h"
-#include "charset/charset.h"
+
+enum ECodeType : int;
 
 //! 文字コード変換 xxx→SJIS
 class CConvert_CodeToSjis final : public CConvert{

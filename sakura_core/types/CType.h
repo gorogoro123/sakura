@@ -32,9 +32,10 @@
 #include "doc/CDocTypeSetting.h"
 #include "doc/CLineComment.h"
 #include "doc/CBlockComment.h"
-#include "charset/charset.h"  // ECodeType
 #include "CRegexKeyword.h"	// RegexKeywordInfo
 #include "charset/charcode.h"
+
+enum ECodeType : int;
 
 //! タブ表示方法
 enum ETabArrow {

@@ -30,9 +30,9 @@
 
 #include "io/CFile.h"
 #include "util/file.h"
-#include "charset/charset.h"
 
 class CEditDoc;
+enum ECodeType : int;
 
 //####本来はここにあるべきでは無い
 struct SFileInfo{

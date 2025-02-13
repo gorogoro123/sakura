@@ -29,7 +29,8 @@
 
 #include "basis/SakuraBasis.h"
 #include "config/maxdata.h"
-#include "charset/charset.h"
+
+enum ECodeType : int;
 
 /*!
  * ファイル情報
