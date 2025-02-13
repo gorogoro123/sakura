@@ -33,8 +33,9 @@
 #include <string_view>
 
 #include "mem/CNativeW.h"
-#include "charset/charset.h"
 #include "CEol.h"
+
+enum ECodeType : int;
 
 //定数
 enum EConvertResult{

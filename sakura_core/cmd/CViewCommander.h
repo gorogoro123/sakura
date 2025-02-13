@@ -29,6 +29,7 @@
 
 #include "CEol.h"
 #include "types/CType.h"
+#include "charset/charset.h"
 
 class CEditView;
 enum EFunctionCode;

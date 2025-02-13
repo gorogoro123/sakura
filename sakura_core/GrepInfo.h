@@ -27,7 +27,7 @@
 #pragma once
 
 #include "_main/global.h"	//SSearchOption
-#include "charset/charcode.h"	//ECodeType
+#include "charset/charset.h"	//ECodeType
 #include "mem/CNativeW.h"	//CNativeW
 
 /*!

@@ -45,6 +45,7 @@
 #include "CSelectLang.h"
 #include "String_define.h"
 #include "util/MessageBoxF.h"
+#include "charset/charset.h"
 
 /*!
 	コンストラクタ

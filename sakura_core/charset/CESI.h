@@ -35,9 +35,10 @@
 #define SAKURA_CESI_C5EC4EE4_9EEA_47B9_9D02_236EF1F3222C_H_
 #pragma once
 
-struct SEncodingConfig;
-
 #include "_main/global.h"
+#include "charset/charset.h"
+
+struct SEncodingConfig;
 
 struct tagEncodingInfo {
 	ECodeType eCodeID;  // 文字コード識別番号

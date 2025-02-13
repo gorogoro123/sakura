@@ -30,8 +30,6 @@
 #include <Windows.h>
 #include <tchar.h>
 
-#include "charset/charset.h"
-
 /* ウィンドウのID */
 #define IDW_STATUSBAR 123
 

@@ -24,6 +24,7 @@
 */
 #include "StdAfx.h"
 #include "CharsetDetector.h"
+#include "charset/charset.h"
 
 // https://www.freedesktop.org/wiki/Software/uchardet/
 // https://docs.microsoft.com/en-us/windows/win32/intl/code-page-identifiers

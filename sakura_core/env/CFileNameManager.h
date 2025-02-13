@@ -34,6 +34,7 @@
 
 #include "util/design_template.h"
 #include "config/maxdata.h"
+#include "charset/charset.h"
 
 struct DLLSHAREDATA;
 struct EditInfo;

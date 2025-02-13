@@ -27,6 +27,7 @@
 
 #include "charset/CCodeFactory.h"
 #include "charset/CCodeMediator.h"
+#include "charset/charset.h"
 
 /*!
 	コンストラクタ

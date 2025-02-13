@@ -26,6 +26,7 @@
 #include "CConvert_CodeToSjis.h"
 
 #include "charset/CCodeFactory.h"
+#include "charset/charset.h"
 
 /*!
 	コンストラクタ

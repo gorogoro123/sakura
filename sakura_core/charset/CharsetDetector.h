@@ -31,6 +31,8 @@
 #include "extmodule/CIcu4cI18n.h"
 #include "extmodule/CUchardet.h"
 
+enum ECodeType : int;
+
 /*!
  * @brief 文字コード検出クラス
  */
