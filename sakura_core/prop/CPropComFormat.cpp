@@ -37,7 +37,6 @@ static const DWORD p_helpids[] = {	//10400
 	IDC_RADIO_DFORM_1,					HIDC_RADIO_DFORM_1,		//日付書式（カスタム）
 	IDC_RADIO_TFORM_0,					HIDC_RADIO_TFORM_0,		//時刻書式（標準）
 	IDC_RADIO_TFORM_1,					HIDC_RADIO_TFORM_1,		//時刻書式（カスタム）
-//	IDC_STATIC,							-1,
 	0, 0
 };
 //@@@ 2001.02.04 End

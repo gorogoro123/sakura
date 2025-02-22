@@ -31,7 +31,6 @@ static const DWORD p_helpids[] = {	//13000
 	IDCANCEL,				HIDCANCEL_DLG1,
 	IDC_EDIT_INPUT1,		HIDC_DLG1_EDIT1,	//入力フィールド	IDC_EDIT1->IDC_EDIT_INPUT1	2008/7/3 Uchi
 	IDC_STATIC_MSG,			HIDC_DLG1_EDIT1,	//メッセージ
-//	IDC_STATIC,				-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

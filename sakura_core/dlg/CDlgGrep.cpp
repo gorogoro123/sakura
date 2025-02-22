@@ -38,7 +38,7 @@
 #include "String_define.h"
 
 //GREP CDlgGrep.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//12000
+static const DWORD p_helpids[] = {	//12000
 	IDC_BUTTON_FOLDER,				HIDC_GREP_BUTTON_FOLDER,			//フォルダー
 	IDC_BUTTON_CURRENTFOLDER,		HIDC_GREP_BUTTON_CURRENTFOLDER,		//現フォルダー
 	IDOK,							HIDOK_GREP,							//検索
@@ -67,7 +67,6 @@ const DWORD p_helpids[] = {	//12000
 	IDC_CHECK_FILE_ONLY,			HIDC_CHECK_FILE_ONLY,				//ファイル毎最初のみ検索
 	IDC_CHECK_BASE_PATH,			HIDC_CHECK_BASE_PATH,				//ベースフォルダー表示
 	IDC_CHECK_SEP_FOLDER,			HIDC_CHECK_SEP_FOLDER,				//フォルダー毎に表示
-//	IDC_STATIC,						-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

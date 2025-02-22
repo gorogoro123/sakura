@@ -31,7 +31,7 @@
 #include "config/system_constants.h"
 #include "String_define.h"
 
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	IDC_TAB_FAVORITE,				HIDC_TAB_FAVORITE,				//タブ
 	IDC_LIST_FAVORITE_FILE,			HIDC_LIST_FAVORITE_FILE,		//ファイル
 	IDC_LIST_FAVORITE_FOLDER,		HIDC_LIST_FAVORITE_FOLDER,		//フォルダー

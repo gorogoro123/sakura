@@ -31,7 +31,7 @@
 #include "String_define.h"
 
 //検索 CDlgFind.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//11800
+static const DWORD p_helpids[] = {	//11800
 	IDC_BUTTON_SEARCHNEXT,			HIDC_FIND_BUTTON_SEARCHNEXT,		//次を検索
 	IDC_BUTTON_SEARCHPREV,			HIDC_FIND_BUTTON_SEARCHPREV,		//前を検索
 	IDCANCEL,						HIDCANCEL_FIND,						//キャンセル
@@ -45,7 +45,6 @@ const DWORD p_helpids[] = {	//11800
 	IDC_STATIC_JRE32VER,			HIDC_FIND_STATIC_JRE32VER,			//正規表現バージョン
 	IDC_BUTTON_SETMARK,				HIDC_FIND_BUTTON_SETMARK,			//2002.01.16 hor 検索該当行をマーク
 	IDC_CHECK_SEARCHALL,			HIDC_FIND_CHECK_SEARCHALL,			//2002.01.26 hor 先頭（末尾）から再検索
-//	IDC_STATIC,						-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

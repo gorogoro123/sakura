@@ -50,7 +50,7 @@ int m_fgColorSampleLeft;
 int m_fgColorSampleRight;
 }
 
-static const DWORD p_helpids2[] = {	//11400
+static const DWORD p_helpids[] = {	//11400
 	IDC_LIST_COLORS,				HIDC_LIST_COLORS,				//色指定
 	IDC_CHECK_DISP,					HIDC_CHECK_DISP,				//色分け表示
 	IDC_CHECK_BOLD,					HIDC_CHECK_BOLD,				//太字
@@ -80,7 +80,6 @@ static const DWORD p_helpids2[] = {	//11400
 	IDC_CHECK_STRINGLINEONLY,		HIDC_CHECK_STRINGLINEONLY,		//文字列は行内のみ
 	IDC_CHECK_STRINGENDLINE,		HIDC_CHECK_STRINGENDLINE,		//終了文字がない場合行末まで色分け
 	IDC_EDIT_VERTLINE,				HIDC_EDIT_VERTLINE,				//縦線の桁指定	// 2006.08.06 ryoji
-//	IDC_STATIC,						-1,
 	0, 0
 };
 
@@ -612,7 +611,7 @@ INT_PTR CPropTypesColor::DispatchEvent(
 	case WM_HELP:
 		{
 			HELPINFO *p = (HELPINFO *)lParam;
-			MyWinHelp( (HWND)p->hItemHandle, HELP_WM_HELP, (ULONG_PTR)(LPVOID)p_helpids2 );	// 2006.10.10 ryoji MyWinHelpに変更に変更
+			MyWinHelp( (HWND)p->hItemHandle, HELP_WM_HELP, (ULONG_PTR)(LPVOID)p_helpids );	// 2006.10.10 ryoji MyWinHelpに変更に変更
 		}
 		return TRUE;
 		/*NOTREACHED*/
@@ -622,7 +621,7 @@ INT_PTR CPropTypesColor::DispatchEvent(
 //@@@ 2001.11.17 add start MIK
 	//Context Menu
 	case WM_CONTEXTMENU:
-		MyWinHelp( hwndDlg, HELP_CONTEXTMENU, (ULONG_PTR)(LPVOID)p_helpids2 );	// 2006.10.10 ryoji MyWinHelpに変更に変更
+		MyWinHelp( hwndDlg, HELP_CONTEXTMENU, (ULONG_PTR)(LPVOID)p_helpids );	// 2006.10.10 ryoji MyWinHelpに変更に変更
 		return TRUE;
 //@@@ 2001.11.17 add end MIK
 	}

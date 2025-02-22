@@ -39,7 +39,7 @@ static inline void CtrlShow(HWND hwndDlg, int id, BOOL bShow)
 	::EnableWindow( hWnd, bShow );
 }
 
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	IDC_LIST_PLUGIN_OPTIONS,		HIDC_LIST_PLUGIN_OPTIONS,		// オプションリスト
 	IDC_EDIT_PLUGIN_OPTION,			HIDC_EDIT_PLUGIN_OPTION,		// オプション編集
 	IDC_EDIT_PLUGIN_OPTION_DIR,		HIDC_EDIT_PLUGIN_OPTION,		// オプション編集
@@ -52,7 +52,6 @@ const DWORD p_helpids[] = {
 	IDCANCEL,						HIDC_FAVORITE_IDCANCEL,			//キャンセル
 	IDC_PLUGIN_README,				HIDC_PLUGIN_README,				//ReadMe
 	IDC_BUTTON_HELP,				HIDC_BUTTON_FAVORITE_HELP,		//ヘルプ
-//	IDC_STATIC,						-1,
 	0, 0
 };
 
