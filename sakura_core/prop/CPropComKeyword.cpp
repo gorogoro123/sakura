@@ -48,7 +48,6 @@ static const DWORD p_helpids[] = {	//10800
 	IDC_LIST_KEYWORD,				HIDC_LIST_KEYWORD,			//キーワード一覧
 	IDC_BUTTON_KEYCLEAN		,		HIDC_BUTTON_KEYCLEAN,		//キーワード整理	// 2006.08.06 ryoji
 	IDC_BUTTON_KEYSETRENAME,		HIDC_BUTTON_KEYSETRENAME,	//セットの名称変更	// 2006.08.06 ryoji
-//	IDC_STATIC,						-1,
 	0, 0
 };
 //@@@ 2001.02.04 End

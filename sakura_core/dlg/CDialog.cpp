@@ -510,7 +510,7 @@ BOOL CDialog::OnContextMenu( WPARAM wPara, LPARAM lParam )
 	return TRUE;
 }
 
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	0, 0
 };
 

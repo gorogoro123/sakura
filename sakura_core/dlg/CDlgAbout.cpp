@@ -37,14 +37,13 @@
 #include "String_define.h"
 
 // バージョン情報 CDlgAbout.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//12900
+static const DWORD p_helpids[] = {	//12900
 	IDOK,					HIDOK_ABOUT,
 	IDC_EDIT_ABOUT,			HIDC_ABOUT_EDIT_ABOUT,
 //	IDC_STATIC_URL_UR,		12970,
 //	IDC_STATIC_URL_ORG,		12971,
 //	IDC_STATIC_UPDATE,		12972,
 //	IDC_STATIC_VER,			12973,
-//	IDC_STATIC,				-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

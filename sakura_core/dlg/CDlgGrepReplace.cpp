@@ -33,7 +33,7 @@
 #include "sakura.hh"
 #include "String_define.h"
 
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	IDC_BUTTON_FOLDER,				HIDC_GREP_REP_BUTTON_FOLDER,			//フォルダー
 	IDC_BUTTON_CURRENTFOLDER,		HIDC_GREP_REP_BUTTON_CURRENTFOLDER,		//現フォルダー
 	IDOK,							HIDOK_GREP_REP,							//置換開始

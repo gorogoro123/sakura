@@ -50,7 +50,6 @@ static const DWORD p_helpids[] = {	//10210
 	IDC_BUTTON_FILEOPENDIR, 			HIDC_EDIT_FILEOPENDIR,					//指定フォルダーパス
 	IDC_CHECK_ENABLEEXTEOL,				HIDC_CHECK_ENABLEEXTEOL,				//改行コードNEL,PS,LSを有効にする
 	IDC_CHECK_BOXSELECTLOCK,			HIDC_CHECK_BOXSELECTLOCK,				//矩形選択移動で選択をロックする
-//	IDC_STATIC,							-1,
 	0, 0
 };
 //@@@ 2001.02.04 End

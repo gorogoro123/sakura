@@ -32,7 +32,7 @@
 #include "sakura.hh"
 #include "config/system_constants.h"
 
-const DWORD p_helpids[] = {	//13200
+static const DWORD p_helpids[] = {	//13200
 	IDC_BUTTON_DIFF_DST,		HIDC_BUTTON_DIFF_DST,
 	IDC_CHECK_DIFF_OPT_BLINE,	HIDC_CHECK_DIFF_OPT_BLINE,
 	IDC_CHECK_DIFF_OPT_CASE,	HIDC_CHECK_DIFF_OPT_CASE,
@@ -55,7 +55,6 @@ const DWORD p_helpids[] = {	//13200
 	IDC_CHECK_NOTIFYNOTFOUND,	HIDC_CHECK_DIFF_NOTIFYNOTFOUND,	// 見つからないときにメッセージを表示	// 2006.10.10 ryoji
 	IDC_CHECK_SEARCHALL,		HIDC_CHECK_DIFF_SEARCHALL,		// 先頭（末尾）から再検索する	// 2006.10.10 ryoji
 //	IDC_FRAME_SEARCH_MSG,		HIDC_FRAME_DIFF_SEARCH_MSG,
-//	IDC_STATIC,					-1,
 	0, 0
 };
 

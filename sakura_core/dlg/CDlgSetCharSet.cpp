@@ -22,7 +22,7 @@
 #include "sakura.hh"
 
 //文字コードセット設定 CDlgSetCharSet
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	IDOK,							HIDOK_GREP,							//検索
 	IDCANCEL,						HIDCANCEL_GREP,						//キャンセル
 	IDC_BUTTON_HELP,				HIDC_GREP_BUTTON_HELP,				//ヘルプ

@@ -32,7 +32,7 @@
 #include "String_define.h"
 
 // ジャンプ CDlgJump.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//12800
+static const DWORD p_helpids[] = {	//12800
 	IDC_BUTTON_JUMP,				HIDC_JUMP_BUTTON_JUMP,			//ジャンプ
 	IDCANCEL,						HIDCANCEL_JUMP,					//キャンセル
 	IDC_BUTTON_HELP,				HIDC_JUMP_BUTTON_HELP,			//ヘルプ
@@ -44,7 +44,6 @@ const DWORD p_helpids[] = {	//12800
 	IDC_RADIO_LINENUM_CRLF,			HIDC_JUMP_RADIO_LINENUM_CRLF,	//改行単位
 	IDC_SPIN_LINENUM,				HIDC_JUMP_EDIT_LINENUM,			//12870,	//
 	IDC_SPIN_PLSQL_E1,				HIDC_JUMP_EDIT_PLSQL_E1,		//12871,	//
-//	IDC_STATIC,						-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

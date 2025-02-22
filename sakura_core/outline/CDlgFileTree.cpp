@@ -30,7 +30,7 @@
 #include "config/app_constants.h"
 #include "String_define.h"
 
-const DWORD p_helpids[] = {	//13300
+static const DWORD p_helpids[] = {	//13300
 	IDC_CHECK_LOADINI,      HIDC_CHECK_FILETREE_LOADINI,
 	IDC_EDIT_DEFINI,        HIDC_EDIT_FILETREE_DEFINI,
 	IDC_BUTTON_REF1,        HIDC_BUTTON_FILETREE_REF1,
@@ -65,7 +65,6 @@ const DWORD p_helpids[] = {	//13300
 	IDOK,                   HIDC_FILETREE_IDOK,
 	IDCANCEL,               HIDC_FILETREE_IDCANCEL,
 	IDC_BUTTON_HELP,        HIDC_BUTTON_FILETREE_HELP,
-//	IDC_STATIC,				-1,
 	0, 0
 };
 

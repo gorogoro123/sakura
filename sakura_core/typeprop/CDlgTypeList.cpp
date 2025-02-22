@@ -53,7 +53,7 @@ int CheckExt(LPCWSTR sExt, bool *pbRMenu, bool *pbDblClick);
 static const int PROP_TEMPCHANGE_FLAG = 0x10000;
 
 // タイプ別設定一覧 CDlgTypeList.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//12700
+static const DWORD p_helpids[] = {	//12700
 	IDC_BUTTON_TEMPCHANGE,	HIDC_TL_BUTTON_TEMPCHANGE,	//一時適用
 	IDOK,					HIDOK_TL,					//設定
 	IDCANCEL,				HIDCANCEL_TL,				//キャンセル
@@ -69,7 +69,6 @@ const DWORD p_helpids[] = {	//12700
 	IDC_BUTTON_DEL_TYPE,	HIDC_BUTTON_DEL_TYPE,		//削除
 	IDC_CHECK_EXT_RMENU,	HIDC_TL_CHECK_RMENU,		//右クリックメニューに追加
 	IDC_CHECK_EXT_DBLCLICK,	HIDC_TL_CHECK_DBLCLICK,		//ダブルクリックで開く
-//	IDC_STATIC,				-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 
