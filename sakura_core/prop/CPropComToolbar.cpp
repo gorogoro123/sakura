@@ -47,7 +47,6 @@ static const DWORD p_helpids[] = {	//11000
 	IDC_LABEL_MENUFUNCKIND,			(DWORD)-1,
 	IDC_LABEL_MENUFUNC,				(DWORD)-1,
 	IDC_LABEL_TOOLBAR,				(DWORD)-1,
-//	IDC_STATIC,						-1,
 	0, 0
 };
 //@@@ 2001.02.04 End

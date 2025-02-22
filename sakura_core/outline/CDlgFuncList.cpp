@@ -67,7 +67,7 @@
 #define VIEWTYPE_TREE	1
 
 //アウトライン解析 CDlgFuncList.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//12200
+static const DWORD p_helpids[] = {	//12200
 	IDC_BUTTON_COPY,					HIDC_FL_BUTTON_COPY,	//コピー
 	IDOK,								HIDOK_FL,				//ジャンプ
 	IDCANCEL,							HIDCANCEL_FL,			//キャンセル
@@ -81,7 +81,6 @@ const DWORD p_helpids[] = {	//12200
 	IDC_BUTTON_WINSIZE,					HIDC_FL_BUTTON_WINSIZE,	//ウィンドウ位置保存	// 2006.08.06 ryoji
 	IDC_BUTTON_MENU,					HIDC_FL_BUTTON_MENU,	//ウィンドウの位置メニュー
 	IDC_BUTTON_SETTING,					HIDC_FL_BUTTON_SETTING,	//設定
-//	IDC_STATIC,							-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

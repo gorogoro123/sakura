@@ -35,7 +35,7 @@
 
 struct EditInfo;
 
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	IDC_LIST_WINDOW,			HIDC_WINLIST_LIST_WINDOW,
 	IDC_BUTTON_SAVE,			HIDC_WINLIST_BUTTTN_SAVE,
 	IDC_BUTTON_CLOSE,			HIDC_WINLIST_BUTTTN_CLOSE,

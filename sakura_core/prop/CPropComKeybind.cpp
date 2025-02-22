@@ -52,7 +52,6 @@ static const DWORD p_helpids[] = {	//10700
 	IDC_LABEL_KEYKIND,				(DWORD)-1,
 	IDC_LABEL_FUNCtoKEY,			(DWORD)-1,
 	IDC_LABEL_KEYtoFUNC,			(DWORD)-1,
-//	IDC_STATIC,						-1,
 	0, 0
 };
 //@@@ 2001.02.04 End

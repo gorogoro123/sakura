@@ -59,7 +59,6 @@ static const DWORD p_helpids[] = {	//11700
 	IDC_PLUGIN_OPTION,		HIDC_PLUGIN_OPTION,			//プラグイン設定	// 2010/3/22 Uchi
 	IDC_PLUGIN_README,		HIDC_PLUGIN_README,			//ReadMe表示		// 2011/11/2 Uchi
 	IDC_PLUGIN_URL,			HIDC_PLUGIN_URL,			//配布先			// 2015/01/02 syat
-	//	IDC_STATIC,			-1,
 	0, 0
 };
 

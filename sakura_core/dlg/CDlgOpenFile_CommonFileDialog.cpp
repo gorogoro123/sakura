@@ -55,7 +55,6 @@ static const DWORD p_helpids[] = {	//13100
 	IDC_COMBO_EOL,			HIDC_OPENDLG_COMBO_EOL,			//改行コード
 	IDC_CHECK_BOM,			HIDC_OPENDLG_CHECK_BOM,			//BOM	// 2006.08.06 ryoji
 	IDC_CHECK_CP,			HIDC_OPENDLG_CHECK_CP,			//CP
-//	IDC_STATIC,				-1,
 	0, 0
 };
 

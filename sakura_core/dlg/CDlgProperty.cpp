@@ -51,12 +51,11 @@
 
 // プロパティ CDlgProperty.cpp	//@@@ 2002.01.07 add start MIK
 #include "sakura.hh"
-const DWORD p_helpids[] = {	//12600
+static const DWORD p_helpids[] = {	//12600
 	IDOK,					HIDOK_PROP,
 //	IDCANCEL,				HIDCANCEL_PROP,			// 未使用 del 2008/7/4 Uchi
 	IDC_BUTTON_HELP,		HIDC_PROP_BUTTON_HELP,
 	IDC_EDIT_PROPERTY,		HIDC_PROP_EDIT1,		// IDC_EDIT1->IDC_EDIT_PROPERTY	2008/7/3 Uchi
-//	IDC_STATIC,				-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

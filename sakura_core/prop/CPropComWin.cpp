@@ -53,7 +53,6 @@ static const DWORD p_helpids[] = {	//11200
 	IDC_BUTTON_WINSIZE,				HIDC_BUTTON_WINSIZE,			//位置と大きさの設定	// 2006.08.06 ryoji
 	IDC_COMBO_LANGUAGE,				HIDC_COMBO_LANGUAGE,			//言語選択
 	//	Feb. 11, 2007 genta TAB関連は「タブバー」シートへ移動
-//	IDC_STATIC,						-1,
 	0, 0
 };
 //@@@ 2001.02.04 End

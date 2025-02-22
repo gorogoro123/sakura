@@ -48,7 +48,7 @@
 
 using namespace std;
 
-static const DWORD p_helpids2[] = {	//11400
+static const DWORD p_helpids[] = {	//11400
 	IDC_CHECK_DOCICON,				HIDC_CHECK_DOCICON,				//文書アイコンを使う	// 2006.08.06 ryoji
 
 	IDC_COMBO_IMESWITCH,			HIDC_COMBO_IMESWITCH,		//IMEのON/OFF状態
@@ -77,7 +77,6 @@ static const DWORD p_helpids2[] = {	//11400
 	IDC_RADIO_LINETERMTYPE2,		HIDC_RADIO_LINETERMTYPE2,		//行番号区切り（任意）
 	IDC_EDIT_LINETERMCHAR,			HIDC_EDIT_LINETERMCHAR,			//行番号区切り
 	IDC_EDIT_LINENUMWIDTH,			HIDC_EDIT_LINENUMWIDTH,			//行番号の最小桁数 2014.08.02 katze
-//	IDC_STATIC,						-1,
 	0, 0
 };
 
@@ -287,7 +286,7 @@ INT_PTR CPropTypesWindow::DispatchEvent(
 	case WM_HELP:
 		{
 			HELPINFO *p = (HELPINFO *)lParam;
-			MyWinHelp( (HWND)p->hItemHandle, HELP_WM_HELP, (ULONG_PTR)(LPVOID)p_helpids2 );	// 2006.10.10 ryoji MyWinHelpに変更に変更
+			MyWinHelp( (HWND)p->hItemHandle, HELP_WM_HELP, (ULONG_PTR)(LPVOID)p_helpids );	// 2006.10.10 ryoji MyWinHelpに変更に変更
 		}
 		return TRUE;
 		/*NOTREACHED*/
@@ -297,7 +296,7 @@ INT_PTR CPropTypesWindow::DispatchEvent(
 //@@@ 2001.11.17 add start MIK
 	//Context Menu
 	case WM_CONTEXTMENU:
-		MyWinHelp( hwndDlg, HELP_CONTEXTMENU, (ULONG_PTR)(LPVOID)p_helpids2 );	// 2006.10.10 ryoji MyWinHelpに変更に変更
+		MyWinHelp( hwndDlg, HELP_CONTEXTMENU, (ULONG_PTR)(LPVOID)p_helpids );	// 2006.10.10 ryoji MyWinHelpに変更に変更
 		return TRUE;
 //@@@ 2001.11.17 add end MIK
 

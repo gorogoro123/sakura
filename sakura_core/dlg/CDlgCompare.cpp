@@ -31,8 +31,7 @@
 #include "config/system_constants.h"
 
 // ファイル内容比較 CDlgCompare.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//12300
-//	IDC_STATIC,						-1,
+static const DWORD p_helpids[] = {	//12300
 	IDOK,							HIDOK_CMP,					//OK
 	IDCANCEL,						HIDCANCEL_CMP,				//キャンセル
 	IDC_BUTTON_HELP,				HIDC_CMP_BUTTON_HELP,		//ヘルプ

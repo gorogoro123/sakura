@@ -30,7 +30,7 @@
 #include "String_define.h"
 
 //置換 CDlgReplace.cpp	//@@@ 2002.01.07 add start MIK
-const DWORD p_helpids[] = {	//11900
+static const DWORD p_helpids[] = {	//11900
 	IDC_BUTTON_SEARCHNEXT,			HIDC_REP_BUTTON_SEARCHNEXT,			//下検索
 	IDC_BUTTON_SEARCHPREV,			HIDC_REP_BUTTON_SEARCHPREV,			//上検索
 	IDC_BUTTON_REPALCE,				HIDC_REP_BUTTON_REPALCE,			//置換
@@ -55,7 +55,6 @@ const DWORD p_helpids[] = {	//11900
 	IDC_BUTTON_SETMARK,				HIDC_REP_BUTTON_SETMARK,			//2002.01.16 hor 検索該当行をマーク
 	IDC_CHECK_SEARCHALL,			HIDC_REP_CHECK_SEARCHALL,			//2002.01.26 hor 先頭（末尾）から再検索
 	IDC_CHECK_CONSECUTIVEALL,		HIDC_REP_CHECK_CONSECUTIVEALL,		//「すべて置換」は置換の繰返し	// 2007.01.16 ryoji
-//	IDC_STATIC,						-1,
 	0, 0
 };	//@@@ 2002.01.07 add end MIK
 

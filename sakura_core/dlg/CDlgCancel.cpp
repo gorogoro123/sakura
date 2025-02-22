@@ -96,7 +96,7 @@ BOOL CDlgCancel::OnBnClicked( int wID )
 }
 
 //@@@ 2002.01.18 add start
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	0, 0
 };
 

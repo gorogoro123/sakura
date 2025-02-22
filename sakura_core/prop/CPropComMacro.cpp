@@ -62,7 +62,6 @@ static const DWORD p_helpids[] = {	//11700
 	IDC_CHECK_MacroOnTypeChanged,	HIDC_CHECK_MacroOnTypeChanged,	//タイプ変更後自動実行マクロ	// 2006.09.01 ryoji
 	IDC_CHECK_MacroOnSave,			HIDC_CHECK_MacroOnSave,			//保存前自動実行マクロ	// 2006.09.01 ryoji
 	IDC_MACROCANCELTIMER,			HIDC_MACROCANCELTIMER,			//マクロ停止ダイアログ表示待ち時間	// 2011.08.04 syat
-//	IDC_STATIC,			-1,
 	0, 0
 };
 //@@@ 2001.12.22 End

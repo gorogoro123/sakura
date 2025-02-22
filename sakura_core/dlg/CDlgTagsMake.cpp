@@ -44,7 +44,7 @@
 #include "sakura.hh"
 #include "String_define.h"
 
-const DWORD p_helpids[] = {	//13700
+static const DWORD p_helpids[] = {	//13700
 	IDC_EDIT_TAG_MAKE_FOLDER,	HIDC_EDIT_TAG_MAKE_FOLDER,	//タグ作成フォルダー
 	IDC_BUTTON_TAG_MAKE_REF,	HIDC_BUTTON_TAG_MAKE_REF,	//参照
 	IDC_BUTTON_FOLDER_UP,		HIDC_BUTTON_TAG_MAKE_FOLDER_UP,	// 上
@@ -53,7 +53,6 @@ const DWORD p_helpids[] = {	//13700
 	IDOK,						HIDC_TAG_MAKE_IDOK,
 	IDCANCEL,					HIDC_TAG_MAKE_IDCANCEL,
 	IDC_BUTTON_HELP,			HIDC_BUTTON_TAG_MAKE_HELP,
-//	IDC_STATIC,						-1,
 	0, 0
 };
 

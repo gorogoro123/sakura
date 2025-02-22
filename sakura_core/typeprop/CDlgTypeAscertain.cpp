@@ -41,14 +41,13 @@
 #include "String_define.h"
 
 // タイプ別設定インポート確認 CDlgTypeAscertain.cpp
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	IDC_RADIO_TYPE_TO,		HIDC_RADIO_TYPE_TO,		//タイプ別名
 	IDC_RADIO_TYPE_ADD,		HIDC_RADIO_TYPE_ADD,	//タイプ別追加
 	IDC_COMBO_COLORS,		HIDC_COMBO_COLORS,		//色指定
 	IDOK,					HIDOK_DTA,				//OK
 	IDCANCEL,				HIDCANCEL_DTA,			//キャンセル
 	IDC_BUTTON_HELP,		HIDC_DTA_BUTTON_HELP,	//ヘルプ
-//	IDC_STATIC,				-1,
 	0, 0
 };
 

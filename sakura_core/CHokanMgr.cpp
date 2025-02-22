@@ -696,7 +696,7 @@ bool CHokanMgr::AddKouhoUnique(vector_ex<std::wstring>& kouhoList, const std::ws
 }
 
 //@@@ 2002.01.18 add start
-const DWORD p_helpids[] = {
+static const DWORD p_helpids[] = {
 	0, 0
 };
 

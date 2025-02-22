@@ -39,7 +39,6 @@ static const DWORD p_helpids[] = {	//10500
 	IDC_CHECK_GREPREALTIME,			HIDC_CHECK_GREPREALTIME,		//リアルタイムで表示する	// 2006.08.08 ryoji
 	IDC_COMBO_TAGJUMP,				HIDC_COMBO_TAGJUMP,				//タグファイルの検索
 	IDC_COMBO_KEYWORD_TAGJUMP,		HIDC_COMBO_KEYWORD_TAGJUMP,		//タグファイルの検索
-//	IDC_STATIC,						-1,
 	0, 0
 };
 //@@@ 2001.02.04 End
