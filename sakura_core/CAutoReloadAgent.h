@@ -30,7 +30,7 @@
 #include "doc/CDocListener.h"
 
 // ファイルが更新された場合に再読込を行うかどうかのフラグ
-enum WatchUpdate {
+enum class WatchUpdate : int {
 	WU_QUERY,	//!< 再読込を行うかどうかダイアログボックスで問い合わせる
 	WU_NOTIFY,	//!< 更新されたことをステータスバーで通知
 	WU_NONE,	//!< 更新監視を行わない

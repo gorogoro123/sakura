@@ -25,7 +25,6 @@
 */
 #include "StdAfx.h"
 #include "CAutoReloadAgent.h"
-// #include "doc/CEditDoc.h"	//  in under CEditWnd.h
 #include "window/CEditWnd.h"
 #include "dlg/CDlgFileUpdateQuery.h"
 #include "CSelectLang.h"
@@ -37,7 +36,7 @@
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
 CAutoReloadAgent::CAutoReloadAgent()
-: m_eWatchUpdate( WU_QUERY )
+: m_eWatchUpdate( WatchUpdate::WU_QUERY )
 , m_nPauseCount(0)
 {
 }
@@ -61,7 +60,7 @@ void CAutoReloadAgent::OnAfterSave(const SSaveInfo& sSaveInfo)
 
 	// 名前を付けて保存から再ロードが除去された分の不足処理を追加（ANSI版との差異）	// 2009.08.12 ryoji
 	if(!sSaveInfo.bOverwriteMode){
-		m_eWatchUpdate = WU_QUERY;	// 「名前を付けて保存」で対象ファイルが変更されたので更新監視方法をデフォルトに戻す
+		m_eWatchUpdate = WatchUpdate::WU_QUERY;	// 「名前を付けて保存」で対象ファイルが変更されたので更新監視方法をデフォルトに戻す
 	}
 }
 
@@ -82,7 +81,7 @@ bool CAutoReloadAgent::_ToDoChecking() const
 	const CommonSetting_File& setting = GetDllShareData().m_Common.m_sFile;
 	if(IsPausing())return false;
 	if(!setting.m_bCheckFileTimeStamp)return false;	//更新の監視設定
-	if(m_eWatchUpdate==WU_NONE)return false;
+	if(m_eWatchUpdate==WatchUpdate::WU_NONE)return false;
 	if(setting.m_nFileShareMode!=SHAREMODE_NOT_EXCLUSIVE)return false; // ファイルの排他制御モード
 	HWND hwndActive = ::GetActiveWindow();
 	if(hwndActive==NULL)return false;	/* アクティブ？ */
@@ -112,7 +111,7 @@ bool CAutoReloadAgent::_IsFileUpdatedByOther(FILETIME* pNewFileTime) const
 void CAutoReloadAgent::CheckFileTimeStamp()
 {
 	// 未編集で再ロード時の遅延
-	if (m_eWatchUpdate == WU_AUTOLOAD) {
+	if (m_eWatchUpdate == WatchUpdate::WU_AUTOLOAD) {
 		if (++m_nDelayCount < GetDllShareData().m_Common.m_sFile.m_nAutoloadDelay)	return;
 		m_nDelayCount = 0;
 	}
@@ -128,7 +127,7 @@ void CAutoReloadAgent::CheckFileTimeStamp()
 
 	//	From Here Dec. 4, 2002 genta
 	switch( m_eWatchUpdate ){
-	case WU_NOTIFY:
+	case WatchUpdate::WU_NOTIFY:
 		{
 			//ファイル更新のお知らせ -> ステータスバー
 			WCHAR szText[40];
@@ -137,13 +136,13 @@ void CAutoReloadAgent::CheckFileTimeStamp()
 			GetEditWnd().SendStatusMessage( szText );
 		}
 		break;
-	case WU_AUTOLOAD:		//以後未編集で再ロード
+	case WatchUpdate::WU_AUTOLOAD:		//以後未編集で再ロード
 		if (!pcDoc->m_cDocEditor.IsModified()) {
 			PauseWatching(); // 更新監視の抑制
 
 			/* 同一ファイルの再オープン */
 			pcDoc->m_cDocFileOperation.ReloadCurrentFile( pcDoc->m_cDocFile.GetCodeSet() );
-			m_eWatchUpdate = WU_AUTOLOAD;
+			m_eWatchUpdate = WatchUpdate::WU_AUTOLOAD;
 
 			ResumeWatching(); //監視再開
 			break;
@@ -165,23 +164,23 @@ void CAutoReloadAgent::CheckFileTimeStamp()
 			case EFUQ_RELOAD:	// 再読込
 				/* 同一ファイルの再オープン */
 				pcDoc->m_cDocFileOperation.ReloadCurrentFile( pcDoc->m_cDocFile.GetCodeSet() );
-				m_eWatchUpdate = WU_QUERY;
+				m_eWatchUpdate = WatchUpdate::WU_QUERY;
 				break;
 			case EFUQ_NOTIFYONLY:	// 以後通知メッセージのみ
-				m_eWatchUpdate = WU_NOTIFY;
+				m_eWatchUpdate = WatchUpdate::WU_NOTIFY;
 				break;
 			case EFUQ_NOSUPERVISION:	// 以後更新を監視しない
-				m_eWatchUpdate = WU_NONE;
+				m_eWatchUpdate = WatchUpdate::WU_NONE;
 				break;
 			case EFUQ_AUTOLOAD:	// 以後未編集で再ロード
 				/* 同一ファイルの再オープン */
 				pcDoc->m_cDocFileOperation.ReloadCurrentFile( pcDoc->m_cDocFile.GetCodeSet() );
-				m_eWatchUpdate = WU_AUTOLOAD;
+				m_eWatchUpdate = WatchUpdate::WU_AUTOLOAD;
 				m_nDelayCount = 0;
 				break;
 			case EFUQ_CLOSE:	// CLOSE
 			default:
-				m_eWatchUpdate = WU_QUERY;
+				m_eWatchUpdate = WatchUpdate::WU_QUERY;
 				break;
 			}
 
