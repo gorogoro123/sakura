@@ -30,12 +30,12 @@
 
 // NULL定義補正
 // 詳細はStdAfx.hを参照
-#ifdef __cplusplus
+#if defined(__cplusplus) && defined(_MSC_VER)
 # pragma warning( push )
 # pragma warning( disable : 4005 )
 # define NULL nullptr
 # pragma warning( pop )
-#endif // end of #ifdef __cplusplus
+#endif // end of if defined(__cplusplus) && defined(_MSC_VER)
 
 /*!
 	CStringRefのテスト
