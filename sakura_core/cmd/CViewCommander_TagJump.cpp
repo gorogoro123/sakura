@@ -338,7 +338,7 @@ bool CViewCommander::Command_TagJumpNoMessage( bool bClose )
 		ptXY.y--;
 
 		for( ; 0 <= ptXY.y; ptXY.y-- ){
-			pLine = GetDocument()->m_cDocLineMgr.GetLine(ptXY.GetY2())->GetDocLineStrWithEOL(&nLineLen);
+			pLine = CDocLine::GetDocLineStrWithEOL_Safe(GetDocument()->m_cDocLineMgr.GetLine(ptXY.GetY2()), &nLineLen);
 			if( NULL == pLine ){
 				break;
 			}
@@ -417,7 +417,7 @@ bool CViewCommander::Command_TagJumpNoMessage( bool bClose )
 	}while(0);
 
 	if (strJumpToFile.empty()) {
-		pLine = GetDocument()->m_cDocLineMgr.GetLine(ptXYOrg.GetY2())->GetDocLineStrWithEOL(&nLineLen);
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe( GetDocument()->m_cDocLineMgr.GetLine(ptXYOrg.GetY2()), &nLineLen);
 		if( NULL == pLine ){
 			return false;
 		}

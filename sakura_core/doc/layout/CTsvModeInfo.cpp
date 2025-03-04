@@ -49,7 +49,7 @@ void CTsvModeInfo::CalcTabLength(CDocLineMgr* cDocLineMgr)
 		int nCharChars;
 		int nField = 0;
 		int nFieldWidth = 0;
-		LPCWSTR pcLine = cDocLine->GetDocLineStrWithEOL(&nLineLen);
+		LPCWSTR pcLine = CDocLine::GetDocLineStrWithEOL_Safe( cDocLine, &nLineLen);
 		for (i = 0; i < nLineLen; ) {
 			if (WCODE::IsLineDelimiter(pcLine[i], true)) break;
 			if (pcLine[i] == delimiter) {

@@ -99,7 +99,7 @@ void CDocOutline::MakeFuncList_Java( CFuncInfoArr* pcFuncInfoArr )
 	bool bExtEol = GetDllShareData().m_Common.m_sEdit.m_bEnableExtEol;
 
 	for( nLineCount = CLogicInt(0); nLineCount <  m_pcDocRef->m_cDocLineMgr.GetLineCount(); ++nLineCount ){
-		pLine = m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount)->GetDocLineStrWithEOL(&nLineLen);
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount), &nLineLen);
 		for( i = 0; i < nLineLen; i += nCharChars ){
 			nCharChars = CNativeW::GetSizeOfChar( pLine, nLineLen, i );
 
@@ -366,7 +366,7 @@ void CDocOutline::MakeFuncList_Java( CFuncInfoArr* pcFuncInfoArr )
 					if( k >= nLineLen2 ){
 						k = 0;
 						++nLineCount2;
-						pLine2 = m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount2)->GetDocLineStrWithEOL(&nLineLen2);
+						pLine2 = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount2), &nLineLen2);
 						if( NULL != pLine2 ){
 							goto loop_is_func;
 						}

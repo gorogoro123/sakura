@@ -99,7 +99,7 @@ void CDocOutline::MakeTopicList_html(CFuncInfoArr* pcFuncInfoArr, bool bXml)
 	}
 	for(nLineCount=CLogicInt(0);nLineCount<m_pcDocRef->m_cDocLineMgr.GetLineCount();nLineCount++)
 	{
-		pLineBuf	=	m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount)->GetDocLineStrWithEOL(&nLineLen);
+		pLineBuf = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount), &nLineLen);
 		if( !pLineBuf )
 		{
 			break;
@@ -306,7 +306,7 @@ void CDocOutline::MakeTopicList_html(CFuncInfoArr* pcFuncInfoArr, bool bXml)
 								}
 								if (bLoop) {
 									nLineCount++;
-									pLineBuf = m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount)->GetDocLineStrWithEOL(&nLineLen);
+									pLineBuf = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount), &nLineLen);
 									pLine = pLineBuf;
 									j = 0;
 									i = 0;

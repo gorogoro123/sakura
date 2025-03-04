@@ -228,7 +228,7 @@ public:
 	{
 		const CLogicInt nLineCount = refDocLineMgr.GetLineCount();
 		for (CLogicInt nLineLen, nLineNumber = CLogicInt(0); nLineNumber < nLineCount; ++nLineNumber) {
-			const wchar_t* const pLine = refDocLineMgr.GetLine(nLineNumber)->GetDocLineStrWithEOL(&nLineLen);
+			const wchar_t* const pLine = CDocLine::GetDocLineStrWithEOL_Safe( refDocLineMgr.GetLine(nLineNumber), &nLineLen);
 			const wchar_t* const pLineEnd = pLine + nLineLen;
 			if (! pLine) { // [EOF] のみの行。
 				break;

@@ -408,7 +408,7 @@ void CDocOutline::MakeFuncList_Erlang( CFuncInfoArr* pcFuncInfoArr )
 	for( nLineCount = CLogicInt(0); nLineCount <  m_pcDocRef->m_cDocLineMgr.GetLineCount(); ++nLineCount ){
 		CLogicInt nLineLen;
 
-		const wchar_t* pLine = m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount)->GetDocLineStrWithEOL(&nLineLen);
+		const wchar_t* pLine = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount), &nLineLen);
 		if( erl_state_machine.parse( pLine, nLineLen, nLineCount )){
 			/*
 			  カーソル位置変換

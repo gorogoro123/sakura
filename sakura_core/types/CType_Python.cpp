@@ -405,7 +405,7 @@ void CDocOutline::MakeFuncList_python( CFuncInfoArr* pcFuncInfoArr )
 		int depth;	//	indent depth
 		CLogicInt col = CLogicInt(0);	//	current working column position
 
-		pLine = m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount)->GetDocLineStrWithEOL(&nLineLen);
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount), &nLineLen);
 		
 		if( python_analyze_state.IsLogicalLineTop() ){
 			//	indent check

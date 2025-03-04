@@ -52,7 +52,7 @@ static bool Commander_COMPARE_core(CViewCommander& commander, bool& bDifferent, 
 		pLineDes = GetDllShareData().m_sWorkBuffer.GetWorkBuffer<const EDIT_CHAR>();
 		int nLineOffset = 0;
 		for(;;){
-			pLineSrc = docMgr.GetLine(poSrc.y)->GetDocLineStrWithEOL(&nLineLenSrc);
+			pLineSrc = CDocLine::GetDocLineStrWithEOL_Safe(docMgr.GetLine(poSrc.y), &nLineLenSrc);
 			do{
 				// m_sWorkBuffer#m_Workの排他制御。外部コマンド出力/TraceOut/Diffが対象
 				LockGuard<CMutex> guard( CShareData::GetMutexShareWork() );

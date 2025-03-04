@@ -127,18 +127,6 @@ TEST(CDocLine, GetDocLineStrWithEOL)
 		CLogicInt n(123);
 		EXPECT_EQ(CDocLine::GetDocLineStrWithEOL_Safe(nullptr, &n), nullptr);
 		EXPECT_EQ(n, CLogicInt(0));
-
-#ifdef _MSC_VER
-		n = 123;
-		CDocLine* p = reinterpret_cast<CDocLine*>(0);
-		EXPECT_EQ(p->GetDocLineStrWithEOL(&n), nullptr);
-		EXPECT_EQ(n, CLogicInt(0));
-
-		// USE_STRICT_INT 定義時は別の関数が呼ばれる
-		int n2 = 123;
-		EXPECT_EQ(p->GetDocLineStrWithEOL(&n), nullptr);
-		EXPECT_EQ(n, 0);
-#endif
 	}
 }
 
@@ -160,13 +148,6 @@ TEST(CDocLine, GetStringRefWithEOL)
 		CStringRef ref = CDocLine::GetStringRefWithEOL_Safe(nullptr);
 		EXPECT_EQ(ref.GetPtr(), nullptr);
 		EXPECT_EQ(ref.GetLength(), 0);
-
-#ifdef _MSC_VER
-		CDocLine* p = reinterpret_cast<CDocLine*>(0);
-		ref = p->GetStringRefWithEOL();
-		EXPECT_EQ(ref.GetPtr(), nullptr);
-		EXPECT_EQ(ref.GetLength(), 0);
-#endif
 	}
 }
 

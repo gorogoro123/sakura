@@ -138,7 +138,7 @@ void CViewCommander::Command_JUMP( void )
 		CLogicInt	nLineLen;
 		CLogicInt	nBgn = CLogicInt(0);
 		CLogicInt	i;
-		pLine = GetDocument()->m_cDocLineMgr.GetLine(CLogicInt(nLineCount))->GetDocLineStrWithEOL(&nLineLen);
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe(GetDocument()->m_cDocLineMgr.GetLine(CLogicInt(nLineCount)), &nLineLen);
 		bValidLine = FALSE;
 		for( i = CLogicInt(0); i < nLineLen; ++i ){
 			if( L' ' != pLine[i] &&

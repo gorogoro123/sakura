@@ -403,7 +403,7 @@ static bool MakeDiffTmpFile_core(CTextOutputStream& out, HWND hwnd, CEditView& v
 		const CDocLineMgr& docMgr = view.m_pcEditDoc->m_cDocLineMgr;
 		for(;;){
 			CLogicInt		nLineLen;
-			pLineData = docMgr.GetLine(y)->GetDocLineStrWithEOL(&nLineLen);
+			pLineData = CDocLine::GetDocLineStrWithEOL_Safe( docMgr.GetLine(y), &nLineLen);
 			// 正常終了
 			if( 0 == nLineLen || NULL == pLineData ) break;
 			if( bBom ){

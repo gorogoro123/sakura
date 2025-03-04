@@ -1937,7 +1937,7 @@ LRESULT CEditWnd::DispatchEvent(
 			return -2; // 行番号不正。LineCount == nLineNum はEOF行として下で処理
 		}
 		CLogicInt	nLineLen = CLogicInt(0);
-		const wchar_t*	pLine = GetDocument()->m_cDocLineMgr.GetLine(nLineNum)->GetDocLineStrWithEOL( &nLineLen );
+		const wchar_t*	pLine = CDocLine::GetDocLineStrWithEOL_Safe( GetDocument()->m_cDocLineMgr.GetLine(nLineNum), &nLineLen );
 		if( nLineOffset < 0 || nLineLen < nLineOffset ){
 			return -3; // オフセット位置不正
 		}
@@ -1950,7 +1950,7 @@ LRESULT CEditWnd::DispatchEvent(
 		if( nLineLen == nLineOffset ){
  			return 0;
  		}
-		pLine = GetDocument()->m_cDocLineMgr.GetLine(CLogicInt(wParam))->GetDocLineStrWithEOL( &nLineLen );
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe( GetDocument()->m_cDocLineMgr.GetLine(CLogicInt(wParam)), &nLineLen );
 		pLine += nLineOffset;
 		nLineLen -= nLineOffset;
 		size_t nEnd = t_min<size_t>(nLineLen, m_pShareData->m_sWorkBuffer.GetWorkBufferCount<EDIT_CHAR>());

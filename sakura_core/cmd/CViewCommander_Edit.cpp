@@ -68,7 +68,7 @@ void CViewCommander::Command_WCHAR( wchar_t wcChar, bool bConvertEOL )
 			if( NULL != pCLayout ){
 				const CDocLine* pcDocLine;
 				pcDocLine = GetDocument()->m_cDocLineMgr.GetLine( pCLayout->GetLogicLineNo() );
-				pLine = pcDocLine->GetDocLineStrWithEOL( &nLineLen );
+				pLine = CDocLine::GetDocLineStrWithEOL_Safe(pcDocLine, &nLineLen );
 				if( NULL != pLine ){
 					/*
 					  カーソル位置変換

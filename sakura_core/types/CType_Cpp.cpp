@@ -519,7 +519,7 @@ void CDocOutline::MakeFuncList_C( CFuncInfoArr* pcFuncInfoArr ,EOutlineType& nOu
 	
 	CLogicInt		nLineCount;
 	for( nLineCount = CLogicInt(0); nLineCount <  m_pcDocRef->m_cDocLineMgr.GetLineCount(); ++nLineCount ){
-		pLine = m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount)->GetDocLineStrWithEOL(&nLineLen);
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe( m_pcDocRef->m_cDocLineMgr.GetLine(nLineCount), &nLineLen);
 
 		//	From Here Aug. 10, 2004 genta
 		//	プリプロセス処理
@@ -1358,7 +1358,7 @@ void CEditView::SmartIndent_CPP( wchar_t wcChar )
 		wchar_t wcCharOrg = wcChar;
 		nCaretPosX_PHY = GetCaret().GetCaretLogicPos().x;
 
-		pLine = m_pcEditDoc->m_cDocLineMgr.GetLine(GetCaret().GetCaretLogicPos().GetY2())->GetDocLineStrWithEOL(&nLineLen);
+		pLine = CDocLine::GetDocLineStrWithEOL_Safe( m_pcEditDoc->m_cDocLineMgr.GetLine(GetCaret().GetCaretLogicPos().GetY2()), &nLineLen);
 		if( NULL == pLine ){
 			if( WCODE::CR != wcChar ){
 				return;
@@ -1426,7 +1426,7 @@ void CEditView::SmartIndent_CPP( wchar_t wcChar )
 
 		nDataLen = CLogicInt(0);
 		for( j = GetCaret().GetCaretLogicPos().GetY2(); j >= CLogicInt(0); --j ){
-			pLine2 = m_pcEditDoc->m_cDocLineMgr.GetLine(j)->GetDocLineStrWithEOL(&nLineLen2);
+			pLine2 = CDocLine::GetDocLineStrWithEOL_Safe( m_pcEditDoc->m_cDocLineMgr.GetLine(j), &nLineLen2);
 			if( j == GetCaret().GetCaretLogicPos().y ){
 				// 2005.10.11 ryoji EOF のみの行もスマートインデントの対象にする
 				if( NULL == pLine2 ){
