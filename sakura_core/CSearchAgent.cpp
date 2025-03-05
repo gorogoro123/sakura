@@ -455,7 +455,7 @@ int CSearchAgent::SearchWord(
 	CLogicInt	nIdxPos;
 	CLogicInt	nIdxPosOld;
 	const wchar_t*	pLine;
-	int			nLineLen;
+	CLogicInt	nLineLen;
 	const wchar_t*	pszRes;
 	CLogicInt	nHitTo;
 	CLogicInt	nHitPos;
