@@ -211,11 +211,12 @@ INT_PTR CDlgTypeList::DispatchEvent( HWND hWnd, UINT wMsg, WPARAM wParam, LPARAM
 					if( !m_bRegistryChecked[ nIdx ] ){
 						WCHAR exts[_countof(type->m_szTypeExts)] = {0};
 						wcscpy( exts, type->m_szTypeExts );
-						WCHAR *ext = _wcstok( exts, CDocTypeManager::m_typeExtSeps );
+						wchar_t *context = nullptr;
+						WCHAR *ext = wcstok_s(exts, CDocTypeManager::m_typeExtSeps, &context);
 
 						m_bExtRMenu[ nIdx ] = true;
 						m_bExtDblClick[ nIdx ] = true;
-						while( NULL != ext ){
+						while (nullptr != ext){
 							if (wcspbrk(ext, CDocTypeManager::m_typeExtWildcards) == NULL) {
 								bool bRMenu;
 								bool bDblClick;
@@ -223,7 +224,7 @@ INT_PTR CDlgTypeList::DispatchEvent( HWND hWnd, UINT wMsg, WPARAM wParam, LPARAM
 								m_bExtRMenu[ nIdx ] &= bRMenu;
 								m_bExtDblClick[ nIdx ] &= bDblClick;
 							}
-							ext = _wcstok( NULL, CDocTypeManager::m_typeExtSeps );
+							ext = wcstok_s(nullptr, CDocTypeManager::m_typeExtSeps, &context);
 						}
 						m_bRegistryChecked[ nIdx ] = true;
 					}
@@ -243,9 +244,10 @@ INT_PTR CDlgTypeList::DispatchEvent( HWND hWnd, UINT wMsg, WPARAM wParam, LPARAM
 			}
 			WCHAR exts[_countof(type->m_szTypeExts)] = {0};
 			wcscpy( exts, type->m_szTypeExts );
-			WCHAR *ext = _wcstok( exts, CDocTypeManager::m_typeExtSeps );
+			wchar_t *context = nullptr;
+			WCHAR *ext = wcstok_s(exts, CDocTypeManager::m_typeExtSeps, &context);
 			int nRet;
-			while( NULL != ext ){
+			while (nullptr != ext){
 				if (wcspbrk(ext, CDocTypeManager::m_typeExtWildcards) == NULL) {
 					if( checked ){	//「右クリック」チェックON
 						if( (nRet = RegistExt( ext, true )) != 0 )
@@ -265,7 +267,7 @@ INT_PTR CDlgTypeList::DispatchEvent( HWND hWnd, UINT wMsg, WPARAM wParam, LPARAM
 						}
 					}
 				}
-				ext = _wcstok( NULL, CDocTypeManager::m_typeExtSeps );
+				ext = wcstok_s(nullptr, CDocTypeManager::m_typeExtSeps, &context);
 			}
 			m_bExtRMenu[nIdx] = checked;
 			::EnableWindow(hwndDblClick, checked);
@@ -282,9 +284,10 @@ INT_PTR CDlgTypeList::DispatchEvent( HWND hWnd, UINT wMsg, WPARAM wParam, LPARAM
 			}
 			WCHAR exts[_countof(type->m_szTypeExts)] = {0};
 			wcscpy( exts, type->m_szTypeExts );
-			WCHAR *ext = _wcstok( exts, CDocTypeManager::m_typeExtSeps );
+			wchar_t *context = nullptr;
+			WCHAR *ext = wcstok_s(exts, CDocTypeManager::m_typeExtSeps, &context);
 			int nRet;
-			while( NULL != ext ){
+			while (nullptr != ext){
 				if (wcspbrk(ext, CDocTypeManager::m_typeExtWildcards) == NULL) {
 					if( (nRet = RegistExt( ext, checked )) != 0 )
 					{
@@ -294,7 +297,7 @@ INT_PTR CDlgTypeList::DispatchEvent( HWND hWnd, UINT wMsg, WPARAM wParam, LPARAM
 						break;
 					}
 				}
-				ext = _wcstok( NULL, CDocTypeManager::m_typeExtSeps );
+				ext = wcstok_s(nullptr, CDocTypeManager::m_typeExtSeps, &context);
 			}
 			m_bExtDblClick[ nIdx ] = checked;
 			return TRUE;
