@@ -160,6 +160,8 @@ protected:
 		::SystemParametersInfo( SPI_GETNONCLIENTMETRICS, ncm.cbSize, (PVOID)&ncm, 0 );
 		return ::CreateFontIndirect( &ncm.lfMenuFont );
 	}
+	LRESULT CALLBACK DefTabWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam );
+	static LRESULT CALLBACK TabWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam );
 
 protected:
 	enum DragState { DRAG_NONE, DRAG_CHECK, DRAG_DRAG };
@@ -205,6 +207,7 @@ private:
 
 	HWND		m_hwndSizeBox;
 	bool		m_bSizeBox;
+	WNDPROC		m_pOldWndProc = nullptr;
 
 	DISALLOW_COPY_AND_ASSIGN(CTabWnd);
 };

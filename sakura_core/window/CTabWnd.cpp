@@ -46,7 +46,7 @@
 #include "env/CShareData.h"
 #include "env/CSakuraEnvironment.h"
 #include "uiparts/CGraphics.h"
-#include "util/os.h" //WM_THEMECHANGED
+#include "util/os.h"
 #include "util/window.h"
 #include "util/module.h"
 #include "util/string_ex2.h"
@@ -101,33 +101,26 @@ static int compTABMENU_DATA( const void *arg1, const void *arg2 )
 	return ret;
 }
 
-WNDPROC	gm_pOldWndProc = NULL;
-
 /* 本来の TabWnd ウィンドウプロシージャ呼び出し */
-inline LRESULT CALLBACK DefTabWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT CALLBACK CTabWnd::DefTabWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
-	if( gm_pOldWndProc )
-		return ::CallWindowProc( gm_pOldWndProc, hwnd, uMsg, wParam, lParam );
+	if( m_pOldWndProc )
+		return ::CallWindowProc( m_pOldWndProc, hwnd, uMsg, wParam, lParam );
 	else
 		return ::DefWindowProc( hwnd, uMsg, wParam, lParam );
 }
 
 /* TabWndウィンドウメッセージのコールバック関数 */
-LRESULT CALLBACK TabWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT CALLBACK CTabWnd::TabWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
 {
-	CTabWnd	*pcTabWnd;
-
 	// Modified by KEITA for WIN64 2003.9.6
-	pcTabWnd = (CTabWnd*)::GetWindowLongPtr( hwnd, GWLP_USERDATA );
+	auto pcTabWnd = (CTabWnd*)::GetWindowLongPtr( hwnd, GWLP_USERDATA );
 
-	if( pcTabWnd )
-	{
-		//return
-		if( 0L == pcTabWnd->TabWndDispatchEvent( hwnd, uMsg, wParam, lParam ) )
-			return 0L;
-	}
+	//return
+	if( 0L == pcTabWnd->TabWndDispatchEvent( hwnd, uMsg, wParam, lParam ) )
+		return 0L;
 
-	return DefTabWndProc( hwnd, uMsg, wParam, lParam );
+	return pcTabWnd->DefTabWndProc( hwnd, uMsg, wParam, lParam );
 }
 
 /* メッセージ配送 */
@@ -831,7 +824,6 @@ CTabWnd::CTabWnd()
 
 	m_hwndTab    = NULL;
 	m_hFont      = NULL;
-	gm_pOldWndProc = NULL;
 	m_hwndToolTip = NULL;
 	m_hIml = NULL;
 
@@ -851,7 +843,7 @@ HWND CTabWnd::Open( HINSTANCE hInstance, HWND hwndParent )
 	/* 初期化 */
 	m_hwndTab    = NULL;
 	m_hFont      = NULL;
-	gm_pOldWndProc = NULL;
+	m_pOldWndProc = nullptr;
 	m_hwndToolTip = NULL;
 	m_bVisualStyle = ::IsVisualStyle();	// 2007.04.01 ryoji
 	m_eDragState = DRAG_NONE;	//	2005.09.29 ryoji
@@ -914,7 +906,7 @@ HWND CTabWnd::Open( HINSTANCE hInstance, HWND hwndParent )
 	{
 		// Modified by KEITA for WIN64 2003.9.6
 		::SetWindowLongPtr( m_hwndTab, GWLP_USERDATA, (LONG_PTR) this );
-		gm_pOldWndProc = (WNDPROC)::SetWindowLongPtr( m_hwndTab, GWLP_WNDPROC, (LONG_PTR) TabWndProc );
+		m_pOldWndProc = (WNDPROC)::SetWindowLongPtr( m_hwndTab, GWLP_WNDPROC, (LONG_PTR) TabWndProc );
 
 		//スタイルを変更する。
 		UINT lngStyle;
@@ -1011,11 +1003,11 @@ void CTabWnd::Close( void )
 {
 	if( GetHwnd() )
 	{
-		if( gm_pOldWndProc )
+		if( m_pOldWndProc )
 		{
 			// Modified by KEITA for WIN64 2003.9.6
-			::SetWindowLongPtr( m_hwndTab, GWLP_WNDPROC, (LONG_PTR)gm_pOldWndProc );
-			gm_pOldWndProc = NULL;
+			::SetWindowLongPtr( m_hwndTab, GWLP_WNDPROC, (LONG_PTR)m_pOldWndProc );
+			m_pOldWndProc = nullptr;
 		}
 		
 		// Modified by KEITA for WIN64 2003.9.6
