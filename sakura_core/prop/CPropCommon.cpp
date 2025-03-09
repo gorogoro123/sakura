@@ -189,7 +189,7 @@ void CPropCommon::Create( HWND hwndParent, CImageListMgr* pcIcons, CMenuDrawer* 
 */
 struct ComPropSheetInfo {
 	int m_nTabNameId;										//!< TABの表示名
-	unsigned int resId;										//!< Property sheetに対応するDialog resource
+	WORD resId;												//!< Property sheetに対応するDialog resource
 	INT_PTR (CALLBACK *DProc)(HWND, UINT, WPARAM, LPARAM);	//!< Dialog Procedure
 };
 //	To Here Jun. 2, 2001 genta

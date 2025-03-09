@@ -101,7 +101,7 @@ CDialog::~CDialog()
 
 	@date 2011.04.10 nasukoji	各国語メッセージリソース対応
 */
-INT_PTR CDialog::DoModal( HINSTANCE hInstance, HWND hwndParent, int nDlgTemplete, LPARAM lParam )
+INT_PTR CDialog::DoModal( HINSTANCE hInstance, HWND hwndParent, WORD nDlgTemplete, LPARAM lParam )
 {
 	m_bInited = FALSE;
 	m_bModal = TRUE;
@@ -125,7 +125,7 @@ INT_PTR CDialog::DoModal( HINSTANCE hInstance, HWND hwndParent, int nDlgTemplete
 
 	@date 2011.04.10 nasukoji	各国語メッセージリソース対応
 */
-HWND CDialog::DoModeless( HINSTANCE hInstance, HWND hwndParent, int nDlgTemplete, LPARAM lParam, int nCmdShow )
+HWND CDialog::DoModeless( HINSTANCE hInstance, HWND hwndParent, WORD nDlgTemplete, LPARAM lParam, int nCmdShow )
 {
 	m_bInited = FALSE;
 	m_bModal = FALSE;

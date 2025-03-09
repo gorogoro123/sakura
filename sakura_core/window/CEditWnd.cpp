@@ -2959,9 +2959,6 @@ void CEditWnd::PrintPreviewModeONOFF( void )
 		::SetFocus( GetHwnd() );
 
 		// メニューを動的に作成するように変更
-		//hMenu = ::LoadMenu( G_AppInstance(), MAKEINTRESOURCE( IDR_MENU1 ) );
-		//::SetMenu( GetHwnd(), hMenu );
-		//::DrawMenuBar( GetHwnd() );
 		LayoutMainMenu();				// 2010/5/16 Uchi
 
 //@@@ 2002.01.14 YAZAKI 印刷プレビューをCPrintPreviewに独立させたことによる変更
