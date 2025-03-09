@@ -80,8 +80,8 @@ public:
 	||  Attributes & Operations
 	*/
 	virtual INT_PTR DispatchEvent( HWND, UINT, WPARAM, LPARAM );	/* ダイアログのメッセージ処理 */
-	INT_PTR DoModal(HINSTANCE hInstance, HWND hwndParent, int nDlgTemplete, LPARAM lParam);	/* モーダルダイアログの表示 */
-	HWND DoModeless(HINSTANCE hInstance, HWND hwndParent, int nDlgTemplete, LPARAM lParam, int nCmdShow);	/* モードレスダイアログの表示 */
+	INT_PTR DoModal(HINSTANCE hInstance, HWND hwndParent, WORD nDlgTemplete, LPARAM lParam);	/* モーダルダイアログの表示 */
+	HWND DoModeless(HINSTANCE hInstance, HWND hwndParent, WORD nDlgTemplete, LPARAM lParam, int nCmdShow);	/* モードレスダイアログの表示 */
 	HWND DoModeless(HINSTANCE hInstance, HWND hwndParent, LPCDLGTEMPLATE lpTemplate, LPARAM lParam, int nCmdShow);	/* モードレスダイアログの表示 */
 	void CloseDialog(INT_PTR nModalRetVal);
 

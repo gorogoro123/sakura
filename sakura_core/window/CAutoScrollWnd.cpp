@@ -45,7 +45,8 @@ HWND CAutoScrollWnd::Create( HINSTANCE hInstance, HWND hwndParent, bool bVertica
 	LPCWSTR pszClassName;
 
 	m_cView = view;
-	int idb, idc;
+	WORD idb;
+	WORD idc;
 	if( bVertical ){
 		if( bHorizontal ){
 			idb = IDB_SCROLL_CENTER;

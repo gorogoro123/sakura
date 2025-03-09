@@ -155,7 +155,7 @@ bool CShareData::InitShareData()
 		m_pShareData->m_nSize = sizeof(*m_pShareData);
 
 		// 2004.05.13 Moca リソースから製品バージョンの取得
-		GetAppVersionInfo( NULL, VS_VERSION_INFO,
+		GetAppVersionInfo( nullptr,
 			&m_pShareData->m_sVersion.m_dwProductVersionMS, &m_pShareData->m_sVersion.m_dwProductVersionLS );
 
 		m_pShareData->m_sFlags.m_bEditWndChanging = FALSE;	// 編集ウィンドウ切替中	// 2007.04.03 ryoji

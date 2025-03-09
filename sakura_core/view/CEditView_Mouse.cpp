@@ -768,11 +768,11 @@ void CEditView::AutoScrollMove( CMyPoint& point )
 	}else{
 		idcY = 2;
 	}
-	const int idcs[3][3] = {
+	static const WORD idcs[3][3] = {
 		{IDC_CURSOR_AUTOSCROLL_CENTER, IDC_CURSOR_AUTOSCROLL_UP,       IDC_CURSOR_AUTOSCROLL_DOWN},
 		{IDC_CURSOR_AUTOSCROLL_LEFT,   IDC_CURSOR_AUTOSCROLL_UP_LEFT,  IDC_CURSOR_AUTOSCROLL_DOWN_LEFT},
 		{IDC_CURSOR_AUTOSCROLL_RIGHT,  IDC_CURSOR_AUTOSCROLL_UP_RIGHT, IDC_CURSOR_AUTOSCROLL_DOWN_RIGHT}};
-	int cursor = idcs[idcX][idcY];
+	WORD cursor = idcs[idcX][idcY];
 	if( cursor == IDC_CURSOR_AUTOSCROLL_CENTER ){
 		if( !m_bAutoScrollVertical ){
 			cursor = IDC_CURSOR_AUTOSCROLL_HORIZONTAL;

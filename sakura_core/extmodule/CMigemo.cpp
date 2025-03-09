@@ -81,7 +81,7 @@ bool CMigemo::InitDllImp()
 #else
 	// ver 1.3 以降は stdcall
 	DWORD dwVersionMS, dwVersionLS;
-	GetAppVersionInfo( GetInstance(), VS_VERSION_INFO, &dwVersionMS, &dwVersionLS );
+	GetAppVersionInfo( GetInstance(), &dwVersionMS, &dwVersionLS );
 	
 	DWORD dwver103 = (1 << 16) | 3;
 	if( dwver103 <= dwVersionMS ){

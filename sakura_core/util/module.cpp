@@ -129,7 +129,7 @@ DWORD GetDllVersion(LPCWSTR lpszDllName)
 	@date 2007.05.20 ryoji iniファイルパスを優先
 	@author genta
 */
-HICON GetAppIcon( HINSTANCE hInst, int nResource, const WCHAR* szFile, bool bSmall )
+HICON GetAppIcon( HINSTANCE hInst, WORD nResource, const WCHAR* szFile, bool bSmall )
 {
 	// サイズの設定
 	int size = GetSystemMetrics( bSmall ? SM_CXSMICON : SM_CXICON );
@@ -178,7 +178,6 @@ struct VS_VERSION_INFO_HEAD {
 */
 void GetAppVersionInfo(
 	HINSTANCE	hInstance,
-	int			nVersionResourceID,
 	DWORD*		pdwProductVersionMS,
 	DWORD*		pdwProductVersionLS
 )
@@ -192,18 +191,18 @@ void GetAppVersionInfo(
 	static bool bLoad = false;
 	static DWORD dwVersionMS = 0;
 	static DWORD dwVersionLS = 0;
-	if( hInstance == NULL && bLoad ){
+	if( hInstance == nullptr && bLoad ){
 		*pdwProductVersionMS = dwVersionMS;
 		*pdwProductVersionLS = dwVersionLS;
 		return;
 	}
-	if( NULL != ( hRSRC = ::FindResource( hInstance, MAKEINTRESOURCE(nVersionResourceID), RT_VERSION ) )
+	if( NULL != ( hRSRC = ::FindResource( hInstance, MAKEINTRESOURCE(VS_VERSION_INFO), RT_VERSION ) )
 	 && NULL != ( hgRSRC = ::LoadResource( hInstance, hRSRC ) )
 	 && NULL != ( pVVIH = (VS_VERSION_INFO_HEAD*)::LockResource( hgRSRC ) )
 	){
 		*pdwProductVersionMS = pVVIH->Value.dwProductVersionMS;
 		*pdwProductVersionLS = pVVIH->Value.dwProductVersionLS;
-		if( hInstance == NULL ){
+		if( hInstance == nullptr ){
 			dwVersionMS = pVVIH->Value.dwProductVersionMS;
 			dwVersionLS = pVVIH->Value.dwProductVersionLS;
 			bLoad = true;

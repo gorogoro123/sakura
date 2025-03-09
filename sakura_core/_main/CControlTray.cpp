@@ -308,8 +308,7 @@ bool CControlTray::CreateTrayIcon( HWND hWnd )
 		WCHAR	pszTips[64 + _MAX_PATH];
 		//	2004.05.13 Moca バージョン番号は、プロセスごとに取得する
 		DWORD dwVersionMS, dwVersionLS;
-		GetAppVersionInfo( NULL, VS_VERSION_INFO,
-			&dwVersionMS, &dwVersionLS );
+		GetAppVersionInfo( nullptr, &dwVersionMS, &dwVersionLS );
 
 		std::wstring profname;
 		if( CCommandLine::getInstance()->GetProfileName()[0] != L'\0' ){
