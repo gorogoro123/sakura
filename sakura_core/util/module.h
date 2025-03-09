@@ -27,10 +27,10 @@
 #define SAKURA_MODULE_865764F5_F6C8_4B99_B2DB_A29F375539FE_H_
 #pragma once
 
-void GetAppVersionInfo( HINSTANCE hInstance, int nVersionResourceID,
+void GetAppVersionInfo( HINSTANCE hInstance,
 					    DWORD* pdwProductVersionMS, DWORD* pdwProductVersionLS );	/* リソースから製品バージョンの取得 */
 
-HICON GetAppIcon( HINSTANCE hInst, int nResource, const WCHAR* szFile, bool bSmall = false);
+HICON GetAppIcon( HINSTANCE hInst, WORD nResource, const WCHAR* szFile, bool bSmall = false);
 
 DWORD GetDllVersion( LPCWSTR lpszDllName );	// シェルやコモンコントロール DLL のバージョン番号を取得	// 2006.06.17 ryoji
 
