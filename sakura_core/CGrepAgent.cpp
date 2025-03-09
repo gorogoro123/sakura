@@ -196,11 +196,6 @@ public:
 };
 
 CGrepAgent::CGrepAgent()
-: m_bGrepMode( false )			/* Grepモードか */
-, m_bGrepRunning( false )		/* Grep処理中 */
-, m_dwTickAddTail( 0 )
-, m_dwTickUICheck( 0 )
-, m_dwTickUIFileName( 0 )
 {
 }
 
@@ -1741,7 +1736,6 @@ public:
 		:nHitCount(hit)
 		,fileName(name_)
 		,name(name_)
-		,code(code_)
 		,bBom(bBom_)
 		,bOldSave(bOldSave_)
 		,bufferSize(0)
@@ -1840,7 +1834,6 @@ private:
 	int& nHitCount;
 	LPCWSTR fileName;
 	std::wstring name;
-	ECodeType code;
 	bool bBom;
 	bool bOldSave;
 	size_t bufferSize;
@@ -1920,7 +1913,6 @@ int CGrepAgent::DoGrepReplaceFile(
 	if( pcDlgCancel->IsCanceled() ){
 		return -1;
 	}
-	int nOutputHitCount = 0;
 
 	std::vector<std::pair<const wchar_t*, CLogicInt> > searchWords;
 	if( sSearchOption.bWordOnly ){
@@ -2055,7 +2047,7 @@ int CGrepAgent::DoGrepReplaceFile(
 			int nIdx = 0;
 			int nOutputPos = 0;
 			// Jun. 26, 2003 genta 無駄なwhileは削除
-			while( pszRes = CSearchAgent::SearchStringWord(pLine, nLineLen, nIdx, searchWords, sSearchOption.bLoHiCase, &nMatchLen) ){
+			while( (pszRes = CSearchAgent::SearchStringWord(pLine, nLineLen, nIdx, searchWords, sSearchOption.bLoHiCase, &nMatchLen)) ){
 				nIdx = pszRes - pLine + nMatchLen;
 				if( bOutput ){
 					OutputPathInfo(
@@ -2141,7 +2133,6 @@ int CGrepAgent::DoGrepReplaceFile(
 		if( 0 < cmemMessage.GetStringLength() &&
 		   (::GetTickCount() - m_dwTickAddTail > ADDTAIL_INTERVAL_MILLISEC)
 		){
-			nOutputHitCount = nHitCount;
 			AddTail( pcViewDst, cmemMessage, sGrepOption.bGrepStdout );
 			cmemMessage._SetStringLength(0);
 		}
