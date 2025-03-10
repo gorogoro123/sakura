@@ -262,7 +262,9 @@ BOOL CDlgExec::OnBnClicked( int wID )
 
 	case IDC_BUTTON_REFERENCE2:
 		{
-			if( SelectDir( GetHwnd(), LS(STR_DLGEXEC_SELECT_CURDIR), &m_szCurDir[0], &m_szCurDir[0], m_szCurDir.GetBufferCount() ) ){
+			std::wstring szTmpPath;
+			if( SelectDir( GetHwnd(), LS(STR_DLGEXEC_SELECT_CURDIR), m_szCurDir.c_str(), szTmpPath ) ){
+				m_szCurDir.Assign( szTmpPath.c_str() );
 				::DlgItem_SetText( GetHwnd(), IDC_COMBO_CUR_DIR, &m_szCurDir[0] );
 			}
 		}

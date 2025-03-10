@@ -121,8 +121,9 @@ INT_PTR CPropEdit::DispatchEvent(
 					WCHAR szPath[_MAX_PATH];
 					::DlgItem_GetText( hwndDlg, IDC_EDIT_FILEOPENDIR, szMetaPath, _countof(szMetaPath) );
 					CFileNameManager::ExpandMetaToFolder( szMetaPath, szPath, _countof(szPath) );
-					if( SelectDir( hwndDlg, LS(STR_PROPEDIT_SELECT_DIR), szPath, szPath ) ){
-						CNativeW cmem(szPath);
+					std::wstring szTmpPath;
+					if( SelectDir( hwndDlg, LS(STR_PROPEDIT_SELECT_DIR), szPath, szTmpPath ) ){
+						CNativeW cmem(szTmpPath.c_str());
 						cmem.Replace(L"%", L"%%");
 						::DlgItem_SetText( hwndDlg, IDC_EDIT_FILEOPENDIR, cmem.GetStringPtr() );
 					}

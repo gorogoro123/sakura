@@ -170,7 +170,9 @@ INT_PTR CPropHelper::DispatchEvent(
 					}else{
 						wcscpy( szPath, m_Common.m_sHelper.m_szMigemoDict );
 					}
-					if( SelectDir( hwndDlg, LS(STR_PROPCOMHELP_MIGEMODIR), szPath, szPath ) ){
+					std::wstring szTmpPath;
+					if( SelectDir( hwndDlg, LS(STR_PROPCOMHELP_MIGEMODIR), szPath, szTmpPath ) ){
+						wcsncpy_s( szPath, _countof(szPath), szTmpPath.c_str(), _TRUNCATE );
 						wcscpy( m_Common.m_sHelper.m_szMigemoDict, GetRelPath(szPath) ); // 2015.03.03 可能なら相対パスにする
 						::DlgItem_SetText( hwndDlg, IDC_EDIT_MIGEMO_DICT, m_Common.m_sHelper.m_szMigemoDict );
 					}

@@ -1931,10 +1931,8 @@ bool CMacro::HandleFunction(CEditView *View, EFunctionCode ID, VARIANT *Argument
 				return false;
 			}
 
-			WCHAR szPath[ _MAX_PATH ];
-			int nRet = SelectDir( View->GetHwnd(), sMessage.c_str(), sDefault.c_str(), szPath );
-			if( nRet == IDOK ){
-				SysString S( szPath, wcslen(szPath) );
+			if( SelectDir( View->GetHwnd(), sMessage.c_str(), sDefault.c_str(), sDefault ) ){
+				SysString S( sDefault.c_str(), sDefault.length() );
 				Wrap( &Result )->Receive( S );
 			}else{
 				Result.vt = VT_BSTR;

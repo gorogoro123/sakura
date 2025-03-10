@@ -526,8 +526,9 @@ BOOL CDlgGrep::OnBnClicked( int wID )
 			if( szFolder[0] == L'\0' ){
 				::GetCurrentDirectory( nMaxPath, szFolder );
 			}
-			if( SelectDir( GetHwnd(), LS(STR_DLGGREP1), szFolder, szFolder ) ){
-				SetGrepFolder( GetItemHwnd(IDC_COMBO_FOLDER), szFolder );
+			std::wstring szTmpPath;
+			if( SelectDir( GetHwnd(), LS(STR_DLGGREP1), szFolder, szTmpPath ) ){
+				SetGrepFolder( GetItemHwnd(IDC_COMBO_FOLDER), szTmpPath.c_str() );
 			}
 		}
 

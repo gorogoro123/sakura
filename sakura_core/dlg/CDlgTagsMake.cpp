@@ -128,8 +128,10 @@ void CDlgTagsMake::SelectFolder( HWND hwndDlg )
 	/* フォルダー */
 	::DlgItem_GetText( hwndDlg, IDC_EDIT_TAG_MAKE_FOLDER, szPath, _MAX_PATH );
 
-	if( SelectDir( hwndDlg, LS(STR_DLGTAGMAK_SELECTDIR), szPath, szPath ) )
+	std::wstring szTmpPath;
+	if( SelectDir( hwndDlg, LS(STR_DLGTAGMAK_SELECTDIR), szPath, szTmpPath ) )
 	{
+		wcsncpy_s( szPath, _countof(szPath), szTmpPath.c_str(), _TRUNCATE );
 		//末尾に\\マークを追加する．
 		::PathAddBackslashW( szPath );
 
