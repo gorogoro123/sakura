@@ -541,8 +541,9 @@ BOOL CDlgFileTree::OnBnClicked( int wID )
 				// RADIO_GREP == folder
 				WCHAR szDir[MAX_PATH];
 				DlgItem_GetText(GetHwnd(), IDC_EDIT_PATH, szDir, _countof(szDir) );
-				if( SelectDir(hwndDlg, LS(STR_DLGGREP1), szDir, szDir) ){
-					DlgItem_SetText(GetHwnd(), IDC_EDIT_PATH, szDir );
+				std::wstring szTmpPath;
+				if( SelectDir(hwndDlg, LS(STR_DLGGREP1), szDir, szTmpPath) ){
+					DlgItem_SetText(GetHwnd(), IDC_EDIT_PATH, szTmpPath.c_str() );
 				}
 			}else{
 				// RADIO_FILE == file

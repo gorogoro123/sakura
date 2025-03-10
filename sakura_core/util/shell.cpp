@@ -44,12 +44,8 @@
 
 
 /* フォルダー選択ダイアログ */
-BOOL SelectDir( HWND hWnd, const WCHAR* pszTitle, const WCHAR* pszInitFolder, WCHAR* strFolderName, size_t nMaxCount )
+BOOL SelectDir( HWND hWnd, const WCHAR* pszTitle, const WCHAR* pszInitFolder, std::wstring& strFolderName )
 {
-	if ( nullptr == strFolderName ) {
-		return FALSE;
-	}
-
 	using namespace Microsoft::WRL;
 	ComPtr<IFileDialog> pDialog;
 	HRESULT hres;
@@ -105,15 +101,11 @@ BOOL SelectDir( HWND hWnd, const WCHAR* pszTitle, const WCHAR* pszInitFolder, WC
 		return FALSE;
 	}
 
-	BOOL bRet = TRUE;
-	if ( 0 != wcsncpy_s( strFolderName, nMaxCount, pszResult, _TRUNCATE ) ) {
-		wcsncpy_s( strFolderName, nMaxCount, L"", _TRUNCATE );
-		bRet = FALSE;
-	}
+	strFolderName = pszResult;
 
 	CoTaskMemFree( pszResult );
 
-	return bRet;
+	return TRUE;
 }
 
 ///////////////////////////////////////////////////////////////////////
