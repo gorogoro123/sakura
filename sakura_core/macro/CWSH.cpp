@@ -252,7 +252,7 @@ CWSHClient::CWSHClient(const wchar_t *AEngine, ScriptErrorHandler AErrorHandler,
 	else
 	{
 #ifdef USE_JSCRIPT9
-		if( 0 == wcscmp( AEngine, LTEXT("JScript") ) ){
+		if( 0 == wcscmp( AEngine, L"JScript" ) ){
 			ClassID = CLSID_JSScript9;
 		}
 #endif

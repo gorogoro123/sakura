@@ -194,23 +194,23 @@ private:
 //コマンド情報
 MacroFuncInfo CPluginIfObj::m_MacroFuncInfoCommandArr[] = 
 {
-	//ID									関数名							引数										戻り値の型	m_pszData
-	{EFunctionCode(F_PL_SETOPTION),			LTEXT("SetOption"),				{VT_BSTR, VT_BSTR, VT_VARIANT, VT_EMPTY},	VT_EMPTY,	NULL }, //オプションファイルに値を書く
-	{EFunctionCode(F_PL_ADDCOMMAND),		LTEXT("AddCommand"),			{VT_BSTR, VT_BSTR, VT_BSTR, VT_EMPTY},		VT_EMPTY,	NULL }, //コマンドを追加する
+	//ID									関数名					引数										戻り値の型	m_pszData
+	{EFunctionCode(F_PL_SETOPTION),			L"SetOption",			{VT_BSTR, VT_BSTR, VT_VARIANT, VT_EMPTY},	VT_EMPTY,	nullptr }, //オプションファイルに値を書く
+	{EFunctionCode(F_PL_ADDCOMMAND),		L"AddCommand",			{VT_BSTR, VT_BSTR, VT_BSTR, VT_EMPTY},		VT_EMPTY,	nullptr }, //コマンドを追加する
 	//	終端
-	{F_INVALID,	NULL, {VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_EMPTY,	NULL}
+	{F_INVALID,	nullptr, {VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_EMPTY,	nullptr}
 };
 
 //関数情報
 MacroFuncInfo CPluginIfObj::m_MacroFuncInfoArr[] = 
 {
-	//ID									関数名							引数										戻り値の型	m_pszData
-	{EFunctionCode(F_PL_GETPLUGINDIR),		LTEXT("GetPluginDir"),			{VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_BSTR,	NULL }, //プラグインフォルダーパスを取得する
-	{EFunctionCode(F_PL_GETDEF),			LTEXT("GetDef"),				{VT_BSTR, VT_BSTR, VT_EMPTY, VT_EMPTY},		VT_BSTR,	NULL }, //設定ファイルから値を読む
-	{EFunctionCode(F_PL_GETOPTION),			LTEXT("GetOption"),				{VT_BSTR, VT_BSTR, VT_EMPTY, VT_EMPTY},		VT_BSTR,	NULL }, //オプションファイルから値を読む
-	{EFunctionCode(F_PL_GETCOMMANDNO),		LTEXT("GetCommandNo"),			{VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_I4,		NULL }, //オプションファイルから値を読む
-	{EFunctionCode(F_PL_GETSTRING),			LTEXT("GetString"),				{VT_I4,    VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_BSTR,	NULL }, //設定ファイルから文字列を読む
+	//ID									関数名					引数										戻り値の型	m_pszData
+	{EFunctionCode(F_PL_GETPLUGINDIR),		L"GetPluginDir",		{VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_BSTR,	nullptr }, //プラグインフォルダーパスを取得する
+	{EFunctionCode(F_PL_GETDEF),			L"GetDef",				{VT_BSTR, VT_BSTR, VT_EMPTY, VT_EMPTY},		VT_BSTR,	nullptr }, //設定ファイルから値を読む
+	{EFunctionCode(F_PL_GETOPTION),			L"GetOption",			{VT_BSTR, VT_BSTR, VT_EMPTY, VT_EMPTY},		VT_BSTR,	nullptr }, //オプションファイルから値を読む
+	{EFunctionCode(F_PL_GETCOMMANDNO),		L"GetCommandNo",		{VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_I4,		nullptr }, //オプションファイルから値を読む
+	{EFunctionCode(F_PL_GETSTRING),			L"GetString",			{VT_I4,    VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_BSTR,	nullptr }, //設定ファイルから文字列を読む
 	//	終端
-	{F_INVALID,	NULL, {VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_EMPTY,	NULL}
+	{F_INVALID,	nullptr, {VT_EMPTY, VT_EMPTY, VT_EMPTY, VT_EMPTY},	VT_EMPTY,	nullptr}
 };
 #endif /* SAKURA_CPLUGINIFOBJ_F083BB50_2D36_44C9_8F2B_6F2D3BA7AAF9_H_ */
