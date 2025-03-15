@@ -74,14 +74,14 @@ void CProfile::ReadOneline(
 		return;
 
 	//コメント行を読みとばす
-	if( 0 == line.compare( 0, 2, LTEXT("//") ))
+	if( 0 == line.compare( 0, 2, L"//" ))
 		return;
 
 	// セクション取得
 	//	Jan. 29, 2004 genta compare使用
-	if( line.compare( 0, 1, LTEXT("[") ) == 0 
-			&& line.find( LTEXT('=') ) == line.npos
-			&& line.find( LTEXT(']') ) == ( line.size() - 1 ) ) {
+	if( line.compare( 0, 1, L"[" ) == 0 
+			&& line.find( L'=' ) == line.npos
+			&& line.find( L']' ) == ( line.size() - 1 ) ) {
 		Section Buffer;
 		Buffer.strSectionName = line.substr( 1, line.size() - 1 - 1 );
 		m_ProfileData.push_back( Buffer );
@@ -228,7 +228,7 @@ bool CProfile::WriteProfile(
 	std::vector< std::wstring > vecLine;
 	if( nullptr != pszComment ) {
 		vecLine.emplace_back( L";" + std::wstring( pszComment ) );		// //->;	2008/5/24 Uchi
-		vecLine.push_back( LTEXT("") );
+		vecLine.push_back( L"" );
 	}
 	for(const auto& iter : m_ProfileData) {
 		//セクション名を書き込む
@@ -237,7 +237,7 @@ bool CProfile::WriteProfile(
 			//エントリを書き込む
 			vecLine.emplace_back( mapiter.first + L"=" + mapiter.second );
 		}
-		vecLine.push_back( LTEXT("") );
+		vecLine.push_back( L"" );
 	}
 
 	// 別ファイルに書き込んでから置き換える（プロセス強制終了などへの安全対策）
