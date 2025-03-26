@@ -14,10 +14,13 @@
   <Target Name="RunCompileTests" DependsOnTargets="MakeCompileTestBuildDir" BeforeTargets="ClCompile" Inputs="@(CompileTestTarget)" Outputs="$(CompileTestBuildDir)CMakeCache.txt">
     <PropertyGroup>
       <VsVersion>$([System.Text.RegularExpressions.Regex]::Replace('$(VisualStudioVersion)', '^(\d+).*', '$1'))</VsVersion>
+      <CMD_CL Condition="'$(PlatformToolset)' == 'ClangCL'">$(LLVMInstallDir)\bin\$(CLToolExe)</CMD_CL>
+      <CMD_CL Condition="'$(PlatformToolset)' != 'ClangCL'">$(ClCompilerPath)</CMD_CL>
     </PropertyGroup>
     <SetEnv name="platform" value="$(Platform)" prefix="false" />
     <SetEnv name="configuration" value="$(Configuration)" prefix="false" />
     <SetEnv name="NUM_VSVERSION" value="$(VsVersion)" prefix="false" />
+    <SetEnv name="CMD_CL" value="$(CMD_CL)" prefix="false" />
     <Exec Command="$(MSBuildThisFileDirectory)compiletests.run.cmd &quot;$(CompileTestBuildDir)&quot;" ConsoleToMSBuild="true" />
   </Target>
   <Target Name="AppendCleanTargetsForCompileTest" BeforeTargets="CoreClean">
