@@ -37,7 +37,7 @@
 #include "doc/CDocListener.h"
 
 //! 分→ミリ秒に変換するための係数
-const int MSec2Min = 1000 * 60;
+constexpr int MSec2Min = 1000 * 60;
 
 /*! @class CPassiveTimer CAutoSave.h
 	基準時刻からの経過時間が設定間隔を過ぎたかどうかを判定する。
@@ -51,7 +51,7 @@ public:
 	/*!
 		初期値は間隔1msecでタイマーは無効。
 	*/
-	CPassiveTimer() : nInterval(1), bEnabled(false){ Reset(); }
+	CPassiveTimer() { Reset(); }
 
 	//時間間隔
 	void SetInterval(int m);	//!	時間間隔の設定
@@ -67,8 +67,8 @@ public:
 
 private:
 	DWORD	nLastTick;	//!< 最後にチェックしたときの時刻 (GetTickCount()で取得したもの)
-	int		nInterval;	//!< Action間隔 (分)
-	bool	bEnabled;	//!< 有効かどうか
+	int		nInterval = 1;	//!< Action間隔 (分)
+	bool	bEnabled = false;	//!< 有効かどうか
 };
 
 class CAutoSaveAgent : public CDocListenerEx{
