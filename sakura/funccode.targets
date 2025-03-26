@@ -1,6 +1,8 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Label="FuncCode">
-    <HeaderMake>..\Win32\$(Configuration)\HeaderMake.exe</HeaderMake>
+    <HeaderMake Condition="'$(Configuration)'=='Debug_clang'">..\Win32\Debug\HeaderMake.exe</HeaderMake>
+    <HeaderMake Condition="'$(Configuration)'=='Release_clang'">..\Win32\Release\HeaderMake.exe</HeaderMake>
+    <HeaderMake Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">..\Win32\$(Configuration)\HeaderMake.exe</HeaderMake>
     <FuncCodeDefine>..\sakura_core\Funccode_define.h</FuncCodeDefine>
     <FuncCodeEnum>..\sakura_core\Funccode_enum.h</FuncCodeEnum>
   </PropertyGroup>

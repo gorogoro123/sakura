@@ -10,13 +10,21 @@ if not exist "%CMD_CMAKE%" (
   exit /b 1
 )
 
+if "%CONFIGURATION%" == "Debug_clang" (
+  set CONFIGURATION_TYPE=Debug
+) else if "%CONFIGURATION%" == "Release_clang" (
+  set CONFIGURATION_TYPE=Release
+) else (
+  set CONFIGURATION_TYPE=%CONFIGURATION%
+)
+
 if not exist "%CMD_NINJA%" (
   set GENERATOR="%CMAKE_G_PARAM%"
   set GENERATOR_OPTS=-A %PLATFORM% "-DCMAKE_CONFIGURATION_TYPES=Debug;Release"
   set "MAKE_PROGRAM=%CMD_MSBUILD%"
 ) else (
   set GENERATOR=Ninja
-  set GENERATOR_OPTS=-DCMAKE_BUILD_TYPE=%CONFIGURATION%
+  set GENERATOR_OPTS=-DCMAKE_BUILD_TYPE=%CONFIGURATION_TYPE%
   set "MAKE_PROGRAM=%CMD_NINJA%"
 )
 
@@ -28,7 +36,10 @@ call :run_cmake_configure || endlocal && exit /b 1
 endlocal && exit /b 0
 
 :run_cmake_configure
-call :find_cl_compiler
+if not exist "%CMD_CL%" (
+  echo "no cl.exe found."
+  exit /b 1
+)
 
 :: replace back-slash to slash in the path.
 set CL_COMPILER=%CMD_CL:\=/%
@@ -44,9 +55,4 @@ set CL_COMPILER=%CMD_CL:\=/%
   || endlocal && exit /b 1
 goto :EOF
 
-:find_cl_compiler
-for /f "usebackq delims=" %%a in (`where cl.exe`) do (
-  set "CMD_CL=%%a"
-  goto :EOF
-)
 goto :EOF
