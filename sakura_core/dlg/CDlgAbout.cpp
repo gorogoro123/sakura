@@ -63,6 +63,11 @@ const DWORD p_helpids[] = {	//12900
 // http://docwiki.embarcadero.com/RADStudio/Rio/en/Predefined_Macros#C.2B.2B_Compiler_Versions_in_Predefined_Macros
 #  define COMPILER_TYPE "B"
 #  define COMPILER_VER  __BORLANDC__ 
+#elif defined(__clang__)
+// Clang/LLVM
+// https://clang.llvm.org/docs/LanguageExtensions.html
+#  define COMPILER_TYPE "C"
+#  define COMPILER_VER  (__clang_major__ * 10000 + __clang_minor__ * 100 + __clang_patchlevel__ )
 #elif defined(__GNUG__)
 // __GNUG__ = (__GNUC__ && __cplusplus)
 // GNU C++
