@@ -55,12 +55,20 @@ if "%PLATFORM%" == "x64" (
   set GENERATOR_OPTS=-DCMAKE_INSTALL_LIBDIR=lib64 %GENERATOR_OPTS%
 )
 
+if "%CONFIGURATION%" == "Debug_clang" (
+  set CONFIGURATION_TYPE=Debug
+) else if "%CONFIGURATION%" == "Release_clang" (
+  set CONFIGURATION_TYPE=Release
+) else (
+  set CONFIGURATION_TYPE=%CONFIGURATION%
+)
+
 :: run cmake configuration.
 "%CMD_CMAKE%" -G Ninja ^
   "-DCMAKE_MAKE_PROGRAM=%CMD_NINJA%" ^
   "-DCMAKE_C_COMPILER=%C_COMPILER%" ^
   "-DCMAKE_CXX_COMPILER=%CXX_COMPILER%" ^
-  -DCMAKE_BUILD_TYPE=%CONFIGURATION% ^
+  -DCMAKE_BUILD_TYPE=%CONFIGURATION_TYPE% ^
   -DCMAKE_INSTALL_PREFIX=%GOOGLETEST_INSTALL_PATH%  ^
   %GENERATOR_OPTS%                                  ^
   -DBUILD_GMOCK=ON                                  ^
@@ -71,16 +79,12 @@ if "%PLATFORM%" == "x64" (
 goto :EOF
 
 :find_cl_compilers
-call :find_cl
+if not exist "%CMD_CL%" (
+  echo "no cl.exe found."
+  exit /b 1
+)
 set C_COMPILER=%CMD_CL:\=/%
 set CXX_COMPILER=%CMD_CL:\=/%
-goto :EOF
-
-:find_cl
-for /f "usebackq delims=" %%a in (`where cl.exe`) do (
-  set "CMD_CL=%%a"
-  goto :EOF
-)
 goto :EOF
 
 :find_gcc_compilers

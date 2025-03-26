@@ -32,10 +32,13 @@
   <Target Name="BuildGoogleTest" DependsOnTargets="MakeGoogleTestBuildDir;MakeGoogleTestInstallDir" BeforeTargets="ClCompile" Condition="!Exists('$(GTestLibPath)') Or !Exists('$(GMockLibPath)')">
     <PropertyGroup>
       <VsVersion>$([System.Text.RegularExpressions.Regex]::Replace('$(VisualStudioVersion)', '^(\d+).*', '$1'))</VsVersion>
+      <CMD_CL Condition="'$(PlatformToolset)' == 'ClangCL'">$(LLVMInstallDir)\bin\clang-cl.exe</CMD_CL>
+      <CMD_CL Condition="'$(PlatformToolset)' != 'ClangCL'">$(ClCompilerPath)</CMD_CL>
     </PropertyGroup>
     <SetEnv name="platform" value="$(Platform)" prefix="false" />
     <SetEnv name="configuration" value="$(Configuration)" prefix="false" />
     <SetEnv name="NUM_VSVERSION" value="$(VsVersion)" prefix="false" />
+    <SetEnv name="CMD_CL" value="$(CMD_CL)" prefix="false" />
     <Exec Command="$(MSBuildThisFileDirectory)googletest.build.cmd &quot;$(GoogleTestBuildDir)&quot; &quot;$(GoogleTestInstallDir)&quot;" ConsoleToMSBuild="true" />
   </Target>
   <Target Name="AppendCleanTargetsForGoogleTest" BeforeTargets="CoreClean">
