@@ -42,14 +42,14 @@
 #include <string>
 #include <string_view>
 #include <vector>
+#include <ShlObj.h>
 
 #include "io/CTextStream.h"
 #include "charset/CUtf8.h"		// Resource読み込みに使用
 #include "CEol.h"
 #include "util/file.h"
-#include "apiwrap/StdApi.h"
 
-void EnsureDirectoryExist( const std::wstring& strProfileName )
+static void EnsureDirectoryExist( const std::wstring& strProfileName )
 {
 	const size_t cchLastYen = strProfileName.find_last_of( L'\\' );
 	if( cchLastYen != std::wstring::npos && cchLastYen < strProfileName.length() && cchLastYen + 1 < _MAX_PATH ){
@@ -59,7 +59,7 @@ void EnsureDirectoryExist( const std::wstring& strProfileName )
 
 		// フォルダーが存在しなければ作成する
 		if( !IsDirectory( szProfileFolder ) ){
-			MakeSureDirectoryPathExistsW( szProfileFolder );
+			SHCreateDirectory(nullptr, szProfileFolder);
 		}
 	}
 }
