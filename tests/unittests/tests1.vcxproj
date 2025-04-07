@@ -115,7 +115,9 @@
     <ClCompile Include="test-cdocline.cpp" />
     <ClCompile Include="test-cdoclinemgr.cpp" />
     <ClCompile Include="test-codechecker.cpp" />
-    <ClCompile Include="test-cppa.cpp" />
+    <ClCompile Include="test-cppa.cpp">
+      <ExcludedFromBuild Condition="'$(Platform)'=='x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="test-csearchagent.cpp" />
     <ClCompile Include="test-crunningtimer.cpp" />
     <ClCompile Include="test-csharedata.cpp" />

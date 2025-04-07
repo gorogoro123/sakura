@@ -76,8 +76,12 @@ using ExtModuleImplementations = ::testing::Types<
 	CHtmlHelp,
 	CIcu4cI18n,
 	CMigemo,
-	CUchardet,
-	CPPA>;
+#ifdef _WIN64
+#else
+	CPPA,
+#endif
+	CUchardet
+	>;
 
 //! パラメータテストをインスタンス化する
 INSTANTIATE_TYPED_TEST_SUITE_P(
