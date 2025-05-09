@@ -232,7 +232,7 @@ INT_PTR CPropCommon::DoPropertySheet( int nPageNum, bool bTrayProc )
 	}
 	//	To Here Jun. 2, 2001 genta
 
-	PROPSHEETHEADER psh = { PROPSHEETHEADER_V2_SIZE };
+	PROPSHEETHEADER psh = {};
 	psh.dwSize     = PROPSHEETHEADER_V2_SIZE;
 	psh.dwFlags    = PSH_NOAPPLYNOW | PSH_PROPSHEETPAGE | PSH_USEPAGELANG;
 	psh.hwndParent = m_hwndParent;
