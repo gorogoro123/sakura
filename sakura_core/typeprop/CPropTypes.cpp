@@ -169,7 +169,7 @@ INT_PTR CPropTypes::DoPropertySheet( int nPageNum )
 		p->pfnCallback = NULL;
 	}
 
-	PROPSHEETHEADER psh = { PROPSHEETHEADER_V2_SIZE };
+	PROPSHEETHEADER psh = {};
 	psh.dwSize     = PROPSHEETHEADER_V2_SIZE;
 	psh.dwFlags    = PSH_NOAPPLYNOW | PSH_PROPSHEETPAGE | PSH_USEPAGELANG;
 	psh.hwndParent = m_hwndParent;
