@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "build_config.h"
 #include <stdlib.h> //malloc,free
 

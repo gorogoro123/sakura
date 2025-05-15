@@ -23,7 +23,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <ShlObj.h>
 
 #include "window/CEditWnd.h"

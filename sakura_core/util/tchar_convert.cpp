@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "util/tchar_convert.h"
 #include "mem/CRecycledBuffer.h"
 #include "charset/charcode.h"

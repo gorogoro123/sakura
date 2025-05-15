@@ -9,7 +9,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CDocTypeManager.h"
 #include "_main/CMutex.h"
 #include "CFileExt.h"

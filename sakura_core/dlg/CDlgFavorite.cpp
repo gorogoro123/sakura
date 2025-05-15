@@ -13,7 +13,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <algorithm>
 #include "CDlgFavorite.h"
 #include "dlg/CDlgInput1.h"

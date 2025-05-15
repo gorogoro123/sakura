@@ -10,7 +10,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CDlgTypeAscertain.h"
 #include "env/CDocTypeManager.h"
 #include "util/shell.h"

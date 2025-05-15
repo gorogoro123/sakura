@@ -13,7 +13,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgCtrlCode.h"
 #include "func/Funccode.h"
 #include "util/shell.h"

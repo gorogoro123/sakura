@@ -11,7 +11,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CDllHandler.h"
 #include "util/module.h"
 

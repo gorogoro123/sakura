@@ -15,7 +15,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <io.h>
 #include "CMigemo.h"
 #include "env/CShareData.h"

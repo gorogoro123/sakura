@@ -17,7 +17,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <stdio.h>
 #include <string.h>
 #include "CKeyMacroMgr.h"

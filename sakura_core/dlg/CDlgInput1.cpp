@@ -14,7 +14,6 @@
 	This source code is designed for sakura editor.
 	Please contact the copyright holder to use this code for other purpose.
 */
-#include "StdAfx.h"
 #include "dlg/CDlgInput1.h"
 #include "CEditApp.h"
 #include "Funccode_enum.h"	// EFunctionCode

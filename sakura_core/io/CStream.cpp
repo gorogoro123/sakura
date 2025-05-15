@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CStream.h"
 #include <string>
 #include "util/std_macro.h"

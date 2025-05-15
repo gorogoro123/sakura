@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CRuler.h"
 #include "CTextArea.h"
 #include "view/CEditView.h"

@@ -13,7 +13,6 @@
 	This source code is designed for sakura editor.
 	Please contact the copyright holder to use this code for other purpose.
 */
-#include "StdAfx.h"
 #include "window/CSplitBoxWnd.h"
 #include "uiparts/CGraphics.h"
 #include "apiwrap/StdApi.h"

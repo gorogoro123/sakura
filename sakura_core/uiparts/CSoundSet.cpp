@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CSoundSet.h"
 #include "util/MessageBoxF.h"
 

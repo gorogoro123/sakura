@@ -11,7 +11,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include <algorithm>
 #include <ctype.h>
 #include "CMacroFactory.h"

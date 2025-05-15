@@ -13,7 +13,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 
 #include <limits.h>
 #include <stdio.h>

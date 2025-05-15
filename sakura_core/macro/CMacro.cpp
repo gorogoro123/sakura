@@ -21,7 +21,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "func/Funccode.h"
 #include "CMacro.h"
 #include "_main/CControlTray.h"

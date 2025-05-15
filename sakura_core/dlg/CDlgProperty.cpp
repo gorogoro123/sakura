@@ -14,7 +14,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "dlg/CDlgProperty.h"
 #include "doc/CEditDoc.h"
 #include "func/Funccode.h"		// Stonee, 2001/03/12

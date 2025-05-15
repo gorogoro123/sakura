@@ -19,7 +19,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <limits.h>
 #include "CTabWnd.h"
 #include "window/CEditWnd.h"

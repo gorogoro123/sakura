@@ -17,7 +17,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <string.h>
 #include <memory>
 #include "doc/CDocOutline.h"

@@ -11,7 +11,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <string.h>
 #include <stdlib.h>
 #include "CFileExt.h"

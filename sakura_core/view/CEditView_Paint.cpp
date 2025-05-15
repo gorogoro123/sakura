@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <vector>
 #include <limits.h>
 #pragma comment(lib, "Msimg32.lib")

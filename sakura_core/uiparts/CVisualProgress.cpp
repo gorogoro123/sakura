@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CVisualProgress.h"
 #include "CWaitCursor.h"
 

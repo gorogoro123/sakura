@@ -21,7 +21,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "CEditView.h"
 #include <algorithm>
 #include "charset/CShiftJis.h"

@@ -81,6 +81,7 @@ CFLAGS= \
  -I$(SRCDIR) \
  $(DEFINES) $(MYCFLAGS)
 CXXFLAGS= $(CFLAGS) \
+ -include StdAfx.h \
  -std=c++17 \
  $(MYCXXFLAGS)
 LIBS= \

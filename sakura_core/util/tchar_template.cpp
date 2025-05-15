@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "tchar_template.h"
 #include "util/std_macro.h"
 

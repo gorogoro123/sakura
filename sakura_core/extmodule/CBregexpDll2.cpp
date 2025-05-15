@@ -5,7 +5,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CBregexpDll2.h"
 
 CBregexpDll2::CBregexpDll2()

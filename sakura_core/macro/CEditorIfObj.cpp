@@ -8,7 +8,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CEditorIfObj.h"
 #include "macro/CMacro.h"
 #include "macro/CSMacroMgr.h"

@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CPropertyManager.h"
 #include "env/DLLSHAREDATA.h"
 #include "env/CDocTypeManager.h"

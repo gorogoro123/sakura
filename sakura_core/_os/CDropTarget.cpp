@@ -14,7 +14,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "CDropTarget.h"
 #include "window/CEditWnd.h"	// 2008.06.20 ryoji
 #include "view/CEditView.h"// 2002/2/3 aroka

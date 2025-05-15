@@ -23,7 +23,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <stdlib.h>
 #include <string.h>	// Apr. 03, 2003 genta
 #include <memory>

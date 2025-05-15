@@ -17,7 +17,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "func/CKeyBind.h"
 #include "env/CShareData.h"
 #include "macro/CSMacroMgr.h"// 2002/2/10 aroka

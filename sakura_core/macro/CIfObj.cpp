@@ -16,7 +16,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "macro/CIfObj.h"
 
 #include "debug/Debug1.h"

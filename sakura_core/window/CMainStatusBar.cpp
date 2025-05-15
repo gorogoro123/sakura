@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CMainStatusBar.h"
 #include "window/CEditWnd.h"
 #include "CEditApp.h"

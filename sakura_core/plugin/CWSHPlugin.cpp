@@ -8,7 +8,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "plugin/CWSHPlugin.h"
 #include "plugin/CPluginIfObj.h"
 #include "macro/CWSHManager.h"

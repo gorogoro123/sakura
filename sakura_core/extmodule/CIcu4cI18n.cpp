@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CIcu4cI18n.h"
 
 CIcu4cI18n::CIcu4cI18n() noexcept

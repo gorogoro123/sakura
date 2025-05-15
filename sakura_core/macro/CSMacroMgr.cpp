@@ -23,7 +23,6 @@
 	This source code is designed for sakura editor.
 	Please contact the copyright holder to use this code for other purpose.
 */
-#include "StdAfx.h"
 #include "macro/CSMacroMgr.h"
 #include "macro/CPPAMacroMgr.h"
 #include "macro/CWSHManager.h"

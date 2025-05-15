@@ -16,7 +16,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "charset.h"
 #include "CCodePage.h"
 #include <vector>

@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "docplus/CModifyManager.h"
 #include "doc/CEditDoc.h"
 #include "doc/logic/CDocLineMgr.h"

@@ -19,7 +19,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgWindowList.h"
 #include "Funccode_enum.h"
 #include "util/shell.h"

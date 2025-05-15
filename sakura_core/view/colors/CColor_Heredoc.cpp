@@ -5,7 +5,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "view/CEditView.h" // SColorStrategyInfo
 #include "CColor_Heredoc.h"
 #include "doc/layout/CLayout.h"

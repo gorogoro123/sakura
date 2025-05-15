@@ -5,7 +5,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CSaveAgent.h"
 #include "doc/CEditDoc.h"
 #include "doc/CDocVisitor.h"

@@ -26,7 +26,6 @@
 */
 // 2007.10.25 kobake CViewCommanderクラスに分離
 
-#include "StdAfx.h"
 #include "CViewCommander.h"
 #include "CViewCommander_inline.h"
 

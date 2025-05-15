@@ -10,7 +10,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CMacroManagerBase.h"
 #include "view/CEditView.h"
 #include "cmd/CViewCommander_inline.h"

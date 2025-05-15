@@ -22,7 +22,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <string>
 #include <stdio.h>
 #include <string.h>

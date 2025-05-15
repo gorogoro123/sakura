@@ -26,7 +26,6 @@
 //	このファイルは「コマンド一覧」のメニューの順番や表示にも使われている
 //	sakura_rc.rcファイルの下のほうにあるString Tableも参照のこと
 
-#include "StdAfx.h"
 #include <Shlwapi.h>
 #include "func/Funccode.h"
 #include "config/maxdata.h" //MAX_MRU

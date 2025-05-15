@@ -17,7 +17,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CViewCommander.h"
 #include "CViewCommander_inline.h"
 

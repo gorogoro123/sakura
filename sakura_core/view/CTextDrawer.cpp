@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CTextDrawer.h"
 #include <vector>
 #include "CTextMetrics.h"

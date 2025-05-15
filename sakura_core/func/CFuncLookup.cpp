@@ -15,7 +15,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "func/CFuncLookup.h"
 #include "plugin/CJackManager.h"
 #include "apiwrap/StdControl.h"

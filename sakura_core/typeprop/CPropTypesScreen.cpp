@@ -20,7 +20,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "CPropTypes.h"
 #include "dlg/CDlgOpenFile.h"
 #include "util/module.h"

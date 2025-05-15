@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CConvert_CodeToSjis.h"
 
 #include "charset/CCodeFactory.h"

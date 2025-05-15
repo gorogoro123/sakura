@@ -14,7 +14,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "util/shell.h"
 #include "util/window.h"

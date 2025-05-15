@@ -15,7 +15,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <algorithm>
 #include "view/CCaret.h"
 #include "view/CEditView.h"
