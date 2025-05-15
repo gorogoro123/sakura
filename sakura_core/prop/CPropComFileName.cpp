@@ -32,7 +32,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "util/shell.h"
 #include "util/window.h"

@@ -31,7 +31,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CHtmlHelp.h"
 
 CHtmlHelp::CHtmlHelp(void) noexcept

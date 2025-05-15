@@ -16,7 +16,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "util/shell.h"
 #include "env/DLLSHAREDATA.h" // CFormatManager.hより前に必要

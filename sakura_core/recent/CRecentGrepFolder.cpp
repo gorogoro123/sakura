@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CRecentGrepFolder.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //

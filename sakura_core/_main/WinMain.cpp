@@ -20,7 +20,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <Ole2.h>
 #include <locale.h>
 #include "_main/CCommandLine.h"

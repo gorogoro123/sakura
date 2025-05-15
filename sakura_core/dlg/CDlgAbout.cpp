@@ -19,7 +19,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <shellapi.h>
 #include "dlg/CDlgAbout.h"
 #include "uiparts/HandCursor.h"

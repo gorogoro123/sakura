@@ -29,7 +29,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <limits.h>
 #include "dlg/CDlgPluginOption.h"
 #include "prop/CPropCommon.h"

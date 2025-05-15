@@ -23,7 +23,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CLoadAgent.h"
 #include "CReadManager.h"
 #include "_main/CAppMode.h"

@@ -19,7 +19,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgFind.h"
 #include "view/CEditView.h"
 #include "util/shell.h"

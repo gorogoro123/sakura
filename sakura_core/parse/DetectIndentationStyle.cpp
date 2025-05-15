@@ -1,5 +1,4 @@
-﻿#include "StdAfx.h"
-#include "DetectIndentationStyle.h"
+﻿#include "DetectIndentationStyle.h"
 
 #include "doc/CEditDoc.h"
 #include "config/app_constants.h"

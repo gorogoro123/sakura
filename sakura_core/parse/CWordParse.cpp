@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CWordParse.h"
 #include "charset/charcode.h"
 #include "charset/codechecker.h"

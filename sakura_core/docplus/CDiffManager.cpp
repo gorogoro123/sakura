@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "docplus/CDiffManager.h"
 #include "types/CTypeSupport.h"
 #include "window/CEditWnd.h"

@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "format.h"
 #include "basis/CMyString.h"
 

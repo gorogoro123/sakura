@@ -35,7 +35,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CViewCommander.h"
 #include "CViewCommander_inline.h"
 

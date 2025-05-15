@@ -29,7 +29,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <memory>
 #include "CImpExpManager.h"
 #include "typeprop/CDlgTypeAscertain.h"

@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CAutoScrollWnd.h"
 #include "view/CEditView.h"
 #include "sakura_rc.h"

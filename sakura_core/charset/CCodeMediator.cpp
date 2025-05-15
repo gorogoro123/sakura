@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "charset/CCodeMediator.h"
 #include "charset/CharsetDetector.h"
 #include "charset/CESI.h"

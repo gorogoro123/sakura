@@ -33,7 +33,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CPPA.h"
 #include "view/CEditView.h"
 #include "func/Funccode.h"

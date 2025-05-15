@@ -25,7 +25,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "env/CShareData_IO.h"
 #include "doc/CDocTypeSetting.h" // ColorInfo !!
 #include "CShareData.h"

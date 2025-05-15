@@ -21,7 +21,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "CPropTypes.h"
 #include "env/CShareData.h"
 #include "typeprop/CImpExpManager.h"	// 2010/4/23 Uchi

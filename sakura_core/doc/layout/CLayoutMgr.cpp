@@ -15,7 +15,6 @@
 	This source code is designed for sakura editor.
 	Please contact the copyright holder to use this code for other purpose.
 */
-#include "StdAfx.h"
 #include "doc/layout/CLayoutMgr.h"
 #include "doc/layout/CLayout.h"/// 2002/2/10 aroka
 #include "doc/CEditDoc.h"

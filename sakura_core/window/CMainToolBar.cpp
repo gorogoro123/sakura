@@ -26,7 +26,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "window/CMainToolBar.h"
 #include "window/CEditWnd.h"
 #include "CEditApp.h"

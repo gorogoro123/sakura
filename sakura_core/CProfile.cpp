@@ -34,7 +34,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CProfile.h"
 
 #include <algorithm>

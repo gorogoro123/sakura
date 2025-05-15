@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <shellapi.h>// HDROP
 #include "CClipboard.h"
 #include "doc/CEditDoc.h"

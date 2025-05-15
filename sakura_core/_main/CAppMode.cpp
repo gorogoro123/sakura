@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CAppMode.h"
 #include "window/CEditWnd.h"
 #include "env/CSakuraEnvironment.h"

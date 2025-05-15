@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <limits.h>
 #include "CEditView.h"
 #include "window/CEditWnd.h"

@@ -34,4 +34,3 @@
 		   distribution.
 */
 
-#include "StdAfx.h"

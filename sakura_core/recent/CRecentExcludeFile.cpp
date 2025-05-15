@@ -23,7 +23,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CRecentExcludeFile.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //

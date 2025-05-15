@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CRecentSearch.h"
 #include "config/maxdata.h"
 

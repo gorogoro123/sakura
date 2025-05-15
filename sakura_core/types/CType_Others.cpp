@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "types/CType.h"
 
 void CType_Other::InitTypeConfigImp(STypeConfig* pType)

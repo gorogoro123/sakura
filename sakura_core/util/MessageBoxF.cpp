@@ -32,7 +32,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "MessageBoxF.h"
 
 #include <iostream>

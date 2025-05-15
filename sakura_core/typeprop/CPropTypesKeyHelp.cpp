@@ -30,7 +30,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CPropTypes.h"
 #include "env/CShareData.h"
 #include "typeprop/CImpExpManager.h"	// 2010/4/23 Uchi

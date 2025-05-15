@@ -33,7 +33,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgTagJumpList.h"
 #include "CSortedTagJumpList.h"
 #include "func/Funccode.h"

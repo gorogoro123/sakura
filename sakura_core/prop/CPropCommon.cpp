@@ -38,7 +38,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "env/CShareData.h"
 #include "env/DLLSHAREDATA.h"

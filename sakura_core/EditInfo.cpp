@@ -23,7 +23,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "EditInfo.h"
 
 /*!

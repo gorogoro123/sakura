@@ -33,7 +33,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <process.h> // _beginthreadex
 #ifdef __MINGW32__
 #define INITGUID 1

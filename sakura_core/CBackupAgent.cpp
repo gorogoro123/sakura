@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <time.h>
 #include <io.h>	// _access
 #include "CBackupAgent.h"

@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CRecentExceptMru.h"
 #include "config/maxdata.h"
 

@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CDecode_UuDecode.h"
 #include "charset/charcode.h"
 #include "convert/convert_util2.h"

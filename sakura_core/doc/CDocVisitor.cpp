@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CDocVisitor.h"
 #include "doc/CEditDoc.h"
 #include "cmd/CViewCommander_inline.h"

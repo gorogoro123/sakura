@@ -29,7 +29,6 @@
 		   distribution.
 
 */
-#include "StdAfx.h"
 #include "doc/CEditDoc.h"
 #include "doc/CDocOutline.h"
 #include "doc/logic/CDocLine.h"

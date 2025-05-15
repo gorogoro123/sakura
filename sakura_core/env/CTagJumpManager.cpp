@@ -27,7 +27,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "env/DLLSHAREDATA.h"
 
 #include "CTagJumpManager.h"

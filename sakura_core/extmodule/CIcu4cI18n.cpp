@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CIcu4cI18n.h"
 
 CIcu4cI18n::CIcu4cI18n() noexcept

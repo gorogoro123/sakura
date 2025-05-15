@@ -17,7 +17,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "env/CShareData.h"
 #include "typeprop/CImpExpManager.h"	// 20210/4/23 Uchi

@@ -24,7 +24,6 @@
 */
 // 2008.11.10 変換ロジックを書き直す
 
-#include "StdAfx.h"
 #include "CUtf8.h"
 #include "charset/codechecker.h"
 #include "CEol.h"

@@ -27,7 +27,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "DLLSHAREDATA.h"
 
 #include "CFormatManager.h"

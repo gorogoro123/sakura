@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <wchar.h>
 #include <algorithm>
 #include "types/CType.h"

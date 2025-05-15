@@ -31,7 +31,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgFileUpdateQuery.h"
 #include "apiwrap/StdControl.h"
 #include "CSelectLang.h"

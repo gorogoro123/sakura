@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CConvert_ZeneisuToHaneisu.h"
 #include "convert_util.h"
 #include "mem/CNativeW.h"

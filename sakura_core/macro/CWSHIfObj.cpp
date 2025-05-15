@@ -32,7 +32,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <memory>
 #include "macro/CWSHIfObj.h"
 #include "macro/CSMacroMgr.h" // MacroFuncInfo

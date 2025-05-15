@@ -36,7 +36,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CPrintPreview.h"
 #include "uiparts/HandCursor.h"
 #include "doc/layout/CLayout.h"

@@ -35,7 +35,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "mem/CMemory.h"
 
 #include <algorithm>

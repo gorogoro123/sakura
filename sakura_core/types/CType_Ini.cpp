@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "types/CType.h"
 #include "view/colors/EColorIndexType.h"
 

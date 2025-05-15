@@ -28,7 +28,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <shellapi.h>
 #include "prop/CPropCommon.h"
 #include "CEditApp.h"

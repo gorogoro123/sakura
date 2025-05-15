@@ -25,5 +25,4 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "basis/CStrictInteger.h"

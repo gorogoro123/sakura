@@ -23,5 +23,4 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CUnicodeBe.h"

@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CRuler.h"
 #include "CTextArea.h"
 #include "view/CEditView.h"

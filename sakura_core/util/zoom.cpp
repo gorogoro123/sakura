@@ -25,7 +25,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "zoom.h"
 #include <algorithm>
 #include <cmath>

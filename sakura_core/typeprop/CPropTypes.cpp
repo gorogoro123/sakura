@@ -22,7 +22,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "CPropTypes.h"
 #include "CEditApp.h"
 #include "view/colors/EColorIndexType.h"

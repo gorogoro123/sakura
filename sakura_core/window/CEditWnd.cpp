@@ -41,7 +41,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <ShlObj.h>
 
 #include "window/CEditWnd.h"

@@ -22,7 +22,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "io/CIoBridge.h"
 #include "charset/CCodeFactory.h"
 #include "charset/CCodeBase.h"

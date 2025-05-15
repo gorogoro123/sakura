@@ -23,7 +23,6 @@
 		3. This notice may not be removed or altered from any source
 		   distribution.
 */
-#include "StdAfx.h"
 #include "CAutoReloadAgent.h"
 // #include "doc/CEditDoc.h"	//  in under CEditWnd.h
 #include "window/CEditWnd.h"

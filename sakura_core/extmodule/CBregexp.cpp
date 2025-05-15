@@ -40,7 +40,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include <string>
 #include <stdio.h>
 #include <string.h>

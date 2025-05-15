@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "CRecentImp.h"
 
 #include "CRecentCmd.h"

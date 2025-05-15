@@ -32,7 +32,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "macro/CWSHManager.h"
 #include "macro/CWSH.h"
 #include "macro/CEditorIfObj.h"

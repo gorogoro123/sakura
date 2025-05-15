@@ -30,7 +30,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "outline/CDlgFileTree.h"
 #include "outline/CDlgFuncList.h"
 #include "dlg/CDlgOpenFile.h"

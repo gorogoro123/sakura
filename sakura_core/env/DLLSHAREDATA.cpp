@@ -24,7 +24,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "DLLSHAREDATA.h"
 #include "_main/CMutex.h"
 #include "dlg/CDlgCancel.h"

@@ -28,7 +28,6 @@
 	2008.04.12 kobake CPropTypes.cppから分離
 	2009.02.22 ryoji
 */
-#include "StdAfx.h"
 #include "CPropTypes.h"
 #include "env/CShareData.h"
 #include "typeprop/CImpExpManager.h"	// 2010/4/23 Uchi

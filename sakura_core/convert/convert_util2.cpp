@@ -28,7 +28,6 @@
 		   distribution.
 */
 
-#include "StdAfx.h"
 #include "convert/convert_util2.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
