@@ -16,7 +16,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <ShlObj.h>
 #include "recent/CMRUFile.h"
 #include "recent/CMRUFolder.h"

@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CConvert_TabToSpace.h"
 
 #include <algorithm>

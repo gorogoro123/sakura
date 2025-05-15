@@ -9,7 +9,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "env/DLLSHAREDATA.h"
 
 #include "CTagJumpManager.h"

@@ -12,7 +12,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgWinSize.h"
 #include "util/shell.h"
 #include "util/os.h"

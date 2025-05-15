@@ -12,7 +12,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CDlgKeywordSelect.h"
 #include "env/DLLSHAREDATA.h"
 #include "CKeyWordSetMgr.h"

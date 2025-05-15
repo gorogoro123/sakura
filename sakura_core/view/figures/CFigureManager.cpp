@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CFigureManager.h"
 #include "CFigure_Tab.h"
 #include "CFigure_Comma.h"

@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CConvert_Trim.h"
 #include "convert_util.h"
 #include "CEol.h"

@@ -15,7 +15,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "extmodule/CBregexp.h"	// 2007.08/12 genta バージョン取得
 #include "util/shell.h"

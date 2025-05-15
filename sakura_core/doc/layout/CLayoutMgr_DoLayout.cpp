@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "doc/CEditDoc.h" /// 2003/07/20 genta
 #include "doc/layout/CLayoutMgr.h"
 #include "doc/layout/CLayout.h"/// 2002/2/10 aroka

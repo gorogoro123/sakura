@@ -10,7 +10,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CLatin1.h"
 #include "charset/charcode.h"
 #include "charset/codechecker.h"

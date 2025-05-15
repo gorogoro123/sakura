@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "types/CType.h"
 #include "view/colors/EColorIndexType.h"
 

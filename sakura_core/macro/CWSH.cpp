@@ -15,7 +15,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include <process.h> // _beginthreadex
 #include <ObjBase.h>
 #include <InitGuid.h>

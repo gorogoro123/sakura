@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CRecentFolder.h"
 #include "config/maxdata.h"
 

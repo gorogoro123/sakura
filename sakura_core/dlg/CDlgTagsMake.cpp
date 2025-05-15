@@ -12,7 +12,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "dlg/CDlgTagsMake.h"
 
 #include <Shlwapi.h>

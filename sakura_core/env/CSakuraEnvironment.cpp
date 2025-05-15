@@ -6,7 +6,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CSakuraEnvironment.h"
 #include "env/CShareData.h"
 #include "env/DLLSHAREDATA.h"

@@ -15,7 +15,6 @@
 	This source code is designed for sakura editor.
 	Please contact the copyright holder to use this code for other purpose.
 */
-#include "StdAfx.h"
 #include "types/CType.h" // use CDlgTypeList定義
 #include "window/CEditWnd.h"
 #include "typeprop/CDlgTypeList.h"

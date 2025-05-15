@@ -16,7 +16,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CKeyWordSetMgr.h"
 #include <limits>
 #include "basis/CMyString.h"

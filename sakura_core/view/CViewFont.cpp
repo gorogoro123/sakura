@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CViewFont.h"
 #include "env/DLLSHAREDATA.h"
 #include "util/window.h"

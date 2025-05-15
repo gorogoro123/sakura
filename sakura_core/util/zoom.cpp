@@ -7,7 +7,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "zoom.h"
 #include <algorithm>
 #include <cmath>

@@ -7,5 +7,4 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "basis/CStrictInteger.h"

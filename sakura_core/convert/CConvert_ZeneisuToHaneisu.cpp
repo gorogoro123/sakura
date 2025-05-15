@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CConvert_ZeneisuToHaneisu.h"
 #include "convert_util.h"
 #include "mem/CNativeW.h"

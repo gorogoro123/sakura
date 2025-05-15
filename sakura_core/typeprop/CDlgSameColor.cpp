@@ -11,7 +11,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CDlgSameColor.h"
 #include "types/CType.h"
 #include "view/colors/EColorIndexType.h"

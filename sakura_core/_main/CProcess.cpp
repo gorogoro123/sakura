@@ -15,7 +15,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "_main/CProcess.h"
 
 #include "util/module.h"

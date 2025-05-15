@@ -8,7 +8,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include <shellapi.h>
 #include "CZipFile.h"
 #include "basis/CMyString.h"

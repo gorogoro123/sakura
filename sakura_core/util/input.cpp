@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "input.h"
 #include "apiwrap/StdApi.h"
 #include "config/system_constants.h"

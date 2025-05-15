@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include <stdexcept>
 #include "charset/codechecker.h"
 #include "mem/CNativeW.h"

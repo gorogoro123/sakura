@@ -25,7 +25,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include <HtmlHelp.h>
 #include "CControlTray.h"
 #include "CPropertyManager.h"

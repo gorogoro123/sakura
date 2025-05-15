@@ -13,7 +13,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CHtmlHelp.h"
 
 CHtmlHelp::CHtmlHelp(void) noexcept

@@ -21,7 +21,6 @@
 	Please contact the copyright holder to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 // Oct 6, 2000 ao
 #include <stdio.h>
 #include <io.h>

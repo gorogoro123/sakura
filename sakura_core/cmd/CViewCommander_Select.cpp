@@ -15,7 +15,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "CViewCommander.h"
 #include "CViewCommander_inline.h"
 

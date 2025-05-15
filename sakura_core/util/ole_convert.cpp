@@ -7,7 +7,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "ole_convert.h"
 
 // VARIANT変数をBSTRとみなし、wstringに変換する

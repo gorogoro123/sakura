@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CMruListener.h"
 #include "recent/CMRUFile.h"
 #include "doc/CEditDoc.h"

@@ -6,7 +6,6 @@
 	SPDX-License-Identifier: Zlib
 */
 
-#include "StdAfx.h"
 #include "CEditView_Paint.h"
 #include "window/CEditWnd.h"
 #include "doc/CEditDoc.h"

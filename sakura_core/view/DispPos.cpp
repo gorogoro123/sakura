@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "DispPos.h"
 #include "doc/layout/CLayout.h"
 

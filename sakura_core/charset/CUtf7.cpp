@@ -6,7 +6,6 @@
 */
 // 2008.11.10 変換ロジックを書き直す
 
-#include "StdAfx.h"
 #include "CUtf7.h"
 
 #include <string_view>

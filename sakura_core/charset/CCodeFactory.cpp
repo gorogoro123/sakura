@@ -4,7 +4,6 @@
 
 	SPDX-License-Identifier: Zlib
 */
-#include "StdAfx.h"
 #include "CCodeFactory.h"
 #include "CCodeMediator.h"
 #include "CCodePage.h"

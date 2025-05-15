@@ -17,7 +17,6 @@
 	Please contact the copyright holders to use this code for other purpose.
 */
 
-#include "StdAfx.h"
 #include "prop/CPropCommon.h"
 #include "env/DLLSHAREDATA.h"
 #include "env/CFileNameManager.h"
