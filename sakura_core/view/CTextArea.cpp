@@ -18,7 +18,7 @@
 // 2014.07.26 katze
 //#define USE_LOG10			// この行のコメントを外すと行番号の最小桁数の計算にlog10()を用いる
 #ifdef USE_LOG10
-#include <math.h>
+#include <cmath>
 #endif
 
 //! テンプレートでべき乗を計算(!=0)

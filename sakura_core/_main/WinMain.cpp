@@ -22,7 +22,7 @@
 
 #include "StdAfx.h"
 #include <Ole2.h>
-#include <locale.h>
+#include <clocale>
 #include "_main/CCommandLine.h"
 #include "CProcessFactory.h"
 #include "CProcess.h"

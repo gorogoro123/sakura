@@ -17,7 +17,7 @@
 
 #include <vector>
 #include <windows.h>
-#include <string.h>
+#include <cstring>
 #include <tchar.h>
 #include <Shlwapi.h>
 #include "CGrepEnumKeys.h"

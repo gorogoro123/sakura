@@ -39,6 +39,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <ctime>
 #include <cwchar>
 #include <deque>
@@ -89,12 +90,6 @@
 #endif
 #endif
 #endif
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <wchar.h>
 
 // Windowsヘッダー(他のSDKヘッダーとは別格。)
 #include <Windows.h>

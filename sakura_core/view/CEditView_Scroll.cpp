@@ -29,7 +29,7 @@
 #include "env/DLLSHAREDATA.h"
 #include "window/CEditWnd.h"
 #include "types/CTypeSupport.h"
-#include <limits.h>
+#include <climits>
 #include "config/app_constants.h"
 
 /*! スクロールバー作成

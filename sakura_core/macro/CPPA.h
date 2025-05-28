@@ -23,7 +23,7 @@ PPA(Poor-Pascal for Application)はDelphi/C++Builder用のPascalインタープ�
 #pragma once
 
 #include <ObjIdl.h>  // VARIANT等
-#include <stdio.h>
+#include <cstdio>
 #include "macro/CSMacroMgr.h"
 #include "extmodule/CDllHandler.h"
 #include "mem/CNativeA.h"

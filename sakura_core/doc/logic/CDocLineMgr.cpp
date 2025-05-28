@@ -22,8 +22,7 @@
 */
 
 #include "StdAfx.h"
-// Oct 6, 2000 ao
-#include <stdio.h>
+#include <cstdio>
 #include <list>
 #include "CDocLineMgr.h"
 #include "CDocLine.h"// 2002/2/10 aroka ヘッダー整理

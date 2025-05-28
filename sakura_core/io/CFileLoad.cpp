@@ -15,8 +15,8 @@
 */
 
 #include "StdAfx.h"
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 #include <algorithm>
 #include "_main/global.h"
 #include "mem/CMemory.h"

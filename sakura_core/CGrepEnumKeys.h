@@ -19,7 +19,7 @@
 #include <list>
 #include <vector>
 #include <windows.h>
-#include <string.h>
+#include <cstring>
 #include <tchar.h>
 #include "util/string_ex.h"
 #include "util/file.h"

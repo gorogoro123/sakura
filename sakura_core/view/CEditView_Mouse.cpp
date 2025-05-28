@@ -23,7 +23,7 @@
 
 #include "StdAfx.h"
 #include <process.h> // _beginthreadex
-#include <limits.h>
+#include <climits>
 #include "CEditView.h"
 #include "_main/CAppMode.h"
 #include "CEditApp.h"

@@ -26,7 +26,7 @@
 #include "mem/CNativeW.h"
 
 #if 0
-#include <stdio.h>
+#include <cstdio>
 #define	MYDBGMSG(s) \
 {\
 	FILE	*fp;\

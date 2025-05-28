@@ -18,8 +18,8 @@
 */
 
 #include "StdAfx.h"
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 #include "CKeyMacroMgr.h"
 #include "CMacro.h"
 #include "macro/CSMacroMgr.h"// 2002/2/10 aroka
