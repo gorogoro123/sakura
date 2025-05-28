@@ -20,7 +20,7 @@
 */
 
 #include "StdAfx.h"
-#include <limits.h>
+#include <climits>
 #include "CTabWnd.h"
 #include "window/CEditWnd.h"
 #include "_main/global.h"

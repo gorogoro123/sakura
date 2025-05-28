@@ -7,7 +7,7 @@
 */
 
 #include "StdAfx.h"
-#include <wchar.h>
+#include <cwchar>
 #include <algorithm>
 #include "types/CType.h"
 #include "doc/CEditDoc.h"

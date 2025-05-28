@@ -12,7 +12,7 @@
 */
 
 #include "StdAfx.h"
-#include <limits.h>
+#include <climits>
 #include "dlg/CDlgPluginOption.h"
 #include "prop/CPropCommon.h"
 #include "util/shell.h"

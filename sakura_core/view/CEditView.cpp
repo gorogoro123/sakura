@@ -23,7 +23,7 @@
 */
 
 #include "StdAfx.h"
-#include <limits.h>
+#include <climits>
 #include "view/CEditView.h"
 #include "view/CViewFont.h"
 #include "view/CRuler.h"

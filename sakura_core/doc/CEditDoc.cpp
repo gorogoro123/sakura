@@ -24,8 +24,8 @@
 */
 
 #include "StdAfx.h"
-#include <stdlib.h>
-#include <string.h>	// Apr. 03, 2003 genta
+#include <cstdlib>
+#include <cstring>	// Apr. 03, 2003 genta
 #include <memory>
 #include <OleCtl.h>
 #include <wincodec.h>

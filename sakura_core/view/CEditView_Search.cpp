@@ -7,7 +7,7 @@
 */
 
 #include "StdAfx.h"
-#include <limits.h>
+#include <climits>
 #include "CEditView.h"
 #include "window/CEditWnd.h"
 #include "parse/CWordParse.h"

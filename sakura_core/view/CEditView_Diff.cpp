@@ -20,8 +20,8 @@
 */
 
 #include "StdAfx.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 #include "view/CEditView.h"
 #include "_main/global.h"
 #include "_main/CMutex.h"

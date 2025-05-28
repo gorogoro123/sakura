@@ -18,7 +18,7 @@
 */
 
 #include "StdAfx.h"
-#include <string.h>
+#include <cstring>
 #include <memory>
 #include "doc/CDocOutline.h"
 #include "doc/CEditDoc.h"

@@ -5,7 +5,7 @@
 	SPDX-License-Identifier: Zlib
 */
 #include "StdAfx.h"
-#include <locale.h>
+#include <clocale>
 #include <mbstring.h>
 #include "charset/codeutil.h"
 #include "charset/charcode.h"

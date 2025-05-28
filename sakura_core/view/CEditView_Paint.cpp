@@ -8,7 +8,7 @@
 
 #include "StdAfx.h"
 #include <vector>
-#include <limits.h>
+#include <climits>
 #pragma comment(lib, "Msimg32.lib")
 #include "view/CEditView_Paint.h"
 #include "view/CEditView.h"

@@ -7,7 +7,7 @@
 */
 
 #include "StdAfx.h"
-#include <time.h>
+#include <ctime>
 #include <io.h>	// _access
 #include "CBackupAgent.h"
 #include "window/CEditWnd.h"

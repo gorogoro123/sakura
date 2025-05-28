@@ -8,7 +8,7 @@
 #include "env/CShareData.h"
 #include "env/DLLSHAREDATA.h"
 #include "env/CSakuraEnvironment.h"
-#include <limits.h>
+#include <climits>
 #include "window.h"
 #include <sstream>
 #include "apiwrap/StdApi.h"

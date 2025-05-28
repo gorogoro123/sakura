@@ -23,7 +23,7 @@
 
 //#define MEASURE_SEARCH_TIME
 #ifdef MEASURE_SEARCH_TIME
-#include <time.h>
+#include <ctime>
 #endif
 
 // CSearchStringPattern
