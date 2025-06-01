@@ -294,9 +294,9 @@ wchar_t* CBregexp::MakePatternAlternate( const wchar_t* const szSearch, const wc
 	std::wstring::size_type modifiedSearchSize = 0;
 	for( const wchar_t* p = szSearch; *p; ++p ) {
 		if( *p == L'.') {
-			modifiedSearchSize += (sizeof szDotAlternative) / (sizeof szDotAlternative[0]) - 1;
+			modifiedSearchSize += _countof(szDotAlternative) - 1;
 		} else if( *p == L'$' ) {
-			modifiedSearchSize += (sizeof szDollarAlternative) / (sizeof szDollarAlternative[0]) - 1;
+			modifiedSearchSize += _countof(szDollarAlternative) - 1;
 		} else {
 			modifiedSearchSize += 1;
 		}
