@@ -24,7 +24,7 @@
 #pragma once
 
 #include <Windows.h>
-#include <tchar.h>
+#include <wchar.h>
 
 #include "charset/charset.h"
 

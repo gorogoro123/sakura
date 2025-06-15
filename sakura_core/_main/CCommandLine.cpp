@@ -21,7 +21,7 @@
 #include "StdAfx.h"
 #include "CCommandLine.h"
 #include "mem/CMemory.h"
-#include <tchar.h>
+#include <wchar.h>
 #include <io.h>
 #include <string.h>
 #include "debug/CRunningTimer.h"

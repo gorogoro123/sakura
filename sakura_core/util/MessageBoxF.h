@@ -16,7 +16,7 @@
 #define SAKURA_MESSAGEBOXF_542C25FF_34EB_4920_AC1A_DA32919E101B_H_
 #pragma once
 
-#include <tchar.h>
+#include <wchar.h>
 #include <Windows.h>
 
 #include <cstdarg>

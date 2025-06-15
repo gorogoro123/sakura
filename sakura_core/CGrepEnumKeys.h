@@ -20,7 +20,7 @@
 #include <vector>
 #include <windows.h>
 #include <string.h>
-#include <tchar.h>
+#include <wchar.h>
 #include "util/string_ex.h"
 #include "util/file.h"
 

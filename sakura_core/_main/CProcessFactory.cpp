@@ -26,7 +26,7 @@
 #include "debug/CRunningTimer.h"
 #include "util/os.h"
 #include <io.h>
-#include <tchar.h>
+#include <wchar.h>
 #include "CSelectLang.h"
 #include "config/system_constants.h"
 
