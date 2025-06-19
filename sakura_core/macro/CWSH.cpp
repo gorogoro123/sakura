@@ -16,7 +16,6 @@
 */
 
 #include "StdAfx.h"
-#include <process.h> // _beginthreadex
 #include <ObjBase.h>
 #include <InitGuid.h>
 #include <ShlDisp.h>
@@ -264,18 +263,16 @@ CWSHClient::~CWSHClient()
 }
 
 // AbortMacroProcのパラメータ構造体
-typedef struct {
+struct SAbortMacroParam {
 	HANDLE hEvent;
 	IActiveScript *pEngine;				//ActiveScript
 	int nCancelTimer;
 	CEditView *view;
-} SAbortMacroParam;
+};
 
 // WSHマクロ実行を中止するスレッド
-static unsigned __stdcall AbortMacroProc( LPVOID lpParameter )
+static void AbortMacroProc(SAbortMacroParam* pParam)
 {
-	SAbortMacroParam* pParam = (SAbortMacroParam*) lpParameter;
-
 	//停止ダイアログ表示前に数秒待つ
 	if(::WaitForSingleObject(pParam->hEvent, pParam->nCancelTimer * 1000) == WAIT_TIMEOUT){
 		//停止ダイアログ表示
@@ -323,7 +320,6 @@ static unsigned __stdcall AbortMacroProc( LPVOID lpParameter )
 	}
 
 	DEBUG_TRACE(L"AbortMacro: Exit\n");
-	return 0;
 }
 
 bool CWSHClient::Execute(const wchar_t *AScript)
@@ -361,12 +357,11 @@ bool CWSHClient::Execute(const wchar_t *AScript)
 				sThreadParam.nCancelTimer = GetDllShareData().m_Common.m_sMacro.m_nMacroCancelTimer;
 				sThreadParam.view = (CEditView*)m_Data;
 
-				HANDLE hThread = nullptr;
-				unsigned int nThreadId = 0;
+				std::thread hThread;
 				if( 0 < sThreadParam.nCancelTimer ){
 					sThreadParam.hEvent = ::CreateEvent(nullptr, TRUE, FALSE, nullptr);
-					hThread = (HANDLE)_beginthreadex( nullptr, 0, AbortMacroProc, (LPVOID)&sThreadParam, 0, &nThreadId );
-					DEBUG_TRACE(L"Start AbortMacroProc 0x%08x\n", nThreadId);
+					hThread = std::thread(AbortMacroProc, &sThreadParam);
+					DEBUG_TRACE(L"Start AbortMacroProc 0x%08x\n", hThread.get_id());
 				}
 
 				//マクロ実行
@@ -392,8 +387,7 @@ bool CWSHClient::Execute(const wchar_t *AScript)
 
 					//マクロ停止スレッドの終了待ち
 					DEBUG_TRACE(L"Waiting for AbortMacroProc to finish\n");
-					::WaitForSingleObject(hThread, INFINITE); 
-					::CloseHandle(hThread);
+					hThread.join();
 					::CloseHandle(sThreadParam.hEvent);
 				}
 			}
