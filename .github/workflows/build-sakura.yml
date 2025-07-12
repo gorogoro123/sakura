@@ -82,11 +82,13 @@ jobs:
       shell: pwsh
 
       # Toolbar Bitmap Split/Mux
-    - run: build-bmp-tools.bat ${{matrix.config}}
-      name: Bitmap Split/Mux
+    - name: Bitmap Split/Mux
+      if: ${{ matrix.config == 'Release' }}
+      run: build-bmp-tools.bat ${{matrix.config}}
       shell: cmd
 
     - name: Install Locale Emulator
+      if: ${{ matrix.config == 'Release' }}
       run: |
         choco install autohotkey.install --confirm
         $LEExpandDir = "${{github.workspace}}\tools\locale-emulator"
@@ -102,14 +104,17 @@ jobs:
       shell: pwsh
 
     - name: Build HTML Help
+      if: ${{ matrix.config == 'Release' }}
       run: build-chm.bat
       shell: cmd
 
     - name: Update/Install Inno Setup
+      if: ${{ matrix.config == 'Release' }}
       run: choco upgrade innosetup --confirm
       shell: pwsh
 
     - name: Build installer with Inno Setup
+      if: ${{ matrix.config == 'Release' }}
       run: build-installer.bat ${{ matrix.platform }} ${{ matrix.config }}
       shell: cmd
 
