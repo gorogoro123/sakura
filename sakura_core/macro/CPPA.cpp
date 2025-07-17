@@ -256,18 +256,18 @@ char* CPPA::GetDeclarations( const MacroFuncInfo& cMacroFuncInfo, char* szBuffer
 			strcat( szArgument, "; " );
 			strcat( szArgument, szArguments[j] );
 		}
-		auto_sprintf( szBuffer, "%hs S_%ls(%hs)%hs; index %d;",
+		auto_sprintf( szBuffer, "%s S_%s(%s)%s; index %d;",
 			szType,
-			cMacroFuncInfo.m_pszFuncName,
+			to_achar(cMacroFuncInfo.m_pszFuncName),
 			szArgument,
 			szReturn,
 			cMacroFuncInfo.m_nFuncID
 		);
 	}
 	else {
-		auto_sprintf( szBuffer, "%hs S_%ls%hs; index %d;",
+		auto_sprintf( szBuffer, "%s S_%s%s; index %d;",
 			szType,
-			cMacroFuncInfo.m_pszFuncName,
+			to_achar(cMacroFuncInfo.m_pszFuncName),
 			szReturn,
 			cMacroFuncInfo.m_nFuncID
 		);
