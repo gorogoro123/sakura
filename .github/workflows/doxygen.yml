@@ -6,11 +6,8 @@ on:
       - '**/*.md'
       - '.gitignore'
       - '.editorconfig'
-  pull_request:
-    paths-ignore:
-      - '**/*.md'
-      - '.gitignore'
-      - '.editorconfig'
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
