@@ -15,7 +15,7 @@ on:
 
 jobs:
   doxygen:
-    runs-on: windows-latest
+    runs-on: windows-2025
     strategy:
       matrix:
         BuildPlatform: [Win32, x64]
@@ -30,10 +30,6 @@ jobs:
 
       - name: Show environment variables for debug
         run: set
-        shell: cmd
-
-      - name: Install doxygen
-        run: externals\doxygen\doxygen-${{ env.DOXYGEN_VERSION }}-setup.exe /silent /suppressmsgboxes
         shell: cmd
 
       - name: Run doxygen

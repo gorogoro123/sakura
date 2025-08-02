@@ -15,7 +15,7 @@ on:
 
 jobs:
   cppcheck:
-    runs-on: windows-latest
+    runs-on: windows-2025
     strategy:
       matrix:
         BuildPlatform: [Win32, x64]
@@ -29,10 +29,6 @@ jobs:
 
       - name: Show environment variables for debug
         run: set
-        shell: cmd
-
-      - name: Install cppcheck
-        run: msiexec /i externals\cppcheck\cppcheck-1.84-x64-Setup.msi /quiet /qn /norestart /log cppcheck-install.log
         shell: cmd
 
       - name: Run cppcheck
