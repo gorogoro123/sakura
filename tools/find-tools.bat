@@ -144,7 +144,7 @@ exit /b
 
 :Git
 set APPDIR=Git\Cmd
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:Git`) do ( 
     set "CMD_GIT=%%a"
     exit /b
@@ -156,7 +156,7 @@ if "%FORCE_POWERSHELL_ZIP%" == "1" (
     exit /b
 )
 set APPDIR=7-Zip
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:7z`) do ( 
     set "CMD_7Z=%%a"
     exit /b
@@ -165,7 +165,7 @@ exit /b
 
 :hhc
 set APPDIR=HTML Help Workshop
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:hhc.exe`) do ( 
     set "CMD_HHC=%%a"
     exit /b
@@ -174,7 +174,7 @@ exit /b
 
 :iscc
 set APPDIR=Inno Setup 6
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:ISCC.exe`) do ( 
     set "CMD_ISCC=%%a"
     exit /b
@@ -183,7 +183,7 @@ exit /b
 
 :cppcheck
 set APPDIR=cppcheck
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:cppcheck.exe`) do ( 
     set "CMD_CPPCHECK=%%a"
     exit /b
@@ -192,7 +192,7 @@ exit /b
 
 :doxygen
 set APPDIR=doxygen\bin
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:doxygen.exe`) do ( 
     set "CMD_DOXYGEN=%%a"
     exit /b
@@ -202,7 +202,7 @@ exit /b
 :vswhere
 :: ref https://github.com/Microsoft/vswhere
 set APPDIR=Microsoft Visual Studio\Installer
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:vswhere.exe`) do ( 
     set "CMD_VSWHERE=%%a"
     exit /b
@@ -263,7 +263,7 @@ exit /b
 :resolve_cmake
 if exist "%CMD_CMAKE%" goto :EOF
 set APPDIR=CMake\bin
-set PATH2=%PATH%;%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;
+set PATH2=%ProgramFiles%\%APPDIR%\;%ProgramFiles(x86)%\%APPDIR%\;%ProgramW6432%\%APPDIR%\;%PATH%;
 for /f "usebackq delims=" %%a in (`where $PATH2:cmake`) do ( 
     set "CMD_CMAKE=%%a"
     exit /b

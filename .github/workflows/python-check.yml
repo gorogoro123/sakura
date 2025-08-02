@@ -15,7 +15,7 @@ on:
 
 jobs:
   python-compile-check:
-    runs-on: windows-latest
+    runs-on: windows-2025
     strategy:
       matrix:
         python-version: ['3.x']

@@ -15,7 +15,7 @@ on:
 
 jobs:
   cppcheck:
-    runs-on: windows-latest
+    runs-on: windows-2025
     strategy:
       matrix:
         BuildPlatform: [Win32, x64]
