@@ -2437,7 +2437,7 @@ int CTabWnd::GetImageIndex( EditNode* pNode )
 		{
 			// 拡張子を取り出す
 			WCHAR szExt[_MAX_EXT];
-			_wsplitpath( pNode->m_szFilePath, nullptr, nullptr, nullptr, szExt );
+			_wsplitpath_s( pNode->m_szFilePath, nullptr, 0, nullptr, 0, nullptr, 0, szExt, _countof(szExt) );
 
 			// 拡張子に関連付けられたアイコンイメージのインデックスを取得する
 			hImlSys = (HIMAGELIST)::SHGetFileInfo( szExt, FILE_ATTRIBUTE_NORMAL, &sfi, sizeof(sfi), SHGFI_SYSICONINDEX | SHGFI_SMALLICON | SHGFI_USEFILEATTRIBUTES );

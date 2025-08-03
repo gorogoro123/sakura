@@ -1033,7 +1033,7 @@ void CPrintPreview::OnPrint( void )
 	}else{
 		WCHAR	szFileName[_MAX_FNAME];
 		WCHAR	szExt[_MAX_EXT];
-		_wsplitpath( m_pParentWnd->GetDocument()->m_cDocFile.GetFilePath(), nullptr, nullptr, szFileName, szExt );
+		_wsplitpath_s( m_pParentWnd->GetDocument()->m_cDocFile.GetFilePath(), nullptr, 0, nullptr, 0, szFileName, _countof(szFileName), szExt, _countof(szExt) );
 		auto_snprintf_s( szJobName, _countof(szJobName), L"%s%s", szFileName, szExt );
 	}
 
