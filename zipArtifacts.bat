@@ -22,7 +22,7 @@ if "%configuration%" == "Release" (
 )
 
 if "%platform%" == "x64" (
-	set ALPHA=1
+	set ALPHA=0
 ) else (
 	set ALPHA=0
 )
@@ -43,7 +43,7 @@ if "%CI_REPO_NAME%" == "sakura-editor/sakura" (
 ) else if "%CI_REPO_NAME%" == "" (
 	set BUILD_ACCOUNT=
 ) else (
-	set BUILD_ACCOUNT=%CI_ACCOUNT_NAME%
+	@rem set BUILD_ACCOUNT=%CI_ACCOUNT_NAME%
 )
 
 @echo checking CI_BUILD_NUMBER %CI_BUILD_NUMBER%
