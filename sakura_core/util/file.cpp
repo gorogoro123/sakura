@@ -214,7 +214,7 @@ FILE* _wfopen_absexe(LPCWSTR fname, LPCWSTR mode)
 {
 	if( _IS_REL_PATH( fname ) ){
 		WCHAR path[_MAX_PATH];
-		GetExedir( path, fname );
+		GetExedir( path, _countof(path), fname );
 		return _wfopen( path, mode );
 	}
 	return _wfopen( fname, mode );
@@ -229,9 +229,9 @@ FILE* _wfopen_absini(LPCWSTR fname, LPCWSTR mode, BOOL bOrExedir/*=TRUE*/ )
 	if( _IS_REL_PATH( fname ) ){
 		WCHAR path[_MAX_PATH];
 		if( bOrExedir )
-			GetInidirOrExedir( path, fname );
+			GetInidirOrExedir( path, _countof(path), fname );
 		else
-			GetInidir( path, fname );
+			GetInidir( path, _countof(path), fname );
 		return _wfopen( path, mode );
 	}
 	return _wfopen( fname, mode );
@@ -487,6 +487,7 @@ std::filesystem::path GetExeFileName()
 */
 void GetExedir(
 	LPWSTR	pDir,	//!< [out] EXEファイルのあるディレクトリを返す場所．予め_MAX_PATHのバッファを用意しておくこと．
+	size_t  nLen,	//!< [in]  pDirのサイズ
 	LPCWSTR	szFile	//!< [in]  ディレクトリ名に結合するファイル名．
 )
 {
@@ -503,7 +504,7 @@ void GetExedir(
 
 	// exeフォルダーのフルパス、またはexe基準のファイルパスを取得
 	auto path = GetExeFileName().parent_path().concat(partialPath);
-	::wcsncpy_s(pDir, decltype(DLLSHAREDATA::m_szIniFile)::BUFFER_COUNT, path.c_str(), _TRUNCATE);
+	::wcsncpy_s(pDir, nLen, path.c_str(), _TRUNCATE);
 }
 
 /*!
@@ -524,7 +525,8 @@ std::filesystem::path GetIniFileName()
 	@date 2007.05.19 新規作成（GetExedirベース）
 */
 void GetInidir(
-	LPWSTR	pDir,				//!< [out] INIファイルのあるディレクトリを返す場所．予め_MAX_PATHのバッファを用意しておくこと．
+	LPWSTR	pDir,				//!< [out] INIファイルのあるディレクトリを返す場所．
+	size_t  nLen,				//!< [in] pDirのサイズ
 	LPCWSTR szFile	/*=NULL*/	//!< [in] ディレクトリ名に結合するファイル名．
 )
 {
@@ -541,7 +543,7 @@ void GetInidir(
 
 	// 設定フォルダーのフルパス、またはini基準のファイルパスを取得
 	auto path = GetIniFileName().parent_path().concat(partialPath);
-	::wcsncpy_s(pDir, decltype(DLLSHAREDATA::m_szPrivateIniFile)::BUFFER_COUNT, path.c_str(), _TRUNCATE);
+	::wcsncpy_s(pDir, nLen, path.c_str(), _TRUNCATE);
 }
 
 /*!
@@ -552,7 +554,7 @@ void GetInidir(
 */
 void GetInidirOrExedir(
 	LPWSTR	pDir,								//!< [out] INIファイルまたはEXEファイルのあるディレクトリを返す場所．
-												//         予め_MAX_PATHのバッファを用意しておくこと．
+	size_t  nLen,								//!< [in] pDirのサイズ
 	LPCWSTR	szFile					/*=NULL*/,	//!< [in] ディレクトリ名に結合するファイル名．
 	BOOL	bRetExedirIfFileEmpty	/*=FALSE*/	//!< [in] ファイル名の指定が空の場合はEXEファイルのフルパスを返す．
 )
@@ -562,20 +564,21 @@ void GetInidirOrExedir(
 
 	// ファイル名の指定が空の場合はEXEファイルのフルパスを返す（オプション）
 	if( bRetExedirIfFileEmpty && (szFile == nullptr || szFile[0] == L'\0') ){
-		GetExedir( pDir );
+		GetExedir( pDir, nLen );
 		return;
 	}
 
 	// INI基準のフルパスが実在すればそのパスを返す
-	GetInidir( szInidir, szFile );
+	GetInidir( szInidir, _countof(szInidir), szFile );
 	if( fexist(szInidir) ){
 		::lstrcpy( pDir, szInidir );
 		return;
 	}
 
 	// EXE基準のフルパスが実在すればそのパスを返す
-	if( GetExedir( szExedir, szFile ); fexist(szExedir) ){
-		::wcsncpy_s( pDir, _MAX_PATH - 1, szExedir, _TRUNCATE );
+	GetExedir( szExedir, _countof(szExedir), szFile ); 
+	if( fexist(szExedir) ){
+		::wcsncpy_s( pDir, nLen, szExedir, _TRUNCATE );
 		return;
 	}
 
@@ -593,12 +596,12 @@ LPCWSTR GetRelPath( LPCWSTR pszPath )
 	WCHAR szPath[_MAX_PATH + 1];
 	LPCWSTR pszFileName = pszPath;
 
-	GetInidir( szPath, L"" );
+	GetInidir( szPath, _countof(szPath), L"" );
 	int nLen = wcslen( szPath );
 	if( 0 == wmemicmp( szPath, pszPath, nLen ) ){
 		pszFileName = pszPath + nLen;
 	}else{
-		GetExedir( szPath, L"" );
+		GetExedir( szPath, _countof(szPath), L"" );
 		nLen = wcslen( szPath );
 		if( 0 == wmemicmp( szPath, pszPath, nLen ) ){
 			pszFileName = pszPath + nLen;

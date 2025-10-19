@@ -530,7 +530,7 @@ bool CViewCommander::Command_TagsMake( void )
 	/* exeのあるフォルダー */
 	WCHAR	szExeFolder[_MAX_PATH + 1];
 
-	GetExedir( cmdline, CTAGS_COMMAND );
+	GetExedir( cmdline, _countof(cmdline), CTAGS_COMMAND );
 	SplitPath_FolderAndFile( cmdline, szExeFolder, nullptr );
 
 	//ctags.exeの存在チェック

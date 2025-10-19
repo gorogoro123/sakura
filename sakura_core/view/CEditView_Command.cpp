@@ -68,7 +68,7 @@ bool CEditView::TagJumpSub(
 		}
 	}else{
 		if( bRelFromIni && _IS_REL_PATH( pszFileName ) ){
-			GetInidirOrExedir( szJumpToFile, pszFileName );
+			GetInidirOrExedir( szJumpToFile, _countof(szJumpToFile), pszFileName );
 		}
 		else {
 			wcscpy( szJumpToFile, pszFileName );

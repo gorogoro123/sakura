@@ -153,7 +153,7 @@ static LRESULT CALLBACK PropSheetWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, L
 			switch( nId ){
 			case 100:	// 設定フォルダを開く
 				WCHAR szPath[_MAX_PATH];
-				GetInidir( szPath );
+				GetInidir( szPath, _countof(szPath) );
 
 				// フォルダの ITEMIDLIST を取得して ShellExecuteEx() で開く
 				// Note. MSDN の ShellExecute() の解説にある方法でフォルダを開こうとした場合、
@@ -193,7 +193,7 @@ static LRESULT CALLBACK PropSheetWndProc( HWND hwnd, UINT uMsg, WPARAM wParam, L
 				if( IDOK == nMsgResult )
 				{
 					DLLSHAREDATA *pShareData = &GetDllShareData();
-					GetInidir( pShareData->m_sHistory.m_szIMPORTFOLDER );
+					GetInidir( pShareData->m_sHistory.m_szIMPORTFOLDER, _countof2(pShareData->m_sHistory.m_szIMPORTFOLDER) );
 					AddLastChar( pShareData->m_sHistory.m_szIMPORTFOLDER, _countof2(pShareData->m_sHistory.m_szIMPORTFOLDER), L'\\' );
 				}
 				break;
@@ -424,7 +424,7 @@ static LPCWSTR GetHelpFilePath()
 {
 	static WCHAR szHelpFile[_MAX_PATH] = L"";
 	if(szHelpFile[0]==L'\0'){
-		GetExedir( szHelpFile, L"sakura.chm" );
+		GetExedir( szHelpFile, _countof(szHelpFile), L"sakura.chm" );
 	}
 	return szHelpFile;
 }

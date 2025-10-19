@@ -176,9 +176,9 @@ static const WCHAR* _Resolve(const WCHAR* fname, bool bOrExedir)
 	if( _IS_REL_PATH( fname ) ){
 		static WCHAR path[_MAX_PATH];
 		if( bOrExedir )
-			GetInidirOrExedir( path, fname );
+			GetInidirOrExedir( path, _countof(path), fname );
 		else
-			GetInidir( path, fname );
+			GetInidir( path, _countof(path), fname );
 		return path;
 	}
 	return fname;

@@ -184,7 +184,7 @@ bool CShareData::InitShareData()
 
 		// 設定ファイルフォルダー
 		WCHAR	szIniFolder[_MAX_PATH];
-		GetInidir(szIniFolder);
+		GetInidir(szIniFolder, _countof(szIniFolder));
 
 //@@@ 2001.12.26 YAZAKI MRUリストは、CMRUに依頼する
 		CMRUFile cMRU;
@@ -1138,7 +1138,7 @@ int CShareData::GetMacroFilename( int idx, WCHAR *pszPath, int nBufLen )
 		 // 2003.06.24 Moca フォルダーも相対パスなら実行ファイルからのパス
 		// 2007.05.19 ryoji 相対パスは設定ファイルからのパスを優先
 		if( _IS_REL_PATH( m_pShareData->m_Common.m_sMacro.m_szMACROFOLDER ) ){
-			GetInidirOrExedir( szDir, m_pShareData->m_Common.m_sMacro.m_szMACROFOLDER );
+			GetInidirOrExedir( szDir, _countof(szDir), m_pShareData->m_Common.m_sMacro.m_szMACROFOLDER );
 			pszDir = szDir;
 		}else{
 			pszDir = m_pShareData->m_Common.m_sMacro.m_szMACROFOLDER;

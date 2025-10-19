@@ -23,7 +23,7 @@ CPluginManager::CPluginManager()
 {
 	//pluginsフォルダーの場所を取得
 	WCHAR szPluginPath[_MAX_PATH];
-	GetInidir( szPluginPath, L"plugins\\" );	//iniと同じ階層のpluginsフォルダーを検索
+	GetInidir( szPluginPath, _countof(szPluginPath), L"plugins\\" );	//iniと同じ階層のpluginsフォルダーを検索
 	m_sBaseDir.append(szPluginPath);
 
 	//Exeフォルダー配下pluginsフォルダーのパスを取得

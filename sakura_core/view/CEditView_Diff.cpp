@@ -116,7 +116,7 @@ void CEditView::ViewDiffInfo(
 	WCHAR	szExeFolder[_MAX_PATH + 1];
 
 	WCHAR	cmdline[1024];
-	GetExedir( cmdline, L"diff.exe" );
+	GetExedir( cmdline, _countof(cmdline), L"diff.exe" );
 	SplitPath_FolderAndFile( cmdline, szExeFolder, nullptr );
 
 	//	From Here Dec. 28, 2002 MIK

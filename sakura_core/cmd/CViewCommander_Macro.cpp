@@ -96,7 +96,7 @@ void CViewCommander::Command_SAVEKEYMACRO( void )
 	// 2003.06.23 Moca 相対パスは実行ファイルからのパス
 	// 2007.05.19 ryoji 相対パスは設定ファイルからのパスを優先
 	if( _IS_REL_PATH( GetDllShareData().m_Common.m_sMacro.m_szMACROFOLDER ) ){
-		GetInidirOrExedir( szInitDir, GetDllShareData().m_Common.m_sMacro.m_szMACROFOLDER );
+		GetInidirOrExedir( szInitDir, _countof(szInitDir), GetDllShareData().m_Common.m_sMacro.m_szMACROFOLDER );
 	}else{
 		wcscpy( szInitDir, GetDllShareData().m_Common.m_sMacro.m_szMACROFOLDER );	/* マクロ用フォルダー */
 	}
@@ -141,7 +141,7 @@ void CViewCommander::Command_LOADKEYMACRO( void )
 	// 2003.06.23 Moca 相対パスは実行ファイルからのパス
 	// 2007.05.19 ryoji 相対パスは設定ファイルからのパスを優先
 	if( _IS_REL_PATH( pszFolder ) ){
-		GetInidirOrExedir( szInitDir, pszFolder );
+		GetInidirOrExedir( szInitDir, _countof(szInitDir), pszFolder );
 	}else{
 		wcscpy( szInitDir, pszFolder );	/* マクロ用フォルダー */
 	}
@@ -217,7 +217,7 @@ void CViewCommander::Command_EXECEXTMACRO( const WCHAR* pszPath, const WCHAR* ps
 		pszFolder = GetDllShareData().m_Common.m_sMacro.m_szMACROFOLDER;
 
 		if( _IS_REL_PATH( pszFolder ) ){
-			GetInidirOrExedir( szInitDir, pszFolder );
+			GetInidirOrExedir( szInitDir, _countof(szInitDir), pszFolder );
 		}else{
 			wcscpy( szInitDir, pszFolder );	/* マクロ用フォルダー */
 		}

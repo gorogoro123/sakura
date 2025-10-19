@@ -3920,7 +3920,7 @@ void CDlgFuncList::LoadFileTreeSetting( CFileTreeSetting& data, SFilePath& IniDi
 			WCHAR szDir[_MAX_PATH * 2];
 			if( _IS_REL_PATH( pFileTree->m_szProjectIni ) ){
 				// sakura.iniからの相対パス
-				GetInidirOrExedir( szDir, pFileTree->m_szProjectIni );
+				GetInidirOrExedir( szDir, _countof(szDir), pFileTree->m_szProjectIni );
 				pszIniFileName = szDir;
 			}else{
 				pszIniFileName = pFileTree->m_szProjectIni;

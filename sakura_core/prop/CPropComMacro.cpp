@@ -563,7 +563,7 @@ void CPropMacro::SelectBaseDir_Macro( HWND hwndDlg )
 	if( _IS_REL_PATH( szDir ) ){
 		WCHAR folder[_MAX_PATH];
 		wcscpy( folder, szDir );
-		GetInidirOrExedir( szDir, folder );
+		GetInidirOrExedir( szDir, _countof(szDir), folder );
 	}
 
 	if( SelectDir( hwndDlg, LS(STR_PROPCOMMACR_SEL_DIR), szDir, szDir ) ){
@@ -592,7 +592,7 @@ void CPropMacro::OnFileDropdown_Macro( HWND hwndDlg )
 	if( _IS_REL_PATH( path ) ){
 		WCHAR folder[_MAX_PATH * 2];
 		wcscpy( folder, path );
-		GetInidirOrExedir( path, folder );
+		GetInidirOrExedir( path, _countof(path), folder );
 	}
 	wcscat( path, L"*.*" );	//	2002/05/01 YAZAKI どんなファイルもどんと来い。
 

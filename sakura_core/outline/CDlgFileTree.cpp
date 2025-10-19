@@ -480,7 +480,7 @@ BOOL CDlgFileTree::OnBnClicked( int wID )
 				WCHAR szDir[_MAX_PATH * 2];
 				if( _IS_REL_PATH( m_fileTreeSetting.m_szDefaultProjectIni ) ){
 					// sakura.iniからの相対パス
-					GetInidirOrExedir( szDir, m_fileTreeSetting.m_szDefaultProjectIni );
+					GetInidirOrExedir( szDir, _countof(szDir), m_fileTreeSetting.m_szDefaultProjectIni );
 					pszIniFileName = szDir;
 				}else{
 					pszIniFileName = m_fileTreeSetting.m_szDefaultProjectIni;
@@ -530,7 +530,7 @@ BOOL CDlgFileTree::OnBnClicked( int wID )
 				// RADIO_FILE == file
 				CDlgOpenFile dlg;
 				WCHAR szDir[_MAX_PATH];
-				GetInidir(szDir);
+				GetInidir(szDir, _countof(szDir));
 				dlg.Create( G_AppInstance(), hwndDlg, L"*.*", szDir,
 					std::vector<LPCWSTR>(), std::vector<LPCWSTR>() );
 				WCHAR szFile[_MAX_PATH];

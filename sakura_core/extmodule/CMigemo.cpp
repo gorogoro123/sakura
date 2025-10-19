@@ -113,12 +113,12 @@ LPCWSTR CMigemo::GetDllNameImp(int nIndex)
 		szDll = GetDllShareData().m_Common.m_sHelper.m_szMigemoDll;
 
 		if(szDll[0] == L'\0'){
-			GetInidir( szDllName, L"migemo.dll" );
+			GetInidir( szDllName, _countof(szDllName), L"migemo.dll" );
 			return fexist(szDllName) ? szDllName : L"migemo.dll";
 		}
 		else{
 			if(_IS_REL_PATH(szDll)){
-				GetInidirOrExedir(szDllName , szDll);	// 2007.05.21 ryoji 相対パスは設定ファイルからのパスを優先
+				GetInidirOrExedir(szDllName, _countof(szDllName), szDll);	// 2007.05.21 ryoji 相対パスは設定ファイルからのパスを優先
 				szDll = szDllName;
 			}
 			return szDll;
@@ -287,11 +287,11 @@ int CMigemo::migemo_load_all()
 		WCHAR *ppath;
 		
 		if (szDict[0] == L'\0'){
-			GetInidirOrExedir(path,L"dict");	// 2007.05.20 ryoji 相対パスは設定ファイルからのパスを優先
+			GetInidirOrExedir(path, _countof(path), L"dict");	// 2007.05.20 ryoji 相対パスは設定ファイルからのパスを優先
 		}
 		else{
 			if (_IS_REL_PATH(szDict)){
-				GetInidirOrExedir(path,szDict);	// 2007.05.19 ryoji 相対パスは設定ファイルからのパスを優先
+				GetInidirOrExedir(path, _countof(path), szDict);	// 2007.05.19 ryoji 相対パスは設定ファイルからのパスを優先
 			}else{
 				wcscpy(path,szDict);
 			}

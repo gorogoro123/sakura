@@ -1171,7 +1171,7 @@ bool CControlTray::OpenNewEditor(
 		// Grepなどで入りきらない場合はレスポンスファイルを利用する
 		if( cCmdLineBuf.max_size() < cCmdLineBuf.size() + wcslen(szCmdLineOption) ){
 			WCHAR szIniDir[_MAX_PATH];
-			GetInidir(szIniDir);
+			GetInidir(szIniDir, _countof(szIniDir));
 			LPWSTR pszTempFile = _wtempnam(szIniDir, L"skr_resp");
 			if( !pszTempFile ){
 				ErrorMessage(hWndParent, LS(STR_TRAY_RESPONSEFILE));

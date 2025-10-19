@@ -20,7 +20,7 @@ void ChangeCurrentDirectoryToExeDir()
 {
 	WCHAR szExeDir[_MAX_PATH];
 	szExeDir[0] = L'\0';
-	GetExedir( szExeDir, nullptr );
+	GetExedir( szExeDir, _countof(szExeDir), nullptr );
 	if( szExeDir[0] ){
 		::SetCurrentDirectory( szExeDir );
 	}else{
@@ -120,7 +120,7 @@ HICON GetAppIcon( HINSTANCE hInst, int nResource, const WCHAR* szFile, bool bSma
 	HICON hIcon;
 
 	// ファイルからの読み込みをまず試みる
-	GetInidirOrExedir( szPath, szFile );
+	GetInidirOrExedir( szPath, _countof(szPath), szFile );
 
 	hIcon = (HICON)::LoadImage(
 		nullptr,

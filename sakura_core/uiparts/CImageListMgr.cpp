@@ -159,7 +159,7 @@ bool CImageListMgr::Create(HINSTANCE hInstance)
 	//	2001.7.1 GAE リソースをローカルファイル(sakuraディレクトリ) my_icons.bmp から読めるように
 	// 2007.05.19 ryoji 設定ファイル優先に変更
 	WCHAR szPath[_MAX_PATH];
-	GetInidirOrExedir( szPath, FN_TOOL_BMP );
+	GetInidirOrExedir( szPath, _countof(szPath), FN_TOOL_BMP );
 	hRscbmp = (HBITMAP)::LoadImage( nullptr, szPath, IMAGE_BITMAP, 0, 0,
 		LR_LOADFROMFILE | LR_CREATEDIBSECTION | LR_LOADMAP3DCOLORS );
 

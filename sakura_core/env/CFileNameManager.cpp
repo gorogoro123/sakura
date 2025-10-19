@@ -196,13 +196,13 @@ bool CFileNameManager::ExpandMetaToFolder( LPCWSTR pszSrc, LPWSTR pszDes, int nD
 			// %SAKURA%
 			if( 0 == wmemicmp( L"SAKURA%", ps, 7 ) ){
 				// exeのあるフォルダー
-				GetExedir( szPath );
+				GetExedir( szPath, _countof(szPath) );
 				nMetaLen = 6;
 			}
 			// %SAKURADATA%	// 2007.06.06 ryoji
 			else if( 0 == wmemicmp( L"SAKURADATA%", ps, 11 ) ){
 				// iniのあるフォルダー
-				GetInidir( szPath );
+				GetInidir( szPath, _countof(szPath) );
 				nMetaLen = 10;
 			}
 			// メタ文字列っぽい

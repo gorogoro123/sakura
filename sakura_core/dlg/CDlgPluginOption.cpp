@@ -699,7 +699,7 @@ void CDlgPluginOption::SelectDirectory( int iLine )
 	if (_IS_REL_PATH( szDir )) {
 		WCHAR	folder[_MAX_PATH];
 		wcscpy( folder, szDir );
-		GetInidirOrExedir( szDir, folder );
+		GetInidirOrExedir( szDir, _countof(szDir), folder );
 	}
 
 	// 項目名の取得

@@ -129,10 +129,10 @@ TEST(file, Deprecated_GetExedir)
 	WCHAR szBuf[_MAX_PATH];
 
 	// 戻り値取得用のバッファを指定しない場合、何も起きない
-	GetExedir(nullptr);
+	GetExedir(nullptr, 0);
 
 	// exeフォルダーの取得
-	GetExedir(szBuf);
+	GetExedir(szBuf, _countof(szBuf));
 	::wcscat_s(szBuf, filename);
 	ASSERT_STREQ(exeBasePath.c_str(), szBuf);
 
@@ -140,7 +140,7 @@ TEST(file, Deprecated_GetExedir)
 	::wcscpy_s(szBuf, L"");
 
 	// exe基準ファイルパスの取得
-	GetExedir(szBuf, filename);
+	GetExedir(szBuf, _countof(szBuf), filename);
 	ASSERT_STREQ(exeBasePath.c_str(), szBuf);
 }
 
@@ -367,10 +367,10 @@ TEST(file, Deprecated_GetInidir)
 	WCHAR szBuf[_MAX_PATH];
 
 	// 戻り値取得用のバッファを指定しない場合、何も起きない
-	GetInidir(nullptr);
+	GetInidir(nullptr, 0);
 
 	// iniフォルダーの取得
-	GetInidir(szBuf);
+	GetInidir(szBuf, _countof(szBuf) );
 	::wcscat_s(szBuf, filename);
 	ASSERT_STREQ(iniBasePath.c_str(), szBuf);
 
@@ -378,7 +378,7 @@ TEST(file, Deprecated_GetInidir)
 	::wcscpy_s(szBuf, L"");
 
 	// ini基準ファイルパスの取得
-	GetInidir(szBuf, filename);
+	GetInidir(szBuf, _countof(szBuf), filename);
 	ASSERT_STREQ(iniBasePath.c_str(), szBuf);
 }
 
@@ -399,7 +399,7 @@ TEST(file, GetInidirOrExedir)
 
 	std::wstring buf(_MAX_PATH, L'\0');
 
-	GetInidirOrExedir(buf.data(), L"", true);
+	GetInidirOrExedir(buf.data(), buf.capacity(), L"", true);
 	ASSERT_STREQ(GetExeFileName().replace_filename(L"").c_str(), buf.data());
 
 	constexpr auto filename = L"test.txt";
@@ -413,7 +413,7 @@ TEST(file, GetInidirOrExedir)
 	CProfile().WriteProfile(iniBasePath.c_str(), L"file, GetInidirOrExedirのテスト");
 
 	// 両方あるときはINI基準のパスが変える
-	GetInidirOrExedir(buf.data(), filename, true);
+	GetInidirOrExedir(buf.data(), buf.capacity(), filename, true);
 	ASSERT_STREQ(iniBasePath.c_str(), buf.data());
 
 	// INI基準パスのファイルを削除する
@@ -421,7 +421,7 @@ TEST(file, GetInidirOrExedir)
 	ASSERT_FALSE(fexist(iniBasePath.c_str()));
 
 	// EXE基準のみ存在するときはEXE基準のパスが変える
-	GetInidirOrExedir(buf.data(), filename, true);
+	GetInidirOrExedir(buf.data(), buf.capacity(), filename, true);
 	ASSERT_STREQ(exeBasePath.c_str(), buf.data());
 
 	// EXE基準パスのファイルを削除する
@@ -429,7 +429,7 @@ TEST(file, GetInidirOrExedir)
 	ASSERT_FALSE(fexist(exeBasePath.c_str()));
 
 	// 両方ないときはINI基準のパスが変える
-	GetInidirOrExedir(buf.data(), filename, true);
+	GetInidirOrExedir(buf.data(), buf.capacity(), filename, true);
 	ASSERT_STREQ(iniBasePath.c_str(), buf.data());
 }
 

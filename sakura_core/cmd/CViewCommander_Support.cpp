@@ -227,7 +227,7 @@ retry:;
 	if( _IS_REL_PATH( helpfile ) ){
 		// 2003.06.23 Moca 相対パスは実行ファイルからのパス
 		// 2007.05.21 ryoji 相対パスは設定ファイルからのパスを優先
-		GetInidirOrExedir( path, helpfile );
+		GetInidirOrExedir( path, _countof(path), helpfile );
 	}else{
 		wcscpy( path, helpfile );
 	}
@@ -304,7 +304,8 @@ void CViewCommander::Command_EXTHTMLHELP( const WCHAR* _helpfile, const WCHAR* k
 		// 2007.05.21 ryoji 相対パスは設定ファイルからのパスを優先
 		WCHAR* pWork=GetDllShareData().m_sWorkBuffer.GetWorkBuffer<WCHAR>();
 		if( _IS_REL_PATH( filename ) ){
-			GetInidirOrExedir( pWork, filename );
+			const size_t max_size = GetDllShareData().m_sWorkBuffer.GetWorkBufferCount<WCHAR>();
+			GetInidirOrExedir( pWork, max_size, filename );
 		}else{
 			wcscpy( pWork, filename ); //	Jul. 5, 2002 genta
 		}
@@ -333,7 +334,7 @@ void CViewCommander::Command_EXTHTMLHELP( const WCHAR* _helpfile, const WCHAR* k
 		// 2007.05.21 ryoji 相対パスは設定ファイルからのパスを優先
 		if( _IS_REL_PATH( filename ) ){
 			WCHAR path[_MAX_PATH];
-			GetInidirOrExedir( path, filename );
+			GetInidirOrExedir( path, _countof(path), filename );
 			//	Jul. 6, 2001 genta HtmlHelpの呼び出し方法変更
 			hwndHtmlHelp = OpenHtmlHelp(
 				nullptr/*GetDllShareData().m_sHandles.m_hwndTray*/,

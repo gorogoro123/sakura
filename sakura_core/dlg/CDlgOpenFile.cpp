@@ -89,7 +89,7 @@ BOOL CDlgOpenFile::SelectFile(
 	// 2003.06.23 Moca 相対パスは実行ファイルからのパスとして開く
 	// 2007.05.19 ryoji 相対パスは設定ファイルからのパスを優先
 	if( resolvePath && _IS_REL_PATH( szFilePath ) ){
-		GetInidirOrExedir(szPath, szFilePath);
+		GetInidirOrExedir(szPath, _countof(szPath), szFilePath);
 	}else{
 		wcscpy(szPath, szFilePath);
 	}

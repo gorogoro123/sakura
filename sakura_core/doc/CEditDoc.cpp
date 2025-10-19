@@ -303,7 +303,7 @@ void CEditDoc::SetBackgroundImage()
 	}
 	if( _IS_REL_PATH(path.c_str()) ){
 		CFilePath fullPath;
-		GetInidirOrExedir( &fullPath[0], &path[0] );
+		GetInidirOrExedir( &fullPath[0], fullPath.GetBufferCount(), &path[0] );
 		path = fullPath;
 	}
 
