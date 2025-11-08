@@ -16,8 +16,6 @@
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
 CVisualProgress::CVisualProgress()
-: m_pcWaitCursor(nullptr)
-, nOldValue(-1)
 {
 }
 
