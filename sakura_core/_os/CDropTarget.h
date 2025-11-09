@@ -97,9 +97,9 @@ public:
 	||  Attributes & Operations
 	*/
 private: // 2002/2/10 aroka アクセス権変更
-	CEditWnd*		m_pcEditWnd;	// 2008.06.20 ryoji
-	HWND			m_hWnd_DropTarget;
-	CEditView*		m_pcEditView;
+	CEditWnd*		m_pcEditWnd = nullptr;	// 2008.06.20 ryoji
+	HWND			m_hWnd_DropTarget = nullptr;
+	CEditView*		m_pcEditView = nullptr;
 	//	static REFIID	m_owniid;
 public:
 	BOOL			Register_DropTarget(HWND hWnd);
