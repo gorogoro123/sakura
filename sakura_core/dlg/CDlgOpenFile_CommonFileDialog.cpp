@@ -85,6 +85,8 @@ struct CDlgOpenFile_CommonFileDialog final : public IDlgOpenFile
 	void InitOfn( OPENFILENAME* ofn );
 
 	static void InitLayout( HWND hwndOpenDlg, HWND hwndDlg, HWND hwndBaseCtrl );
+	static LRESULT APIENTRY OFNHookProcMain( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam , UINT_PTR uIdSubclass, DWORD_PTR dwRefData );
+	static UINT_PTR CALLBACK OFNHookProc( HWND hdlg, UINT uiMsg, WPARAM wParam, LPARAM lParam );
 
 	//! リトライ機能付き GetOpenFileName
 	bool _GetOpenFileNameRecover( OPENFILENAME* ofn );
@@ -107,7 +109,6 @@ class CDlgOpenFileData{
 public:
 	CDlgOpenFile_CommonFileDialog*	m_pcDlgOpenFile;
 
-	WNDPROC			m_wpOpenDialogProc;
 	int				m_nHelpTopicID;
 	bool			m_bViewMode;		// ビューモードか
 	BOOL			m_bIsSaveDialog;	// 保存のダイアログか
@@ -137,17 +138,15 @@ public:
 	{}
 };
 
-static const WCHAR* s_pszOpenFileDataName = L"FileOpenData";
-
 /*
 || 	開くダイアログのサブクラスプロシージャ
 
 	@date 2002.2.17 YAZAKI CShareDataのインスタンスは、CProcessにひとつあるのみ。
 */
-LRESULT APIENTRY OFNHookProcMain( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam )
+LRESULT APIENTRY CDlgOpenFile_CommonFileDialog::OFNHookProcMain( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam , UINT_PTR uIdSubclass, DWORD_PTR dwRefData )
 {
 //	OFNOTIFY*				pofn;
-	CDlgOpenFileData* pData = (CDlgOpenFileData*)::GetProp( hwnd, s_pszOpenFileDataName );
+	const auto pData = (CDlgOpenFileData*)dwRefData;
 	WORD					wNotifyCode;
 	WORD					wID;
 	switch( uMsg ){
@@ -170,7 +169,11 @@ LRESULT APIENTRY OFNHookProcMain( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 			case chx1:	// The read-only check box
 				pData->m_bViewMode = ( 0 != ::IsDlgButtonChecked( hwnd , chx1 ) );
 				break;
+			default:
+				break;
 			}
+			break;
+		default:
 			break;
 		}
 		break;
@@ -181,18 +184,20 @@ LRESULT APIENTRY OFNHookProcMain( HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 //		MYTRACE( L"pofn->hdr.idFrom=%xh(%d)\n", pofn->hdr.idFrom, pofn->hdr.idFrom );
 //		MYTRACE( L"pofn->hdr.code=%xh(%d)\n", pofn->hdr.code, pofn->hdr.code );
 		break;
+	case WM_DESTROY:
+		::RemoveWindowSubclass(hwnd, &OFNHookProcMain, uIdSubclass);
+		return 0;
+	default:
+		break;
 	}
 
-	return ::CallWindowProc( pData->m_wpOpenDialogProc, hwnd, uMsg, wParam, lParam );
+	return ::DefSubclassProc(hwnd, uMsg, wParam, lParam);
 }
 
 /*!
 	開くダイアログのフックプロシージャ
 */
-// Modified by KEITA for WIN64 2003.9.6
-// APIENTRY -> CALLBACK Moca 2003.09.09
-//UINT APIENTRY OFNHookProc(
-UINT_PTR CALLBACK OFNHookProc(
+UINT_PTR CALLBACK CDlgOpenFile_CommonFileDialog::OFNHookProc(
 	HWND hdlg,		// handle to child dialog window
 	UINT uiMsg,		// message identifier
 	WPARAM wParam,	// message parameter
@@ -332,9 +337,7 @@ UINT_PTR CALLBACK OFNHookProc(
 			//	To Here Jul. 26, 2003 ryoji BOMチェックボックスの初期化
 
 			/* Explorerスタイルの「開く」ダイアログをフック */
-			::SetProp( pData->m_hwndOpenDlg, s_pszOpenFileDataName, (HANDLE)pData );
-			// Modified by KEITA for WIN64 2003.9.6
-			pData->m_wpOpenDialogProc = (WNDPROC) ::SetWindowLongPtr( pData->m_hwndOpenDlg, GWLP_WNDPROC, (LONG_PTR) OFNHookProcMain );
+			::SetWindowSubclass(pData->m_hwndOpenDlg, &OFNHookProcMain, 0, (DWORD_PTR)pData);
 
 			/* 文字コード選択コンボボックス初期化 */
 			nIdxSel = -1;
@@ -369,17 +372,6 @@ UINT_PTR CALLBACK OFNHookProc(
 			::CheckDlgButton( pData->m_hwndOpenDlg, chx1, pData->m_bViewMode );
 		}
 		break;
-
-	case WM_DESTROY:
-		/* フック解除 */
-		{
-			CDlgOpenFileData* pData = (CDlgOpenFileData*)::GetWindowLongPtr(hdlg, DWLP_USER);
-			// Modified by KEITA for WIN64 2003.9.6
-			::SetWindowLongPtr( pData->m_hwndOpenDlg, GWLP_WNDPROC, (LONG_PTR)pData->m_wpOpenDialogProc );
-			::RemoveProp( pData->m_hwndOpenDlg, s_pszOpenFileDataName );
-		}
-		return FALSE;
-
 	case WM_NOTIFY:
 		pofn = (OFNOTIFY*) lParam;
 //		MYTRACE( L"=========WM_NOTIFY=========\n" );
@@ -506,6 +498,8 @@ UINT_PTR CALLBACK OFNHookProc(
 //		case CDN_SHAREVIOLATION	:	MYTRACE( L"pofn->hdr.code=CDN_SHAREVIOLATION\n" );break;
 //		case CDN_TYPECHANGE		:	MYTRACE( L"pofn->hdr.code=CDN_TYPECHANGE    \n" );break;
 //		default:					MYTRACE( L"pofn->hdr.code=???\n" );break;
+		default:
+			break;
 		}
 
 //		MYTRACE( L"=======================\n" );
@@ -561,6 +555,8 @@ UINT_PTR CALLBACK OFNHookProc(
 					}
 				}
 				break;
+			default:
+				break;
 			}
 			break;	/* CBN_SELCHANGE */
 		case CBN_DROPDOWN:
@@ -591,6 +587,8 @@ UINT_PTR CALLBACK OFNHookProc(
 					}
 					CDialog::OnCbnDropDown( hwndCtl, true );
 					break;
+				default:
+					break;
 				}
 				break;	/* CBN_DROPDOWN */
 			}
@@ -604,8 +602,12 @@ UINT_PTR CALLBACK OFNHookProc(
 					}
 				}
 				break;
+			default:
+				break;
 			}
 			break;	// BN_CLICKED
+		default:
+			break;
 		}
 		break;	/* WM_COMMAND */
 
@@ -1110,7 +1112,7 @@ void CDlgOpenFile_CommonFileDialog::InitOfn( OPENFILENAME* ofn )
 	memset_raw(ofn, 0, sizeof(*ofn));
 
 	ofn->lStructSize = sizeof(OPENFILENAME);
-	ofn->lpfnHook = OFNHookProc;
+	ofn->lpfnHook = &OFNHookProc;
 	ofn->lpTemplateName = MAKEINTRESOURCE(IDD_FILEOPEN);	// <-L"IDD_FILEOPEN"; 2008/7/26 Uchi
 	ofn->nFilterIndex = 1;	//Jul. 09, 2001 JEPRO		/* 「開く」での最初のワイルドカード */
 }
