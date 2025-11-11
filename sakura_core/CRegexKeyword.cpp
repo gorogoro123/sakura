@@ -21,7 +21,6 @@
 #include "StdAfx.h"
 #include "CRegexKeyword.h"
 #include "extmodule/CBregexp.h"
-#include "types/CType.h"
 #include "view/colors/EColorIndexType.h"
 #include "mem/CNativeW.h"
 
@@ -79,10 +78,6 @@ CRegexKeyword::CRegexKeyword(LPCWSTR regexp_dll )
 {
 	InitDll( regexp_dll );	// 2007.08.12 genta 引数追加
 	MYDBGMSG("CRegexKeyword")
-
-	m_pTypes    = nullptr;
-	m_nTypeIndex = -1;
-	m_nTypeId = -1;
 
 	RegexKeyInit();
 }
