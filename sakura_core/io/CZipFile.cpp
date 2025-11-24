@@ -9,23 +9,21 @@
 	SPDX-License-Identifier: Zlib
 */
 #include "StdAfx.h"
-#include <shellapi.h>
 #include "CZipFile.h"
 #include "basis/CMyString.h"
 
 // コンストラクタ
-CZipFile::CZipFile() {
-	HRESULT		hr;
-
-	hr = CoCreateInstance(CLSID_Shell, nullptr, CLSCTX_INPROC_SERVER, IID_IShellDispatch, reinterpret_cast<void **>(&psd));
+CZipFile::CZipFile()
+{
+	HRESULT hr = CoCreateInstance(CLSID_Shell, nullptr, CLSCTX_INPROC_SERVER, IID_IShellDispatch, reinterpret_cast<void **>(&psd));
 	if (FAILED(hr)) {
 		psd = nullptr;
 	}
-	pZipFile = nullptr;
 }
 
 // デストラクタ
-CZipFile::~CZipFile() {
+CZipFile::~CZipFile()
+{
 	if (pZipFile != nullptr) {
 		pZipFile->Release();
 		pZipFile = nullptr;
