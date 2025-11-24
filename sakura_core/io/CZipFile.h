@@ -17,7 +17,7 @@
 class CZipFile {
 private:
 	IShellDispatch*	psd;
-	Folder*			pZipFile;
+	Folder*			pZipFile = nullptr;
 	std::wstring	sZipName;
 
 	using Me = CZipFile;
