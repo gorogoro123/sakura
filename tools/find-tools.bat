@@ -113,9 +113,7 @@ exit /b
     )
 
     :: convert productLineVersion to Internal Major Version
-    if "%ARG_VSVERSION%" == "2017" (
-        set ARG_VSVERSION=15
-    ) else if "%ARG_VSVERSION%" == "2019" (
+    if "%ARG_VSVERSION%" == "2019" (
         set ARG_VSVERSION=16
     ) else if "%ARG_VSVERSION%" == "2022" (
         set ARG_VSVERSION=17
@@ -215,14 +213,8 @@ exit /b
 :: sub routine for finding msbuild
 :: ---------------------------------------------------------------------------------------------------------------------
 :msbuild
-    :: vs2017単独インストールで導入されるvswhereには機能制限がある
-    if "%NUM_VSVERSION%" == "15" (
-        call :find_msbuild_legacy
-        set CMAKE_G_PARAM=Visual Studio 15 2017
-    ) else (
-        call :find_msbuild
-        call :set_cmake_gparam_automatically
-    )
+    call :find_msbuild
+    call :set_cmake_gparam_automatically
     exit /b
 
 :find_msbuild
