@@ -15,7 +15,7 @@ on:
 
 jobs:
   check-encoding:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -23,22 +23,18 @@ jobs:
           fetch-depth: 0  # 過去の履歴も含めて全て取得 (checkEncoding.py で origin/master にアクセスするため)
 
       - name: Show environment variables for debug
-        run: set
-        shell: cmd
+        run: env
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
       - name: Python version check
         run: python --version
-        shell: cmd
 
       - name: Install chardet
-        run: pip install chardet --user
-        shell: cmd
+        run: pip install chardet
 
       - name: Check encoding
         run: python checkEncoding.py
-        shell: cmd

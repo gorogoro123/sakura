@@ -51,13 +51,13 @@ def checkExtension(fileName):
 def checkOriginMaster():
 	retCode = 0
 	try:
-		output = subprocess.check_output('git show -s origin/master --')
+		output = subprocess.check_output(['git', 'show', '-s', 'origin/master', '--'])
 	except subprocess.CalledProcessError as gitcode:
 		retCode = gitcode.returncode
 	return retCode
 
 def getMergeBase():
-	output = subprocess.check_output('git show-branch --merge-base origin/master HEAD')
+	output = subprocess.check_output(['git', 'show-branch', '--merge-base', 'origin/master', 'HEAD'])
 	outputDec = output.decode()
 	mergeBase = outputDec.splitlines()
 	return mergeBase[0]
@@ -66,7 +66,7 @@ def getMergeBase():
 def getDiffFiles():
 	mergeBase = getMergeBase()
 
-	output = subprocess.check_output('git diff ' + mergeBase + ' --name-only --diff-filter=dr')
+	output = subprocess.check_output(['git', 'diff', mergeBase, '--name-only', '--diff-filter=dr'])
 	outputDec = output.decode()
 	diffFiles = outputDec.splitlines()
 	for fileName in diffFiles:
@@ -109,7 +109,11 @@ def processFiles(files):
 	return count
 
 if __name__ == '__main__':
-	user_scripts = os.path.join(site.USER_BASE, "Scripts")
+	if os.name == 'nt':
+		scripts_dirname = "Scripts"
+	else:
+		scripts_dirname = "bin"
+	user_scripts = os.path.join(site.USER_BASE, scripts_dirname)
 	sys.path.append(user_scripts)
 	print ("adding " + user_scripts + " to PATH")
 
