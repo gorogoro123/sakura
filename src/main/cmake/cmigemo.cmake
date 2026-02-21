@@ -79,12 +79,23 @@ if(MSVC)
 endif()
 
 if(MINGW)
+  set(CONVERT_SCRIPT "${CMAKE_CURRENT_BINARY_DIR}/fix_header.cmake")
+
+  file(WRITE "${CONVERT_SCRIPT}" "
+    execute_process(
+      COMMAND \"${ICONV_PATH}\" -f cp932 -t UTF-8 \"${CMIGEMO_BUILD_DIR}/src/migemo.h\"
+      OUTPUT_FILE \"${CMIGEMO_INCLUDE_DIR}/migemo.h.nobom\"
+    )
+    file(READ \"${CMIGEMO_INCLUDE_DIR}/migemo.h.nobom\" RAW_CONTENT)
+    string(ASCII 239 187 191 BOM)
+    file(WRITE \"${CMIGEMO_INCLUDE_DIR}/migemo.h\" \"\${BOM}\${RAW_CONTENT}\")
+    file(REMOVE \"${CMIGEMO_INCLUDE_DIR}/migemo.h.nobom\")
+  ")
+
   add_custom_command(
     OUTPUT "${CMIGEMO_INCLUDE_DIR}/migemo.h"
     COMMAND ${CMAKE_COMMAND} -E make_directory "${CMIGEMO_INCLUDE_DIR}"
-    COMMAND ${ICONV_PATH} -f cp932 -t UTF-8 "${CMIGEMO_BUILD_DIR}/src/migemo.h" > "${CMIGEMO_INCLUDE_DIR}/migemo.h.nobom"
-    COMMAND bash -lc \"printf '\\xEF\\xBB\\xBF' > ${CMIGEMO_INCLUDE_DIR}/migemo.h && cat ${CMIGEMO_INCLUDE_DIR}/migemo.h.nobom >> ${CMIGEMO_INCLUDE_DIR}/migemo.h\"
-    COMMAND ${CMAKE_COMMAND} -E remove "${CMIGEMO_INCLUDE_DIR}/migemo.h.nobom"
+    COMMAND ${CMAKE_COMMAND} -P "${CONVERT_SCRIPT}"
     DEPENDS copy_cmigemo_source_files
     COMMENT "Copying cmigemo/migemo.h to include directory"
   )
