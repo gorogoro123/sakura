@@ -256,18 +256,26 @@ function(convert_rc_files_to_utf8 RC_FILES_VAR LOCALE_NAME BINARY_DIR)
   foreach(RC_FILE ${${RC_FILES_VAR}})
     get_filename_component(RC_NAME ${RC_FILE} NAME_WE)
     get_filename_component(RC_EXT ${RC_FILE} EXT)
-    set(UTF8_RC_FILE ${BINARY_DIR}/${RC_NAME}_${LOCALE_NAME}/${RC_NAME}${RC_EXT})
-    
+    set(OUTPUT_DIR "${BINARY_DIR}/${RC_NAME}_${LOCALE_NAME}")
+    set(UTF8_RC_FILE "${OUTPUT_DIR}/${RC_NAME}${RC_EXT}")
+    set(CONVERT_SCRIPT "${OUTPUT_DIR}/convert_${RC_NAME}.cmake")
+
+    file(WRITE "${CONVERT_SCRIPT}" "
+      file(READ \"${RC_FILE}\" CONTENT ENCODING \"UTF-16LE\")
+      file(WRITE \"${UTF8_RC_FILE}\" \"\${CONTENT}\")
+    ")
+
     add_custom_command(
       OUTPUT ${UTF8_RC_FILE}
-      COMMAND ${ICONV_PATH} -f UTF-16LE -t UTF-8 "${RC_FILE}" > "${UTF8_RC_FILE}"
+      COMMAND ${CMAKE_COMMAND} -E make_directory "${OUTPUT_DIR}"
+      COMMAND ${CMAKE_COMMAND} -P "${CONVERT_SCRIPT}"
       DEPENDS ${RC_FILE}
-      COMMENT "Converting ${RC_NAME}_${LOCALE_NAME}${RC_EXT} from UTF-16LE to UTF-8 using iconv"
+      COMMENT "Converting ${RC_NAME}_${LOCALE_NAME}${RC_EXT} from UTF-16LE to UTF-8 using CMake"
     )
-    
+
     list(APPEND RC_FILES_UTF8 ${UTF8_RC_FILE})
   endforeach()
-  
+
   # Replace the original variable with UTF-8 converted files
   set(${RC_FILES_VAR} ${RC_FILES_UTF8} PARENT_SCOPE)
 endfunction()
